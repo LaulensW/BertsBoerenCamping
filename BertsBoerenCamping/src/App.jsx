@@ -1,10 +1,14 @@
 import './App.css'
+import BookingForm from './components/bookingForm'
+import Navbar from './components/navbar'
 
 function App() {
 
   return (
     <>
-    <div><h1>Hoi</h1></div>
+    <div><h1>Welkom bij Berts Groene Camping</h1></div>
+    <div><Navbar /></div>
+    <BookingForm />
     </>
   )
 }
