@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 function BookingForm() {
   const [formData, setFormData] = useState({
     voornaam: '',
+    tussenvoegsel: '',
     achternaam: '',
     email: '',
     telefoonnummer: '',
@@ -42,6 +43,10 @@ function BookingForm() {
       <label>
         Voornaam:
         <input type="text" name="voornaam" value={formData.voornaam} onChange={handleChange} />
+      </label>
+      <label>
+        tussenvoegsel:
+        <input type="text" name="tussenvoegsel" value={formData.tussenvoegsel} onChange={handleChange} />
       </label>
       <label>
         Achternaam:
