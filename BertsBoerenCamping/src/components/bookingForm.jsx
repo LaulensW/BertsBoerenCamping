@@ -7,7 +7,7 @@ function BookingForm() {
     email: '',
     telefoonnummer: '',
     voorkeuren: '',
-    // datum: '', 
+    datum: '', // Assuming you still want to keep the "datum" field
   });
 
   const handleChange = (e) => {
@@ -20,7 +20,7 @@ function BookingForm() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-  
+
     try {
       const response = await fetch('http://localhost:3001/api/gast', {
         method: 'POST',
@@ -29,7 +29,7 @@ function BookingForm() {
         },
         body: JSON.stringify(formData),
       });
-  
+
       // Handle response if needed
       console.log('Response:', response);
     } catch (error) {
@@ -58,10 +58,6 @@ function BookingForm() {
       <label>
         Voorkeuren:
         <input type="text" name="voorkeuren" value={formData.voorkeuren} onChange={handleChange} />
-      </label>
-      <label>
-        Datum:
-        <input type="date" name="datum" value={formData.datum} onChange={handleChange} />
       </label>
       <button type="submit">Klik hier om te boeken!</button>
     </form>
