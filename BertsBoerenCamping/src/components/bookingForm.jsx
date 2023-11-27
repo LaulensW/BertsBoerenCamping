@@ -7,7 +7,7 @@ function BookingForm() {
     email: '',
     telefoonnummer: '',
     voorkeuren: '',
-    datum: '', 
+    // datum: '', 
   });
 
   const handleChange = (e) => {
@@ -20,16 +20,16 @@ function BookingForm() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-
+  
     try {
-      const response = await fetch('http://your-backend-api-endpoint', {
+      const response = await fetch('http://localhost:3001/api/gast', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify(formData),
       });
-
+  
       // Handle response if needed
       console.log('Response:', response);
     } catch (error) {
