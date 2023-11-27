@@ -8,7 +8,7 @@ app.use(cors());
 app.use(express.json());
 
 const db = mysql2.createConnection({
-  host: 'localhost',
+  host: '127.0.0.1',
   user: 'root',
   password: 'DjHsXXpxRyT89&',
   database: 'bertsboerencamping'
@@ -27,14 +27,15 @@ app.post('/api/gast', (req, res) => {
   const formData = req.body;
 
   // Assuming "gast" is your table name
-  const query = 'INSERT INTO gast (voornaam, achternaam, email, telefoonnummer, voorkeuren, datum) VALUES (?, ?, ?, ?, ?, ?)';
+  const query = 'INSERT INTO gast (voornaam, achternaam, email, telefoonnummer, voorkeuren) VALUES (?, ?, ?, ?, ?)';
   const values = [
     formData.voornaam,
+    formData.tussenvoegsel,
     formData.achternaam,
     formData.email,
     formData.telefoonnummer,
     formData.voorkeuren,
-    formData.datum,
+    // formData.datum,
   ];
 
   db.query(query, values, (err, result) => {
