@@ -10,8 +10,10 @@ app.use(express.json());
 const db = mysql2.createConnection({
   host: '127.0.0.1',
   user: 'root',
-  password: 'C#1996@pins',
-  database: 'bertscamping',
+  password: 'DjHsXXpxRyT89&',
+  // C#1996@pins
+  database: 'bertsboerencamping',
+  // bertscamping
 });
 
 db.connect((err) => {
@@ -108,6 +110,32 @@ app.delete('/api/gast/:id', (req, res) => {
     } else {
       console.log('Data deleted successfully:', result);
       res.json({ message: 'Data deleted successfully!' });
+    }
+  });
+});
+
+
+// Boeking Plaatsen (van front-end naar back-end)
+app.post('/api/Booking', (req, res) => {
+  const formData = req.body;
+
+  const query = `INSERT INTO Booking (IdGast, Aankosmtdatum, Vertrekdatum, Accomodatietype)
+                  VALUES (?, ?, ?, ?)`;
+
+  const values = [
+    formData.IdGast,
+    formData.Aankosmtdatum,
+    formData.Vertrekdatum,
+    formData.AccomodatieType,
+  ];
+
+  db.query(query, values, (err, result) => {
+    if (err) {
+      console.error('Error inserting booking data:', err);
+      res.status(500).json({ error: 'Internal Server Error' });
+    } else {
+      console.log('Booking data inserted successfully:', result);
+      res.json({ message: 'Booking form submitted successfully!' });
     }
   });
 });
