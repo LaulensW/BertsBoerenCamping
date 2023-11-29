@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import DatePicker from 'react-datepicker';
+import 'react-datepicker/dist/react-datepicker.css';
 
 function BookingForm() {
   const [formData, setFormData] = useState({
@@ -8,7 +10,7 @@ function BookingForm() {
     email: '',
     telefoonnummer: '',
     voorkeuren: '',
-    datum: '', // Assuming you still want to keep the "datum" field
+    datum: null,
   });
 
   const handleChange = (e) => {
@@ -16,6 +18,13 @@ function BookingForm() {
     setFormData((prevData) => ({
       ...prevData,
       [name]: value,
+    }));
+  };
+
+  const handleDateChange = (date) => {
+    setFormData((prevData) => ({
+      ...prevData,
+      datum: date,
     }));
   };
 
@@ -31,7 +40,6 @@ function BookingForm() {
         body: JSON.stringify(formData),
       });
 
-      // Handle response if needed
       console.log('Response:', response);
     } catch (error) {
       console.error('Error:', error);
@@ -64,6 +72,17 @@ function BookingForm() {
         Voorkeuren:
         <input type="text" name="voorkeuren" value={formData.voorkeuren} onChange={handleChange} />
       </label>
+      {/* Datepicker */}
+      <div>
+        <label>Datum:</label>
+        <DatePicker
+          selected={formData.datum}
+          onChange={date => handleDateChange(date)}
+          dateFormat="dd/MM/yyyy"
+          placeholderText="Select a date"
+        />
+      </div>
+      {/* Submit button */}
       <button type="submit">Klik hier om te boeken!</button>
     </form>
   );
