@@ -4,6 +4,7 @@ import Dashboard from './Views/Dashboard';
 import BookingForm from './components/bookingForm';
 import Navbar from './components/navbar';
 
+
 function App() {
   return (
     <Router>
