@@ -6,3 +6,10 @@
 body {
     font-family: 'IBM Plex Mono', monospace;
 }
+
+:root{
+    --primary-color: #60775d;
+    --secondary-color: #4a4034;
+    --neutral-color: #f5f0ec;
+    
+}

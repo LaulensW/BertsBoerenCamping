@@ -4,7 +4,7 @@
     justify-content: space-between;
     align-items: center;
     padding: 20px;
-    background-color: #fbf2e9; /* Adjust the background color as needed */
+    background-color: var(--neutral-color); /* Adjust the background color as needed */
     color: #fff; /* Adjust the text color as needed */
   }
   

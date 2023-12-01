@@ -46,7 +46,9 @@ function BookingForm() {
       console.error('Error:', error);
     }
   };
-
+  const [dateRange, setDateRange] = useState([null, null]);
+  const [startDate, endDate] = dateRange;
+  
   return (
     <div className="booking-form-container">
       <form className="booking-form" onSubmit={handleSubmit}>
@@ -78,10 +80,13 @@ function BookingForm() {
       <div>
         <label>Datum:</label>
         <DatePicker
-          selected={formData.datum}
-          onChange={date => handleDateChange(date)}
-          dateFormat="dd/MM/yyyy"
-          placeholderText="Selecteer een datum"
+          selectsRange={true}
+          startDate={startDate}
+          endDate={endDate}
+          onChange={(update) => {
+            setDateRange(update);
+          }}
+          isClearable={true}
         />
       </div>
         <button type="submit">Klik hier om te boeken!</button>
