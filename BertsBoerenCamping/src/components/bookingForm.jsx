@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
+import './BookingForm.css';
 
 function BookingForm() {
   const [formData, setFormData] = useState({
@@ -47,7 +48,8 @@ function BookingForm() {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
+    <div className="booking-form-container">
+      <form className="booking-form" onSubmit={handleSubmit}>
       <label>
         Voornaam:
         <input type="text" name="voornaam" value={formData.voornaam} onChange={handleChange} />
@@ -79,13 +81,14 @@ function BookingForm() {
           selected={formData.datum}
           onChange={date => handleDateChange(date)}
           dateFormat="dd/MM/yyyy"
-          placeholderText="Select a date"
+          placeholderText="Selecteer een datum"
         />
       </div>
-      {/* Submit button */}
-      <button type="submit">Klik hier om te boeken!</button>
-    </form>
+        <button type="submit">Klik hier om te boeken!</button>
+      </form>
+    </div>
   );
 }
 
 export default BookingForm;
+  
