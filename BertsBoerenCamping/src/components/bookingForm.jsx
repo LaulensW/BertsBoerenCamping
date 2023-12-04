@@ -89,7 +89,7 @@ function BookingForm() {
           isClearable={true}
         />
       </div>
-        <button type="submit">Klik hier om te boeken!</button>
+        <button className="booking-submit" type="submit">Klik hier om te boeken!</button>
       </form>
     </div>
   );

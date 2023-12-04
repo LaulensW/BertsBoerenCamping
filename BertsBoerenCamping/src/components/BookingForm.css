@@ -19,7 +19,8 @@
     box-sizing: border-box;
   }
   
-.booking-form button {
+
+  .booking-submit {
     background-color: var(--primary-color);
     color: #fff;
     border: none;
