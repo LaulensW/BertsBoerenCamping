@@ -4,6 +4,7 @@ import Home from './Views/Home';
 import Booking from './Views/Booking';
 import About from './Views/About';
 import DashboardPage from './Views/DashboardPage';
+import Login from './Views/Login';
 
 const App = () => {
   return (
@@ -13,6 +14,7 @@ const App = () => {
         <Route path="/booking" element={<Booking />} />
         <Route path="/about" element={<About />} />
         <Route path="/dashboard" element={<DashboardPage />} />
+        <Route path="/login" element={<Login />} />
       </Routes>
     </Router>
   );
