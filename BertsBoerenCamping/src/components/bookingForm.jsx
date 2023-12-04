@@ -11,7 +11,7 @@ function BookingForm() {
     email: '',
     telefoonnummer: '',
     voorkeuren: '',
-    datum: null,
+    dateRange: [null, null],
   });
 
   const handleChange = (e) => {
@@ -25,29 +25,53 @@ function BookingForm() {
   const handleDateChange = (date) => {
     setFormData((prevData) => ({
       ...prevData,
-      datum: date,
+      dateRange: date,
     }));
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-
+  
     try {
-      const response = await fetch('http://localhost:3001/api/gast', {
+      // Step 1: Insert guest information into the "Gast" table
+      const guestResponse = await fetch('http://localhost:3001/api/gast', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify(formData),
+        body: JSON.stringify({
+          voornaam: formData.voornaam,
+          tussenvoegsel: formData.tussenvoegsel,
+          achternaam: formData.achternaam,
+          email: formData.email,
+          telefoonnummer: formData.telefoonnummer,
+          voorkeuren: formData.voorkeuren,
+        }),
       });
-
-      console.log('Response:', response);
+  
+      const guestData = await guestResponse.json();
+  
+      // Step 2: Insert booking information into the "Booking" table
+      const bookingResponse = await fetch('http://localhost:3001/api/booking', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          IdGast: guestData.insertId,
+          Aankomstdatum: formData.dateRange[0],
+          Vertrekdatum: formData.dateRange[1],
+        }),
+      });
+  
+      const bookingResult = await bookingResponse.json();
+  
+      console.log('Guest Response:', guestData);
+      console.log('Booking Response:', bookingResult);
     } catch (error) {
       console.error('Error:', error);
     }
   };
-  const [dateRange, setDateRange] = useState([null, null]);
-  const [startDate, endDate] = dateRange;
   
   return (
     <div className="booking-form-container">
@@ -78,17 +102,18 @@ function BookingForm() {
       </label>
       {/* Datepicker */}
       <div>
-        <label>Datum:</label>
-        <DatePicker
-          selectsRange={true}
-          startDate={startDate}
-          endDate={endDate}
-          onChange={(update) => {
-            setDateRange(update);
-          }}
-          isClearable={true}
-        />
-      </div>
+          <label>Datum:</label>
+          <DatePicker
+            selectsRange={true}
+            startDate={formData.dateRange[0]}
+            endDate={formData.dateRange[1]}
+            onChange={(update) => {
+              handleDateChange(update);
+            }}
+            isClearable={true}
+          />
+        </div>
+        
         <button type="submit">Klik hier om te boeken!</button>
       </form>
     </div>

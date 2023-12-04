@@ -47,7 +47,7 @@ app.post('/api/gast', (req, res) => {
       res.status(500).json({ error: 'Internal Server Error' });
     } else {
       console.log('Data inserted successfully:', result);
-      res.json({ message: 'Booking form submitted successfully!' });
+      res.json({ message: 'booking form submitted successfully!' });
     }
   });
 });
@@ -116,17 +116,18 @@ app.delete('/api/gast/:id', (req, res) => {
 
 
 // Boeking Plaatsen (van front-end naar back-end)
-app.post('/api/Booking', (req, res) => {
+app.post('/api/booking', (req, res) => {
   const formData = req.body;
 
-  const query = `INSERT INTO Booking (IdGast, Aankosmtdatum, Vertrekdatum, Accomodatietype)
+  // Assuming "booking" is your table name
+  const query = `INSERT INTO booking (IdGast, Aankomstdatum, Vertrekdatum, AccommodatieType)
                   VALUES (?, ?, ?, ?)`;
 
   const values = [
     formData.IdGast,
-    formData.Aankosmtdatum,
+    formData.Aankomstdatum,
     formData.Vertrekdatum,
-    formData.AccomodatieType,
+    formData.AccommodatieType,
   ];
 
   db.query(query, values, (err, result) => {
@@ -134,39 +135,39 @@ app.post('/api/Booking', (req, res) => {
       console.error('Error inserting booking data:', err);
       res.status(500).json({ error: 'Internal Server Error' });
     } else {
-      console.log('Booking data inserted successfully:', result);
-      res.json({ message: 'Booking form submitted successfully!' });
+      console.log('booking data inserted successfully:', result);
+      res.json({ message: 'booking form submitted successfully!' });
     }
   });
 });
 
 // Alle boekingen ophalen
-app.get('/api/Booking', (req, res) => {
-  const query = 'SELECT * FROM Booking';
+app.get('/api/booking', (req, res) => {
+  const query = 'SELECT * FROM booking';
 
   db.query(query, (err, result) => {
     if (err) {
       console.error('Error retrieving booking data:' , err);
       res.status(500).json({ error: 'Internal Server Error' });
     } else {
-      console.log('Booking data recieved successfully:', result);
+      console.log('booking data recieved successfully:', result);
       res.json(result);
     }
   });
 });
 
 // Boeking informatie updaten
-app.put('/api/Booking/:id', (req, res) => {
+app.put('/api/booking/:id', (req, res) => {
   const formData = req.body;
   const id = req.params.id;
 
-  const query = `UPDATE Booking
+  const query = `UPDATE booking
                  SET IdGast=?, Aankomstdatum=?, Vertrekdatum=?
-                 WHERE IdBooking=?`;
+                 WHERE Idbooking=?`;
 
   const values = [
     formData.IdGast,
-    formData.Aankosmtdatum,
+    formData.Aankomstdatum,
     formData.Vertrekdatum,
     id,
   ];
@@ -176,25 +177,25 @@ app.put('/api/Booking/:id', (req, res) => {
       console.error('Error updating booking data:', err);
       res.status(500).json({ error: 'Internal Server Error' });
     } else {
-      console.log('Booking data updated successfully:', result);
-      res.json({ message: 'Booking data updated successfully!' });
+      console.log('booking data updated successfully:', result);
+      res.json({ message: 'booking data updated successfully!' });
     }
   });
 });
 
 // Boeking verwijderen
-app.delete('/api/Booking/:id', (req, res) => {
+app.delete('/api/booking/:id', (req, res) => {
   const id = req.params.id;
 
-  const query = 'DELETE FROM Booking WHERE IdBooking=?';
+  const query = 'DELETE FROM booking WHERE Idbooking=?';
 
   db.query(query, [id], (err, result) => {
     if (err) {
       console.error('Error deleting booking data:', err);
       res.status(500).json({ error: 'Internal Server Error' });
     } else {
-      console.log('Booking data deleted successfully:', result);
-      res.json({ message: 'Booking data deleted successfully!' });
+      console.log('booking data deleted successfully:', result);
+      res.json({ message: 'booking data deleted successfully!' });
     }
   });
 });
