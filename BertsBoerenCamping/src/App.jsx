@@ -1,16 +1,21 @@
-import './App.css'
-import BookingForm from './components/bookingForm'
-import Navbar from './components/navbar'
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Home from './Views/Home';
+import Booking from './Views/Booking';
+import About from './Views/About';
+import DashboardPage from './Views/DashboardPage';
 
-function App() {
-
+const App = () => {
   return (
-    <>
-    <div><h1>Welkom bij Berts Groene Camping</h1></div>
-    <div><Navbar /></div>
-    <BookingForm />
-    </>
-  )
-}
+    <Router>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/booking" element={<Booking />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/dashboard" element={<DashboardPage />} />
+      </Routes>
+    </Router>
+  );
+};
 
-export default App
+export default App;
