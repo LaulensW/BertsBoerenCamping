@@ -199,6 +199,23 @@ app.delete('/api/Booking/:id', (req, res) => {
   });
 });
 
+
+// Baliemedewerker login
+app.post('api/login', (req, res) => {
+  const { username, password } = req.body;
+
+  db.query('SELECT * FROM Baliemedewerker WHERE IdMedewerker = ? AND Wachtwoord = ?', [username, password], (err, result) => {
+      if (err) {
+          res.status(500).send('Error authenticating user');
+      } else if (result.length > 0) {
+          res.status(200).send('Login successful');
+      } else {
+          res.status(401).send('Invalid credentials');
+      }
+  });
+});
+
+
 app.listen(port, () => {
   console.log(`Server listening at http://localhost:${port}`);
 });
