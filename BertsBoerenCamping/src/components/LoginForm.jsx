@@ -1,9 +1,10 @@
-import './LoginForm.css';
 import React, { useState } from 'react';
+import './LoginForm.css';
 
 const LoginForm = () => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
+  const [errorMessage, setErrorMessage] = useState('');
 
   const handleUsernameChange = (event) => {
     setUsername(event.target.value);
@@ -15,11 +16,15 @@ const LoginForm = () => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    // Login logic here
+    if (username === 'correctUsername' && password === 'correctPassword') {
+      window.location.href = '/dashboard';
+    } else {
+      setErrorMessage('Verkeerd wachtwoord of gebruikersnaam');
+    }
   };
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form className="login-form" onSubmit={handleSubmit}>
       <div>
         <label htmlFor="username">Username:</label>
         <input
@@ -27,6 +32,7 @@ const LoginForm = () => {
           id="username"
           value={username}
           onChange={handleUsernameChange}
+          className="login-input"
         />
       </div>
       <div>
@@ -36,9 +42,13 @@ const LoginForm = () => {
           id="password"
           value={password}
           onChange={handlePasswordChange}
+          className="login-input"
         />
       </div>
-      <button type="submit">Login</button>
+      <div>
+        <button type="submit" className="login-button">Login</button>
+      </div>
+      {errorMessage && <p className="error-message">{errorMessage}</p>}
     </form>
   );
 };
