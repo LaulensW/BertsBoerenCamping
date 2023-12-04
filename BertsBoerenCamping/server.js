@@ -120,13 +120,13 @@ app.post('/api/booking', (req, res) => {
   const formData = req.body;
 
   // Assuming "booking" is your table name
-  const query = `INSERT INTO booking (IdGast, Aankomstdatum, Vertrekdatum, AccommodatieType)
-                  VALUES (?, ?, ?, ?)`;
+  const query = `INSERT INTO booking (IdGast, AankomstDatum, VertrekDatum, AccommodatieType)
+        VALUES (?, ?, ?, ?)`;
 
   const values = [
     formData.IdGast,
-    formData.Aankomstdatum,
-    formData.Vertrekdatum,
+    formData.AankomstDatum,
+    formData.VertrekDatum,
     formData.AccommodatieType,
   ];
 
@@ -162,13 +162,13 @@ app.put('/api/booking/:id', (req, res) => {
   const id = req.params.id;
 
   const query = `UPDATE booking
-                 SET IdGast=?, Aankomstdatum=?, Vertrekdatum=?
+                 SET IdGast=?, AankomstDatum=?, VertrekDatum=?
                  WHERE Idbooking=?`;
 
   const values = [
     formData.IdGast,
-    formData.Aankomstdatum,
-    formData.Vertrekdatum,
+    formData.AankomstDatum,
+    formData.VertrekDatum,
     id,
   ];
 

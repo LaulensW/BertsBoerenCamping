@@ -59,8 +59,8 @@ function BookingForm() {
         },
         body: JSON.stringify({
           IdGast: guestData.insertId,
-          Aankomstdatum: formData.dateRange[0],
-          Vertrekdatum: formData.dateRange[1],
+          AankomstDatum: formData.dateRange[0].toISOString().slice(0, 10),
+          VertrekDatum: formData.dateRange[1].toISOString().slice(0, 10),
         }),
       });
   
