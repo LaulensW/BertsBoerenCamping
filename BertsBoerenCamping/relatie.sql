@@ -7,10 +7,6 @@ SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,N
 -- -----------------------------------------------------
 -- Schema bertsboerencamping
 -- -----------------------------------------------------
-
--- -----------------------------------------------------
--- Schema bertsboerencamping
--- -----------------------------------------------------
 CREATE SCHEMA IF NOT EXISTS `bertsboerencamping` DEFAULT CHARACTER SET utf8 ;
 USE `bertsboerencamping` ;
 
@@ -27,36 +23,6 @@ CREATE TABLE IF NOT EXISTS `bertsboerencamping`.`gast` (
   `Voorkeuren` VARCHAR(255) NULL,
   PRIMARY KEY (`IdGast`),
   UNIQUE INDEX `idgast_UNIQUE` (`IdGast` ASC) VISIBLE)
-ENGINE = InnoDB;
-
-
--- -----------------------------------------------------
--- Table `bertsboerencamping`.`Baliemedewerker`
--- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `bertsboerencamping`.`Baliemedewerker` (
-  `IdMedewerker` INT(10) NOT NULL AUTO_INCREMENT,
-  `Voornaam` VARCHAR(25) NULL,
-  `Tussenvoegsel` VARCHAR(10) NULL,
-  `Achternaam` VARCHAR(25) NULL,
-  `Rol` INT(10) NULL,
-  `Wachtwoord` VARCHAR(16) NULL,
-  PRIMARY KEY (`IdMedewerker`),
-  UNIQUE INDEX `IdMedewerker_UNIQUE` (`IdMedewerker` ASC) VISIBLE)
-ENGINE = InnoDB;
-
-
--- -----------------------------------------------------
--- Table `bertsboerencamping`.`Administratiefmedewerker`
--- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `bertsboerencamping`.`Administratiefmedewerker` (
-  `IdMedewerker` INT(10) NOT NULL AUTO_INCREMENT,
-  `Voornaam` VARCHAR(25) NULL,
-  `Tussenvoegsel` VARCHAR(10) NULL,
-  `Achternaam` VARCHAR(25) NULL,
-  `Rol` INT(10) NULL,
-  `Wachtwoord` VARCHAR(16) NULL,
-  PRIMARY KEY (`IdMedewerker`),
-  UNIQUE INDEX `IdMedewerker_UNIQUE` (`IdMedewerker` ASC) VISIBLE)
 ENGINE = InnoDB;
 
 
@@ -89,6 +55,36 @@ CREATE TABLE IF NOT EXISTS `bertsboerencamping`.`boeking` (
     REFERENCES `bertsboerencamping`.`Administratiefmedewerker` (`IdMedewerker`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `bertsboerencamping`.`Baliemedewerker`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `bertsboerencamping`.`Baliemedewerker` (
+  `IdMedewerker` INT(10) NOT NULL AUTO_INCREMENT,
+  `Voornaam` VARCHAR(25) NULL,
+  `Tussenvoegsel` VARCHAR(10) NULL,
+  `Achternaam` VARCHAR(25) NULL,
+  `Rol` INT(10) NULL,
+  `Wachtwoord` VARCHAR(16) NULL,
+  PRIMARY KEY (`IdMedewerker`),
+  UNIQUE INDEX `IdMedewerker_UNIQUE` (`IdMedewerker` ASC) VISIBLE)
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `bertsboerencamping`.`Administratiefmedewerker`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `bertsboerencamping`.`Administratiefmedewerker` (
+  `IdMedewerker` INT(10) NOT NULL AUTO_INCREMENT,
+  `Voornaam` VARCHAR(25) NULL,
+  `Tussenvoegsel` VARCHAR(10) NULL,
+  `Achternaam` VARCHAR(25) NULL,
+  `Rol` INT(10) NULL,
+  `Wachtwoord` VARCHAR(16) NULL,
+  PRIMARY KEY (`IdMedewerker`),
+  UNIQUE INDEX `IdMedewerker_UNIQUE` (`IdMedewerker` ASC) VISIBLE)
 ENGINE = InnoDB;
 
 
