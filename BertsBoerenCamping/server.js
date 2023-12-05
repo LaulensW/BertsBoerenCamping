@@ -201,8 +201,8 @@ app.delete('/api/Booking/:id', (req, res) => {
 
 
 // Baliemedewerker login
-app.post('api/login', (req, res) => {
-  const { username, password } = req.body;
+app.post('/dashboard', (req, res) => {
+  const {username, password } = req.body; // req.body maakt de data beschikbaar van de front-end
 
   db.query('SELECT * FROM Baliemedewerker WHERE IdMedewerker = ? AND Wachtwoord = ?', [username, password], (err, result) => {
       if (err) {

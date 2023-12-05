@@ -14,15 +14,15 @@ USE `bertsboerencamping` ;
 -- Table `bertsboerencamping`.`gast`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `bertsboerencamping`.`gast` (
-  `IdGast` INT NOT NULL AUTO_INCREMENT,
-  `Voornaam` VARCHAR(25) NULL,
+  `idGast` INT NOT NULL AUTO_INCREMENT,
+  `voornaam` VARCHAR(25) NULL,
   `tussenvoegsel` VARCHAR(15) NULL,
-  `Achternaam` VARCHAR(25) NULL,
-  `Email` VARCHAR(100) NULL,
-  `Telefoonnummer` VARCHAR(15) NULL,
-  `Voorkeuren` VARCHAR(255) NULL,
-  PRIMARY KEY (`IdGast`),
-  UNIQUE INDEX `idgast_UNIQUE` (`IdGast` ASC) VISIBLE)
+  `achternaam` VARCHAR(25) NULL,
+  `email` VARCHAR(100) NULL,
+  `telefoonnummer` VARCHAR(15) NULL,
+  `voorkeuren` VARCHAR(255) NULL,
+  PRIMARY KEY (`idGast`),
+  UNIQUE INDEX `idgast_UNIQUE` (`idGast` ASC) VISIBLE)
 ENGINE = InnoDB;
 
 
@@ -30,61 +30,61 @@ ENGINE = InnoDB;
 -- Table `bertsboerencamping`.`boeking`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `bertsboerencamping`.`boeking` (
-  `IdBoeking` INT NOT NULL AUTO_INCREMENT,
-  `Aankomstdatum` DATE NULL,
-  `Vertrekdatum` DATE NULL,
-  `Accomodatietype` VARCHAR(50) NULL,
-  `IdGast` INT NULL,
-  `IdMedewerker` INT NULL,
-  PRIMARY KEY (`IdBoeking`),
-  INDEX `idgast_idx` (`IdGast` ASC) VISIBLE,
-  UNIQUE INDEX `IdBoeking_UNIQUE` (`IdBoeking` ASC) VISIBLE,
-  INDEX `IdMedewerker_idx` (`IdMedewerker` ASC) VISIBLE,
+  `idBoeking` INT NOT NULL AUTO_INCREMENT,
+  `aankomstdatum` DATE NULL,
+  `vertrekdatum` DATE NULL,
+  `accomodatietype` VARCHAR(50) NULL,
+  `idGast` INT NULL,
+  `idMedewerker` INT NULL,
+  PRIMARY KEY (`idBoeking`),
+  INDEX `idgast_idx` (`idGast` ASC) VISIBLE,
+  UNIQUE INDEX `IdBoeking_UNIQUE` (`idBoeking` ASC) VISIBLE,
+  INDEX `IdMedewerker_idx` (`idMedewerker` ASC) VISIBLE,
   CONSTRAINT `IdGast`
-    FOREIGN KEY (`IdGast`)
-    REFERENCES `bertsboerencamping`.`gast` (`IdGast`)
+    FOREIGN KEY (`idGast`)
+    REFERENCES `bertsboerencamping`.`gast` (`idGast`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION,
   CONSTRAINT `IdMedewerkerBaliemedewerker`
-    FOREIGN KEY (`IdMedewerker`)
-    REFERENCES `bertsboerencamping`.`Baliemedewerker` (`IdMedewerker`)
+    FOREIGN KEY (`idMedewerker`)
+    REFERENCES `bertsboerencamping`.`baliemedewerker` (`idMedewerker`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION,
   CONSTRAINT `IdMedewerkerAdministratiefmedewerker`
-    FOREIGN KEY (`IdMedewerker`)
-    REFERENCES `bertsboerencamping`.`Administratiefmedewerker` (`IdMedewerker`)
+    FOREIGN KEY (`idMedewerker`)
+    REFERENCES `bertsboerencamping`.`administratiefmedewerker` (`idMedewerker`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `bertsboerencamping`.`Baliemedewerker`
+-- Table `bertsboerencamping`.`baliemedewerker`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `bertsboerencamping`.`Baliemedewerker` (
-  `IdMedewerker` INT(10) NOT NULL AUTO_INCREMENT,
-  `Voornaam` VARCHAR(25) NULL,
-  `Tussenvoegsel` VARCHAR(10) NULL,
-  `Achternaam` VARCHAR(25) NULL,
-  `Rol` INT(10) NULL,
-  `Wachtwoord` VARCHAR(16) NULL,
-  PRIMARY KEY (`IdMedewerker`),
-  UNIQUE INDEX `IdMedewerker_UNIQUE` (`IdMedewerker` ASC) VISIBLE)
+CREATE TABLE IF NOT EXISTS `bertsboerencamping`.`baliemedewerker` (
+  `idMedewerker` INT(10) NOT NULL AUTO_INCREMENT,
+  `voornaam` VARCHAR(25) NULL,
+  `tussenvoegsel` VARCHAR(10) NULL,
+  `achternaam` VARCHAR(25) NULL,
+  `rol` INT(10) NULL,
+  `wachtwoord` VARCHAR(16) NULL,
+  PRIMARY KEY (`idMedewerker`),
+  UNIQUE INDEX `IdMedewerker_UNIQUE` (`idMedewerker` ASC) VISIBLE)
 ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `bertsboerencamping`.`Administratiefmedewerker`
+-- Table `bertsboerencamping`.`administratiefmedewerker`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `bertsboerencamping`.`Administratiefmedewerker` (
-  `IdMedewerker` INT(10) NOT NULL AUTO_INCREMENT,
-  `Voornaam` VARCHAR(25) NULL,
-  `Tussenvoegsel` VARCHAR(10) NULL,
-  `Achternaam` VARCHAR(25) NULL,
-  `Rol` INT(10) NULL,
-  `Wachtwoord` VARCHAR(16) NULL,
-  PRIMARY KEY (`IdMedewerker`),
-  UNIQUE INDEX `IdMedewerker_UNIQUE` (`IdMedewerker` ASC) VISIBLE)
+CREATE TABLE IF NOT EXISTS `bertsboerencamping`.`administratiefmedewerker` (
+  `idMedewerker` INT(10) NOT NULL AUTO_INCREMENT,
+  `voornaam` VARCHAR(25) NULL,
+  `tussenvoegsel` VARCHAR(10) NULL,
+  `achternaam` VARCHAR(25) NULL,
+  `rol` INT(10) NULL,
+  `wachtwoord` VARCHAR(16) NULL,
+  PRIMARY KEY (`idMedewerker`),
+  UNIQUE INDEX `IdMedewerker_UNIQUE` (`idMedewerker` ASC) VISIBLE)
 ENGINE = InnoDB;
 
 
