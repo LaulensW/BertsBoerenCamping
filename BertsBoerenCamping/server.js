@@ -201,6 +201,7 @@ app.delete('/api/boeking/:id', (req, res) => {
 
 
 // Baliemedewerker login
+<<<<<<< Updated upstream
 app.get('/users'), (req, res) => {
   
 }
@@ -213,9 +214,25 @@ app.post('/dashboard', (req, res) => {
           res.status(500).send('Error authenticating user');
       } else if (result.length > 0) {
           res.status(200).send('Login successful');
+=======
+app.post('http://localhost:3001/api/login', (req, res) => {
+  const { username, password } = req.body;
+
+  const query = 'SELECT * FROM baliemedewerker WHERE idMedewerker = ? AND wachtwoord = ?';
+  const values = [username, password];
+
+  db.query(query, values, (err, result) => {
+    if (err) {
+      console.error('Error retrieving login data:', err);
+      res.status(500).json({ error: 'Internal Server Error' });
+    } else {
+      if (result.length === 0) {
+        res.status(401).json({ error: 'Invalid credentials' });
+>>>>>>> Stashed changes
       } else {
-          res.status(401).send('Invalid credentials');
+        res.json({ message: 'Login successful' });
       }
+    }
   });
 });
 
