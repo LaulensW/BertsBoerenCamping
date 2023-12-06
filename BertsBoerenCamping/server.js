@@ -201,7 +201,7 @@ app.delete('/api/Booking/:id', (req, res) => {
 
 
 // Baliemedewerker login
-app.post('http://localhost:3001/api/login', (req, res) => {
+app.post('/api/login', (req, res) => {
   const { username, password } = req.body;
 
   const query = 'SELECT * FROM baliemedewerker WHERE idMedewerker = ? AND wachtwoord = ?';
