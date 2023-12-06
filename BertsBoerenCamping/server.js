@@ -28,13 +28,13 @@ db.connect((err) => {
 app.post('/api/gast', (req, res) => {
   const formData = req.body;
 
-  // Assuming "gast" is your table name
-  const query = `INSERT INTO gast (voornaam, tussenvoegsel, achternaam, email, telefoonnummer, voorkeuren)
+  // Assuming "Gast" is your table name
+  const query = `INSERT INTO Gast (Voornaam, TussenVoegsel, Achternaam, Email, Telefoonnummer, Voorkeuren)
                   VALUES (?, ?, ?, ?, ?, ?)`;
 
   const values = [
     formData.voornaam,
-    formData.tussenvoegsel,
+    formData.tussenVoegsel,
     formData.achternaam,
     formData.email,
     formData.telefoonnummer,
@@ -53,8 +53,8 @@ app.post('/api/gast', (req, res) => {
 });
 
 app.get('/api/gast', (req, res) => {
-  // Assuming "gast" is your table name
-  const query = 'SELECT * FROM gast';
+  // Assuming "Gast" is your table name
+  const query = 'SELECT * FROM Gast';
 
   db.query(query, (err, result) => {
     if (err) {
@@ -71,14 +71,14 @@ app.put('/api/gast/:id', (req, res) => {
   const formData = req.body;
   const id = req.params.id;
 
-  // Assuming "gast" is your table name
-  const query = `UPDATE gast
-                 SET voornaam=?, tussenvoegsel=?, achternaam=?, email=?, telefoonnummer=?, voorkeuren=?
-                 WHERE idGast=?`;
+  // Assuming "Gast" is your table name
+  const query = `UPDATE Gast
+                 SET Voornaam=?, TussenVoegsel=?, Achternaam=?, Email=?, Telefoonnummer=?, Voorkeuren=?
+                 WHERE IdGast=?`;
 
   const values = [
     formData.voornaam,
-    formData.tussenvoegsel,
+    formData.tussenVoegsel,
     formData.achternaam,
     formData.email,
     formData.telefoonnummer,
@@ -100,8 +100,8 @@ app.put('/api/gast/:id', (req, res) => {
 app.delete('/api/gast/:id', (req, res) => {
   const id = req.params.id;
 
-  // Assuming "gast" is your table name
-  const query = 'DELETE FROM gast WHERE idGast=?';
+  // Assuming "Gast" is your table name
+  const query = 'DELETE FROM Gast WHERE IdGast=?';
 
   db.query(query, [id], (err, result) => {
     if (err) {
@@ -116,17 +116,17 @@ app.delete('/api/gast/:id', (req, res) => {
 
 
 // Boeking Plaatsen (van front-end naar back-end)
-app.post('/api/boeking', (req, res) => {
+app.post('/api/Booking', (req, res) => {
   const formData = req.body;
 
-  const query = `INSERT INTO boeking (idGast, aankomstdatum, vertrekdatum, accomodatietype)
+  const query = `INSERT INTO Booking (IdGast, Aankosmtdatum, Vertrekdatum, Accomodatietype)
                   VALUES (?, ?, ?, ?)`;
 
   const values = [
-    formData.idgast,
-    formData.aankosmtdatum,
-    formData.vertrekdatum,
-    formData.accomodatietype,
+    formData.IdGast,
+    formData.Aankosmtdatum,
+    formData.Vertrekdatum,
+    formData.AccomodatieType,
   ];
 
   db.query(query, values, (err, result) => {
@@ -141,8 +141,8 @@ app.post('/api/boeking', (req, res) => {
 });
 
 // Alle boekingen ophalen
-app.get('/api/boeking', (req, res) => {
-  const query = 'SELECT * FROM boeking';
+app.get('/api/Booking', (req, res) => {
+  const query = 'SELECT * FROM Booking';
 
   db.query(query, (err, result) => {
     if (err) {
@@ -156,18 +156,18 @@ app.get('/api/boeking', (req, res) => {
 });
 
 // Boeking informatie updaten
-app.put('/api/boeking/:id', (req, res) => {
+app.put('/api/Booking/:id', (req, res) => {
   const formData = req.body;
   const id = req.params.id;
 
-  const query = `UPDATE boeking
-                 SET idGast=?, aankomstdatum=?, vertrekdatum=?
-                 WHERE idBooking=?`;
+  const query = `UPDATE Booking
+                 SET IdGast=?, Aankomstdatum=?, Vertrekdatum=?
+                 WHERE IdBooking=?`;
 
   const values = [
-    formData.Idgast,
+    formData.IdGast,
     formData.Aankosmtdatum,
-    formData.vertrekdatum,
+    formData.Vertrekdatum,
     id,
   ];
 
@@ -183,10 +183,10 @@ app.put('/api/boeking/:id', (req, res) => {
 });
 
 // Boeking verwijderen
-app.delete('/api/boeking/:id', (req, res) => {
+app.delete('/api/Booking/:id', (req, res) => {
   const id = req.params.id;
 
-  const query = 'DELETE FROM boeking WHERE idBooking=?';
+  const query = 'DELETE FROM Booking WHERE IdBooking=?';
 
   db.query(query, [id], (err, result) => {
     if (err) {
@@ -201,20 +201,6 @@ app.delete('/api/boeking/:id', (req, res) => {
 
 
 // Baliemedewerker login
-<<<<<<< Updated upstream
-app.get('/users'), (req, res) => {
-  
-}
-
-app.post('/dashboard', (req, res) => {
-  const {username, password } = req.body; // req.body maakt de data beschikbaar van de front-end
-
-  db.query('SELECT * FROM baliemedewerker WHERE idMedewerker = ? AND wachtwoord = ?', [username, password], (err, result) => {
-      if (err) {
-          res.status(500).send('Error authenticating user');
-      } else if (result.length > 0) {
-          res.status(200).send('Login successful');
-=======
 app.post('http://localhost:3001/api/login', (req, res) => {
   const { username, password } = req.body;
 
@@ -228,7 +214,6 @@ app.post('http://localhost:3001/api/login', (req, res) => {
     } else {
       if (result.length === 0) {
         res.status(401).json({ error: 'Invalid credentials' });
->>>>>>> Stashed changes
       } else {
         res.json({ message: 'Login successful' });
       }
