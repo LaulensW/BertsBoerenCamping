@@ -210,10 +210,10 @@ app.post('/api/login', (req, res) => {
   db.query(query, values, (err, result) => {
     if (err) {
       console.error('Error retrieving login data:', err);
-      res.status(500).json({ error: 'Internal Server Error' });
+      res.status(500).json({ error: 'Server Error' });
     } else {
       if (result.length === 0) {
-        res.status(401).json({ error: 'Invalid credentials' });
+        res.status(401).json({ error: 'Verkeerde combinatie van gebruikersnaam en wachtwoord' });
       } else {
         res.json({ message: 'Login successful' });
       }

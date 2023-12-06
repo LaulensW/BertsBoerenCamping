@@ -5,10 +5,12 @@
 
 body {
     font-family: 'IBM Plex Mono', monospace;
+    background-color: var(--neutral-color);
 }
 
 :root{
     --primary-color: #60775d;
     --secondary-color: #4a4034;
     --neutral-color: #f5f0ec;
+    --Button-color: #eccfcc;
 }
