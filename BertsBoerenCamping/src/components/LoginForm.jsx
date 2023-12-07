@@ -8,7 +8,7 @@ const LoginForm = () => {
 
   const handleLogin = async (e) => {
     e.preventDefault();
-
+  
     try {
       const response = await fetch('http://localhost:3001/api/login', {
         method: 'POST',
@@ -17,11 +17,12 @@ const LoginForm = () => {
         },
         body: JSON.stringify({ username, password }),
       });
-
+  
       if (response.ok) {
         // Login successful
         setError('');
-        // Redirect or perform any other action
+        // Redirect to dashboard
+        window.location.href = '/dashboard';
       } else {
         const data = await response.json();
         setError(data.error);
