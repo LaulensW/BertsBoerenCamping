@@ -31,7 +31,7 @@
     font-size: 18px;
     margin-right: 50px;
     text-decoration: none;
-    color: #ADA39F; /* Adjust the text color as needed */
+    color: var(--secondary-color); /* Adjust the text color as needed */
   }
   
   .search-field {
