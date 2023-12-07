@@ -4,12 +4,13 @@ import Layout from '../components/Layout';
 
 const Login = () => {
   return (
-    <div>
-      <Layout> 
-        <h2>Login Page</h2>
-        <LoginForm />
-      </Layout> 
-    </div>
+    <body className='login-page'>
+        <div>
+        <Layout> 
+          <LoginForm />
+        </Layout> 
+      </div>
+    </body>
   );
 };
 
