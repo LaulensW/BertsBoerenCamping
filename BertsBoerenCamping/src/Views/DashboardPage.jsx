@@ -1,12 +1,14 @@
 import React from 'react';
 import BookingList from '../components/BookingList';
+import Layout from '../components/Layout';
 
 
 function DashboardPage() {
   return (
     <div>
-      <h1>Dashboard</h1>
-      <BookingList />
+      <Layout>
+      <  BookingList />
+      </Layout>
     </div>
   );
 }

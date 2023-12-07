@@ -4,7 +4,6 @@
     justify-content: space-between;
     align-items: center;
     padding: 20px;
-    background-color: var(--neutral-color); /* Adjust the background color as needed */
     color: #fff; /* Adjust the text color as needed */
   }
   
@@ -19,7 +18,7 @@
   }
   
   .logo {
-    width: 300px; /* Adjust the logo width as needed */
+    width: 180px; /* Adjust the logo width as needed */
     height: auto;
   }
   
@@ -32,7 +31,7 @@
     font-size: 18px;
     margin-right: 50px;
     text-decoration: none;
-    color: #ADA39F; /* Adjust the text color as needed */
+    color: var(--secondary-color); /* Adjust the text color as needed */
   }
   
   .search-field {

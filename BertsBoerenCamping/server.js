@@ -199,6 +199,29 @@ app.delete('/api/Booking/:id', (req, res) => {
   });
 });
 
+
+// Baliemedewerker login
+app.post('/api/login', (req, res) => {
+  const { username, password } = req.body;
+
+  const query = 'SELECT * FROM baliemedewerker WHERE idMedewerker = ? AND wachtwoord = ?';
+  const values = [username, password];
+
+  db.query(query, values, (err, result) => {
+    if (err) {
+      console.error('Error retrieving login data:', err);
+      res.status(500).json({ error: 'Server Error' });
+    } else {
+      if (result.length === 0) {
+        res.status(401).json({ error: 'Verkeerde combinatie van gebruikersnaam en wachtwoord' });
+      } else {
+        res.json({ message: 'Login successful' });
+      }
+    }
+  });
+});
+
+
 app.listen(port, () => {
   console.log(`Server listening at http://localhost:${port}`);
 });
