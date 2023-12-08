@@ -27,7 +27,6 @@ function BookingList() {
 
   return (
     <div className="booking-list-container">
-      <h2>Reserveringen</h2>
       <ul>
         {bookings.map(booking => (
           <li key={booking.IdGast} className="booking-item">
