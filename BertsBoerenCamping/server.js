@@ -3,6 +3,7 @@ require('dotenv').config();
 const express = require('express');
 const cors = require('cors');
 const mysql2 = require('mysql2');
+const bcrypt = require('bcrypt');
 const app = express();
 const port = 3001;
 
@@ -24,11 +25,63 @@ db.connect((err) => {
   console.log('Connected to database');
 });
 
-// Handle form submission
+
+// const admin = [
+//   {
+//     idMedewerker: 1,
+//     username: 'admin',
+//     password: '$2b$10$/CxvFuDyoeTODePyeMdb9uttz9JKwxF2DSeOLwBmtWqSUxR5amwdq',
+//   },
+// ];
+
+
+//Baliemedewerker registreren
+app.post('/api/register', async (req, res) => {
+  const { voornaam, tussenvoegsel, achternaam, rol, wachtwoord } = req.body;
+
+  // Het wachtwoord wordt gehashed voordat het opgeslagen wordt in de database
+  const hashedPassword = await bcrypt.hash(wachtwoord, 10);
+
+  // Stop baliemedewerker gegevens in de database
+  db.query('INSERT INTO baliemedewerker (voornaam, tussenvoegsel, achternaam, rol, wachtwoord) VALUES (?, ?, ?, ?, ?)', [voornaam, tussenvoegsel, achternaam, rol, hashedPassword], (err, results) => {
+    if (err) {
+      console.error('Error registering user:', err);
+      res.status(500).send('Internal Server Error');
+    } else {
+      res.status(201).send('User registered successfully');
+    }
+  });
+});
+
+
+// Baliemedewerker login
+app.post('/api/login', (req, res) => {
+  const { username, password } = req.body;
+
+  db.query('SELECT * FROM baliemedewerker WHERE idMedewerker = ?', [username], async (err, result) => {
+    if (err) { // Indien error -> log + status 500
+      console.error('Error retrieving user:', err);
+      res.status(500).json('Internal Server Error');
+    } else { //Indien opgevraagde idMedewerker nummer klopt -> door met gehashte wachtwoord checken
+      if (result.length > 0) {
+        const match = await bcrypt.compare(password, result[0].wachtwoord);
+        if (match) {
+          res.status(200).json({ message: 'Login successful' });
+        } else {
+          res.status(401).json({ error: 'Invalid password' });
+        }
+      } else {
+        res.status(404).json('User not found');
+      }
+    }
+  });
+});
+
+
+// Invoeren gast gegevens
 app.post('/api/gast', (req, res) => {
   const formData = req.body;
 
-  // Assuming "Gast" is your table name
   const query = `INSERT INTO Gast (Voornaam, TussenVoegsel, Achternaam, Email, Telefoonnummer, Voorkeuren)
                   VALUES (?, ?, ?, ?, ?, ?)`;
 
@@ -52,8 +105,9 @@ app.post('/api/gast', (req, res) => {
   });
 });
 
+
+// Ophalen gast gegevens
 app.get('/api/gast', (req, res) => {
-  // Assuming "Gast" is your table name
   const query = 'SELECT * FROM Gast';
 
   db.query(query, (err, result) => {
@@ -71,7 +125,6 @@ app.put('/api/gast/:id', (req, res) => {
   const formData = req.body;
   const id = req.params.id;
 
-  // Assuming "Gast" is your table name
   const query = `UPDATE Gast
                  SET Voornaam=?, TussenVoegsel=?, Achternaam=?, Email=?, Telefoonnummer=?, Voorkeuren=?
                  WHERE IdGast=?`;
@@ -97,10 +150,11 @@ app.put('/api/gast/:id', (req, res) => {
   });
 });
 
+
+// Verwijderen gegevens gast
 app.delete('/api/gast/:id', (req, res) => {
   const id = req.params.id;
 
-  // Assuming "Gast" is your table name
   const query = 'DELETE FROM Gast WHERE IdGast=?';
 
   db.query(query, [id], (err, result) => {
@@ -195,28 +249,6 @@ app.delete('/api/Booking/:id', (req, res) => {
     } else {
       console.log('Booking data deleted successfully:', result);
       res.json({ message: 'Booking data deleted successfully!' });
-    }
-  });
-});
-
-
-// Baliemedewerker login
-app.post('/api/login', (req, res) => {
-  const { username, password } = req.body;
-
-  const query = 'SELECT * FROM baliemedewerker WHERE idMedewerker = ? AND wachtwoord = ?';
-  const values = [username, password];
-
-  db.query(query, values, (err, result) => {
-    if (err) {
-      console.error('Error retrieving login data:', err);
-      res.status(500).json({ error: 'Server Error' });
-    } else {
-      if (result.length === 0) {
-        res.status(401).json({ error: 'Verkeerde combinatie van gebruikersnaam en wachtwoord' });
-      } else {
-        res.json({ message: 'Login successful' });
-      }
     }
   });
 });
