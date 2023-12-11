@@ -3,7 +3,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px;
+    padding: 20px 20px 0 20px;
     color: #fff; /* Adjust the text color as needed */
   }
   
@@ -63,7 +63,7 @@ select:focus {
     background-color: var(--primary-color);
     color: #fff;
     border: none;
-    border-radius: 5px;
+    border-radius: 10px;
     cursor: pointer;
     font-size: 16px;
     font-family: Arial, sans-serif;
@@ -74,6 +74,6 @@ select:focus {
   }
   
   .login-button:hover {
-    background-color: #45a049; /* Darker shade when hovered */
+    background-color: #A0AD9E; /* Darker shade when hovered */
   }
   
