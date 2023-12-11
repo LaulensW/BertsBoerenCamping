@@ -5,10 +5,10 @@
   }
   
   .booking-item {
-    margin-bottom: 20px;
-    border: 1px solid #ddd;
-    padding: 15px;
-    border-radius: 5px;
+    border: 1px solid black;
+    padding: 20px;
+    box-shadow: 0px 4px 8px 0px rgba(0,0,0,0.2); /* horizontal offset, vertical offset, blur radius, spread radius, color */
+    border-radius: 15px;
     background-color: #fff;
   }
   

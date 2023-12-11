@@ -1,5 +1,5 @@
 import React from 'react';
-import './Dashboard_Bento.css'; // Assuming you have a CSS file for styling
+import './Dashboard_Bento.css';
 import BookingList from './BookingList';
 
 const DashboardBento = () => {
