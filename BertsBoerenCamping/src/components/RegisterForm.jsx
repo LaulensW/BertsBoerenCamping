@@ -5,6 +5,7 @@ const RegisterForm = () => {
     const [voornaam, setVoornaam] = useState('');
     const [tussenvoegsel, setTussenvoegsel] = useState('');
     const [achternaam, setAchternaam] = useState('');
+    const [email, setEmail] = useState('');
     const [rol, setRol] = useState('');
     const [wachtwoord, setWachtwoord] = useState('');
     const [error, setError] = useState('');
@@ -17,7 +18,7 @@ const RegisterForm = () => {
             headers: {
               'Content-Type': 'application/json',
             },
-            body: JSON.stringify({ voornaam, tussenvoegsel, achternaam, rol, wachtwoord }),
+            body: JSON.stringify({ voornaam, tussenvoegsel, achternaam, email, rol, wachtwoord }),
           });
     
           if (response.ok) {
@@ -26,6 +27,7 @@ const RegisterForm = () => {
             setVoornaam('');
             setTussenvoegsel('');
             setAchternaam('');
+            setEmail('');
             setRol('');
             setWachtwoord('');
           } else {
@@ -67,6 +69,16 @@ const RegisterForm = () => {
                 id="achternaam"
                 value={achternaam}
                 onChange={(e) => setAchternaam(e.target.value)}
+                className="input"
+            />
+        </div>
+        <div className="input-field">
+            <label htmlFor="email">Email:</label>
+            <input
+                type="email"
+                id="email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
                 className="input"
             />
         </div>
