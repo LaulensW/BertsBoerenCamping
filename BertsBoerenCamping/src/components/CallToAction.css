@@ -47,25 +47,3 @@ p{
 .boeken-button:hover {
     background-color: #d7a9a3;
 }
-
-
-/*This is for the Campingplekken*/
-h3{
-    font-size: 40px;
-    font-weight:900;
-    margin: 72px 0;
-    color: #60775D;
-    display: flex;    
-    position: absolute; 
-     width: 100%;
-    justify-content: center;
-}
-p2{
-    font-family: 'Homemade Apple', cursive;
-    font-size: 40px;
-    color: #E7E4E1;
-    letter-spacing: 3px;
-    margin-top: 75px;
-    display: flex;
-    justify-content: center;
-}

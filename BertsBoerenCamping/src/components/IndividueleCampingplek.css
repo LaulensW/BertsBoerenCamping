@@ -1,0 +1,18 @@
+.campeerplek{
+    border: 3px solid #ce3434;
+    border-radius: 20px;
+    display: inline-flex;
+    flex-direction: column;
+    margin: 24px 40px;
+}
+.filler-photo{
+    border-radius: 17px 17px 0 0;
+    width: 408px;
+    height: 300px;
+}
+.campingplek-name{
+    display: flex;
+    font-size: 32px;
+    color: #60775D;
+    margin: 24px 0 0 24px;
+}

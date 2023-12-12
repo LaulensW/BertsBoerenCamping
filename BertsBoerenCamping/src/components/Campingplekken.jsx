@@ -1,11 +1,19 @@
 import React from 'react';
 import './Campingplekken.css';
+import IndividueleCampingplek from './IndividueleCampingplek.jsx'
 
-export default function Campingplekken(props) {
+
+export default function Campingplekken() {
     return(
-        <div className="campingplek">
-                <img src="../images/Filler.png" alt="Filler" className="filler-photo"/> 
-                <h4>{props.name}</h4>
-        </div>
-    )  
-}
+    <>
+        <h3 className="onze-campingplekken">ONZE CAMPINGPLEKKEN</h3>
+        <p3 className="onze-campingplekken-cursive">onze campingplekken</p3>
+        < IndividueleCampingplek 
+            name="CAMPINGPLEK A"
+        /> 
+        < IndividueleCampingplek 
+            name="CAMPINGPLEK B"
+        /> 
+    </>
+    );
+};

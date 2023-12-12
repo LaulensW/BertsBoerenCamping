@@ -1,17 +1,19 @@
-.campingplek{
-    display:flex;
-    flex-direction: column;
-    margin: 24px 40px;
-}
-h4{
-    font-size: 24px;
-    margin-top: 24px;
-    width: 408px;
+.onze-campingplekken{
+    font-size: 40px;
+    font-weight:900;
+    margin: 72px 0;
     color: #60775D;
-    border:3px solid #60775D;
+    display: flex;    
+    position: absolute; 
+    width: 100%;
+    justify-content: center;
 }
-.filler-photo{
-    width: 408px;
-    height: 300px;
-    border-radius: 20px 20px 0px 0px;
+.onze-campingplekken-cursive{
+    font-family: 'Homemade Apple', cursive;
+    font-size: 40px;
+    color: #E7E4E1;
+    letter-spacing: 3px;
+    margin-top: 75px;
+    display: flex;
+    justify-content: center;
 }
