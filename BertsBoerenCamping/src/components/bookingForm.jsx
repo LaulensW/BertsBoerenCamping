@@ -29,8 +29,26 @@ function BookingForm() {
     }));
   };
 
+  const [showAlert, setShowAlert] = useState(false);
+
   const handleSubmit = async (e) => {
     e.preventDefault();
+
+    const requiredFields = ['voornaam', 'achternaam', 'email', 'telefoonnummer'].some(
+      (field) => formData[field].trim() === ''
+    );
+  
+    if (requiredFields) {
+      const nonRequiredFields = ['voorkeuren', 'tussenvoegsel'];
+      const nonRequiredFieldsFilled = nonRequiredFields.every(
+        (field) => formData[field].trim() !== ''
+      );
+  
+      if (!nonRequiredFieldsFilled) {
+        setShowAlert(true);
+        return;
+      }
+    }
 
     try {
       const response = await fetch('http://localhost:3001/api/gast', {
@@ -41,7 +59,6 @@ function BookingForm() {
         body: JSON.stringify(formData),
       });
 
-      console.log('Response:', response);
     } catch (error) {
       console.error('Error:', error);
     }
@@ -89,6 +106,7 @@ function BookingForm() {
           isClearable={true}
         />
       </div>
+      {showAlert && <div className="alert">All fields must be filled!</div>}
         <button type="submit">Klik hier om te boeken!</button>
       </form>
     </div>
