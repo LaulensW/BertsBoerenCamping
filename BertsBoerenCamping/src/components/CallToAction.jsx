@@ -1,5 +1,6 @@
 import React from 'react';
 import './CallToAction.css';
+import Campingplekken from './Campingplekken';
 
 const CallToAction = () => {
     return(
@@ -12,7 +13,16 @@ const CallToAction = () => {
 
           <h3>ONZE CAMPINGPLEKKEN</h3>
           <p2>onze campingplekken</p2>
-      
+        
+          <Campingplekken 
+                name="Campingplek A"
+          />
+          <Campingplekken 
+                name="Campingplek B"  
+          />
+          <Campingplekken 
+                name="Campingplek C"
+          />
         </>
     );
 };

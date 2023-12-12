@@ -65,7 +65,7 @@ p2{
     font-size: 40px;
     color: #E7E4E1;
     letter-spacing: 3px;
-    margin: 75px 0px;
+    margin-top: 75px;
     display: flex;
     justify-content: center;
 }
