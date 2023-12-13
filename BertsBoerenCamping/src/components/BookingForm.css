@@ -31,3 +31,44 @@
   .booking-form button:hover {
     background-color: #45a049;
   }
+
+  .alert {
+    color: red;
+    background-color: #f8d7da;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid red;
+    border-radius: 5px;
+  }
+
+  @keyframes popup {
+    0% {
+      transform: translate(-50%, -50%) scale(0);
+    }
+    100% {
+      transform: translate(-50%, -50%) scale(1);
+    }
+  }
+
+  .alert-success {
+    animation: popup 0.3s ease-in;
+    background-color: var(--primary-color);
+    border-radius: 10px;
+    color: var(--neutral-color);
+    left: 50%;
+    min-width: 300px;
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 500px;
+    height: 200px;
+  }
+
+  .inhoud{
+    padding: 10px;
+  }
+
+  .check{
+    padding: 5px;
+    height: 100px;
+  }

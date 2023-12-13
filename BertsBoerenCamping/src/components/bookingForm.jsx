@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
 import './BookingForm.css';
+import { useNavigate } from 'react-router-dom';
 
 function BookingForm() {
   const [formData, setFormData] = useState({
@@ -29,8 +30,29 @@ function BookingForm() {
     }));
   };
 
+  const [showSuccessAlert, setShowSuccessAlert] = useState(false);
+  const [showErrorAlert, setShowErrorAlert] = useState(false);
+  const navigate = useNavigate();
+
   const handleSubmit = async (e) => {
     e.preventDefault();
+
+    const requiredFields = ['voornaam', 'achternaam', 'email', 'telefoonnummer'].some(
+      (field) => formData[field].trim() === ''
+    );
+  
+    if (requiredFields) {
+      const nonRequiredFields = ['voorkeuren', 'tussenvoegsel'];
+      const nonRequiredFieldsFilled = nonRequiredFields.every(
+        (field) => formData[field].trim() !== ''
+      );
+  
+      if (!nonRequiredFieldsFilled) {
+        setShowErrorAlert(true);
+        setShowSuccessAlert(false);
+        return;
+      }
+    }
 
     try {
       const response = await fetch('http://localhost:3001/api/gast', {
@@ -40,8 +62,17 @@ function BookingForm() {
         },
         body: JSON.stringify(formData),
       });
+  
+      if (response.ok) {
+        setShowSuccessAlert(true);
+        setShowErrorAlert(false);
+        setTimeout(() => {
+          navigate('/');
+        }, 2000); 
+      } else {
+        console.error('Error:', response.statusText);
+      }
 
-      console.log('Response:', response);
     } catch (error) {
       console.error('Error:', error);
     }
@@ -89,6 +120,15 @@ function BookingForm() {
           isClearable={true}
         />
       </div>
+      {showErrorAlert && <div className="alert">All fields must be filled!</div>}
+      {showSuccessAlert && 
+      <div className="alert-success">    
+        <div className='inhoud'>
+        <h1>boeken</h1>
+        <img className="check" src="./images/check-circle-svgrepo-com.svg" alt="" />
+        <p>Uw boeking is gemaakt!</p>
+        </div>
+      </div>}
         <button type="submit">Klik hier om te boeken!</button>
       </form>
     </div>

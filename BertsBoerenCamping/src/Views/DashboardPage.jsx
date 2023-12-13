@@ -1,5 +1,5 @@
 import React from 'react';
-import BookingList from '../components/BookingList';
+import DashboardBento from '../components/dashboard_bento.jsx';
 import Layout from '../components/Layout';
 
 
@@ -7,7 +7,7 @@ function DashboardPage() {
   return (
     <div>
       <Layout>
-      <  BookingList />
+      <  DashboardBento />
       </Layout>
     </div>
   );
