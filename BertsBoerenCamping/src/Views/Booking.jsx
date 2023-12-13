@@ -6,7 +6,7 @@ const Booking = () => {
   return (
     <div>
       <Layout> 
-      <h2>Booking Page</h2>
+      <h2></h2>
       <BookingForm />
       </Layout> 
     </div>

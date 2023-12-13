@@ -29,7 +29,8 @@ function BookingForm() {
     }));
   };
 
-  const [showAlert, setShowAlert] = useState(false);
+  const [showSuccessAlert, setShowSuccessAlert] = useState(false);
+  const [showErrorAlert, setShowErrorAlert] = useState(false);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -45,7 +46,8 @@ function BookingForm() {
       );
   
       if (!nonRequiredFieldsFilled) {
-        setShowAlert(true);
+        setShowErrorAlert(true);
+        setShowSuccessAlert(false);
         return;
       }
     }
@@ -58,6 +60,13 @@ function BookingForm() {
         },
         body: JSON.stringify(formData),
       });
+
+      if (response.ok) {
+        setShowSuccessAlert(true);
+        setShowErrorAlert(false);
+      } else {
+        console.error('Error:', response.statusText);
+      }
 
     } catch (error) {
       console.error('Error:', error);
@@ -106,7 +115,15 @@ function BookingForm() {
           isClearable={true}
         />
       </div>
-      {showAlert && <div className="alert">All fields must be filled!</div>}
+      {showErrorAlert && <div className="alert">All fields must be filled!</div>}
+      {showSuccessAlert && 
+      <div className="alert-success">    
+        <div className='inhoud'>
+        <p>Boeken</p>
+        <img className="check" src="./images/check-circle-svgrepo-com.svg" alt="" />
+        <p>Booking confirmed</p>
+        </div>
+      </div>}
         <button type="submit">Klik hier om te boeken!</button>
       </form>
     </div>
