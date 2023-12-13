@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import './LoginForm.css';
 
 const LoginForm = () => {
-  const [username, setUsername] = useState('');
+  const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
   const [loading, setLoading] = useState(false);
@@ -17,7 +17,7 @@ const handleLogin = async (e) => {
       headers: {
         'Content-Type': 'application/json',
       },
-      body: JSON.stringify({ username, password }),
+      body: JSON.stringify({ email, password }),
     });
 
     console.log('Response status:', response.status);
@@ -25,7 +25,7 @@ const handleLogin = async (e) => {
     if (response.status === 200) {
       console.log('Login successful');
       setError('');
-      setUsername('');
+      setEmail('');
       setPassword('');
       // Redirect or perform any other action
     } else {
@@ -43,13 +43,13 @@ const handleLogin = async (e) => {
   return (
 <form onSubmit={handleLogin} className="form-container">
   <div>
-    <label htmlFor="username"></label>
+    <label htmlFor="email"></label>
     <input
-      placeholder='Gebruikersnaam'
+      placeholder='Email'
       type="text"
-      id="username"
-      value={username}
-      onChange={(e) => setUsername(e.target.value)}
+      id="email"
+      value={email}
+      onChange={(e) => setEmail(e.target.value)}
     />
   </div>
   <div>
