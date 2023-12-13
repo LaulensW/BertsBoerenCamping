@@ -52,12 +52,12 @@ ENGINE = InnoDB;
 -- Table `bertsboerencamping`.`boeking`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `bertsboerencamping`.`boeking` (
-  `idboeking` INT(10) NOT NULL,
+  `idboeking` INT(10) NOT NULL AUTO_INCREMENT,
   `aankomstdatum` DATE NULL,
   `vertrekdatum` DATE NULL,
   `accomodatietype` VARCHAR(50) NULL,
-  `idgast` INT NULL,
-  `idmedewerker` INT NULL,
+  `idgast` INT(10) NULL,
+  `idmedewerker` INT(10) NULL,
   PRIMARY KEY (`idboeking`),
   INDEX `idgast_idx` (`idgast` ASC) VISIBLE,
   UNIQUE INDEX `idboeking_UNIQUE` (`idboeking` ASC) VISIBLE,
@@ -84,7 +84,7 @@ ENGINE = InnoDB;
 -- Table `bertsboerencamping`.`gast`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `bertsboerencamping`.`gast` (
-  `idgast` INT NOT NULL,
+  `idgast` INT(10) NOT NULL AUTO_INCREMENT,
   `voornaam` VARCHAR(25) NULL,
   `tussenvoegsel` VARCHAR(15) NULL,
   `achternaam` VARCHAR(25) NULL,
@@ -93,8 +93,8 @@ CREATE TABLE IF NOT EXISTS `bertsboerencamping`.`gast` (
   `voorkeuren` VARCHAR(255) NULL,
   `idboeking` INT(10) NULL,
   PRIMARY KEY (`idgast`),
-  UNIQUE INDEX `idgast_UNIQUE` (`idgast` ASC) VISIBLE,
   INDEX `idboeking_idx` (`idboeking` ASC) VISIBLE,
+  UNIQUE INDEX `idgast_UNIQUE` (`idgast` ASC) VISIBLE,
   CONSTRAINT `idboeking`
     FOREIGN KEY (`idboeking`)
     REFERENCES `bertsboerencamping`.`boeking` (`idboeking`)

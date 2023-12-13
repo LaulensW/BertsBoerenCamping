@@ -32,7 +32,8 @@ app.post('/api/register', async (req, res) => {
   const { voornaam, tussenvoegsel, achternaam, email, rol, wachtwoord } = req.body;
 
   // Het wachtwoord wordt gehashed voordat het opgeslagen wordt in de database
-  const hashedPassword = await bcrypt.hash(wachtwoord, 10);
+  const salt = await bcrypt.genSalt(10);
+  const hashedPassword = await bcrypt.hash(wachtwoord, salt);
 
   //
   const query = `
