@@ -25,7 +25,6 @@ p{
     color: #F8F5F2;
     position: absolute;
     margin: 355px 0 0 104px;
-    font-weight: 500;
     text-shadow: 0px 0px 10px rgba(74, 64, 52, 0.5);
 }
 .boeken-button{
@@ -36,9 +35,9 @@ p{
     padding: 32px 160px;
     font-size: 32px;
     line-height: 35.2px;
-    font-weight: 700;
-    color: #F8F5F2;
-    background-color: #ECCFCC;
+    font-weight: 900;
+    color: var(--neutral-color);
+    background-color: var(--Button-color);
     border: none;
     border-radius: 15px;
     box-shadow: 0px 0px 10px rgba(74, 64, 52, 0.5);

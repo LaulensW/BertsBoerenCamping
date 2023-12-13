@@ -1,0 +1,23 @@
+.hoe-moet-je-boeken{
+    font-size: 40px;
+    font-weight:900;
+    margin: 160px 0 0 187px;
+    color: #60775D;
+    display: flex;    
+    position: absolute;
+}
+.hoe-moet-je-boeken-cursive{
+    font-family: 'Homemade Apple', cursive;
+    font-size: 40px;
+    color: #E7E4E1;
+    letter-spacing: 3px;
+    margin: 168px 0 0 187px;
+    display: flex;
+}
+.description{
+    display: flex;
+    position: absolute;
+    margin: 20px 0 0 72px;
+    width: 632px;
+    color: #4a4034;
+}
