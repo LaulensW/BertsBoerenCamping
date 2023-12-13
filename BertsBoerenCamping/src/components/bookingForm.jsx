@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
 import './BookingForm.css';
+import { useNavigate } from 'react-router-dom';
 
 function BookingForm() {
   const [formData, setFormData] = useState({
@@ -31,6 +32,7 @@ function BookingForm() {
 
   const [showSuccessAlert, setShowSuccessAlert] = useState(false);
   const [showErrorAlert, setShowErrorAlert] = useState(false);
+  const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -60,10 +62,13 @@ function BookingForm() {
         },
         body: JSON.stringify(formData),
       });
-
+  
       if (response.ok) {
         setShowSuccessAlert(true);
         setShowErrorAlert(false);
+        setTimeout(() => {
+          navigate('/');
+        }, 2000); 
       } else {
         console.error('Error:', response.statusText);
       }
@@ -119,9 +124,9 @@ function BookingForm() {
       {showSuccessAlert && 
       <div className="alert-success">    
         <div className='inhoud'>
-        <p>Boeken</p>
+        <h1>boeken</h1>
         <img className="check" src="./images/check-circle-svgrepo-com.svg" alt="" />
-        <p>Booking confirmed</p>
+        <p>Uw boeking is gemaakt!</p>
         </div>
       </div>}
         <button type="submit">Klik hier om te boeken!</button>
