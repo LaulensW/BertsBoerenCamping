@@ -95,7 +95,7 @@ app.post('/api/gast', (req, res) => {
 
   const values = [
     formData.voornaam,
-    formData.tussenVoegsel,
+    formData.tussenvoegsel,
     formData.achternaam,
     formData.email,
     formData.telefoonnummer,
@@ -225,9 +225,9 @@ app.put('/api/boeking/:id', (req, res) => {
                  WHERE idbooking=?`;
 
   const values = [
-    formData.IdGast,
-    formData.Aankosmtdatum,
-    formData.Vertrekdatum,
+    formData.idgast,
+    formData.aankosmtdatum,
+    formData.vertrekdatum,
     id,
   ];
 
