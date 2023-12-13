@@ -87,7 +87,7 @@ app.post('/api/gast', (req, res) => {
 
   const values = [
     formData.voornaam,
-    formData.tussenVoegsel,
+    formData.tussenvoegsel,
     formData.achternaam,
     formData.email,
     formData.telefoonnummer,
