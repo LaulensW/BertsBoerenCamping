@@ -1,8 +1,8 @@
 .hoe-moet-je-boeken{
     font-size: 40px;
-    font-weight:900;
+    font-weight: var(--font-weight-semibold);
     margin: 160px 0 0 187px;
-    color: #60775D;
+    color: var(--primary-color);
     display: flex;    
     position: absolute;
 }
@@ -19,5 +19,5 @@
     position: absolute;
     margin: 20px 0 0 72px;
     width: 632px;
-    color: #4a4034;
+    color: var(--secondary-color);
 }

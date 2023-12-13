@@ -1,8 +1,8 @@
 .onze-campingplekken{
     font-size: 40px;
-    font-weight:900;
+    font-weight: var(--font-weight-semibold);
     margin: 72px 0;
-    color: #60775D;
+    color: var(--primary-color);
     display: flex;    
     position: absolute; 
     width: 100%;

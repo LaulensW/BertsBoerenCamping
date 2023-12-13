@@ -18,15 +18,15 @@
 .campingplek-name{
     display: flex;
     font-size: 24px;
-    color: #60775D;
+    color: var(--primary-color);
     margin: 16px 0 0 16px;
 }
 .campingplek-price{
     font-size: 16px;
-    font-weight: 900;
+    font-weight: var(--font-weight-semibold);
     margin: 8px 0 0 16px;
-    color: #F8F5F2;
-    background-color: #ECCFCC;
+    color: var(--neutral-color);
+    background-color: var(--Button-color);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -35,7 +35,7 @@
     border-radius: 8px;
 }
 .campingplek-description{
-    color: #4a4034;
+    color: var(--secondary-color);
     font-size: 16px;
     margin: 8px 16px 16px 16px;
 }

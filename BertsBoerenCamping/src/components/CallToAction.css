@@ -6,7 +6,7 @@
 h1{
     font-size: 56px;
     position: absolute;
-    color: #f8f5f2;
+    color: var(--neutral-color);
     margin: 246px 0 0 104px;
     text-shadow: 0px 0px 10px rgba(74, 64, 52, 0.5);
 }
@@ -22,7 +22,7 @@ p1{
 p{
     z-index: 5;
     font-size: 20px;
-    color: #F8F5F2;
+    color: var(--neutral-color);
     position: absolute;
     margin: 355px 0 0 104px;
     text-shadow: 0px 0px 10px rgba(74, 64, 52, 0.5);
@@ -35,7 +35,7 @@ p{
     padding: 32px 160px;
     font-size: 32px;
     line-height: 35.2px;
-    font-weight: 900;
+    font-weight: var(--font-weight-semibold);
     color: var(--neutral-color);
     background-color: var(--Button-color);
     border: none;
