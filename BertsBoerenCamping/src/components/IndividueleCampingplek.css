@@ -1,18 +1,41 @@
+.campingplekken-total{
+    display: flex;
+    overflow: auto;
+
+}
 .campeerplek{
-    border: 3px solid #ce3434;
-    border-radius: 20px;
+    border-radius: 15px;
     display: inline-flex;
     flex-direction: column;
-    margin: 24px 40px;
+    margin: 24px 20px 40px 20px;
+    box-shadow: 0px 0px 25px rgba(74, 64, 52, 0.2);
 }
 .filler-photo{
-    border-radius: 17px 17px 0 0;
+    border-radius: 13px 13px 0 0;
     width: 408px;
     height: 300px;
 }
 .campingplek-name{
     display: flex;
-    font-size: 32px;
+    font-size: 24px;
     color: #60775D;
-    margin: 24px 0 0 24px;
+    margin: 16px 0 0 16px;
+}
+.campingplek-price{
+    font-size: 16px;
+    font-weight: bolder;
+    margin: 8px 0 0 16px;
+    color: #F8F5F2;
+    background-color: #ECCFCC;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width:60px;
+    height: 27px;
+    border-radius: 8px;
+}
+.campingplek-description{
+    color: #4a4034;
+    font-size: 16px;
+    margin: 8px 16px 16px 16px;
 }
