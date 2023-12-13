@@ -1,0 +1,19 @@
+.onze-campingplekken{
+    font-size: 40px;
+    font-weight: var(--font-weight-semibold);
+    margin: 72px 0;
+    color: var(--primary-color);
+    display: flex;    
+    position: absolute; 
+    width: 100%;
+    justify-content: center;
+}
+.onze-campingplekken-cursive{
+    font-family: 'Homemade Apple', cursive;
+    font-size: 40px;
+    color: #E7E4E1;
+    letter-spacing: 3px;
+    margin-top: 78px;
+    display: flex;
+    justify-content: center;
+}

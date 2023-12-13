@@ -1,0 +1,20 @@
+.faqs-title{
+    font-size: 40px;
+    font-weight: var(--font-weight-semibold);
+    margin: 160px 0 0 873px;
+    color: var(--primary-color);
+    display: flex;    
+    position: absolute; 
+}
+.faqs-title-cursive{
+    font-family: 'Homemade Apple', cursive;
+    font-size: 40px;
+    color: #E7E4E1;
+    letter-spacing: 3px;
+    margin: 168px 0 0 873px;
+    display: flex;
+    position: absolute;
+}
+.faq-totaal{
+    margin: 258px 104px 0 776px;
+}
