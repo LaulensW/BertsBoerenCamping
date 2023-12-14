@@ -14,7 +14,7 @@ function BookingList() {
 
   const handleDelete = (id) => {
     // Update the local state (remove the booking from the list)
-    setBookings(prevBookings => prevBookings.filter(booking => booking.IdGast !== id));
+    setBookings(prevBookings => prevBookings.filter(booking => booking.idgast !== id));
 
     // Make a request to delete the booking from the database
     fetch(`http://localhost:3001/api/gast/${id}`, {
@@ -29,14 +29,14 @@ function BookingList() {
     <div className="booking-list-container">
       <ul>
         {bookings.map(booking => (
-          <li key={booking.IdGast} className="booking-item">
+          <li key={booking.idgast} className="booking-item">
             <div className="booking-details">
-              <strong>Name:</strong> {booking.Voornaam} {booking.TussenVoegsel} {booking.Achternaam}<br />
-              <strong>Email:</strong> {booking.Email}<br />
-              <strong>Phone:</strong> {booking.Telefoonnummer}<br />
-              <strong>Preferences:</strong> {booking.Voorkeuren}<br />
+              <strong>Name:</strong> {booking.voornaam} {booking.tussenvoegsel} {booking.Achternaam}<br />
+              <strong>Email:</strong> {booking.email}<br />
+              <strong>Phone:</strong> {booking.telefoonnummer}<br />
+              <strong>Preferences:</strong> {booking.voorkeuren}<br />
             </div>
-            <button className="booking-delete-button" onClick={() => handleDelete(booking.IdGast)}>
+            <button className="booking-delete-button" onClick={() => handleDelete(booking.idgast)}>
               Delete
             </button>
           </li>
