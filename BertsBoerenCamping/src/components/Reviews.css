@@ -19,8 +19,7 @@
 }
 .reviews-total{
     display: inline-flex;
-    overflow-x: hidden;
-    min-height: 0;
+    overflow: auto;
 }
 .reviewcard{
     border-radius: 15px;
