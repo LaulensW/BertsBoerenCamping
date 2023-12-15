@@ -1,50 +1,39 @@
 import React from 'react';
 import './Campingplekken.css';
-import IndividueleCampingplek from './IndividueleCampingplek.jsx'
-
 
 export default function Campingplekken() {
-    return(
-    <>
-        <h3 className="onze-campingplekken">ONZE CAMPINGPLEKKEN</h3>
-        <p3 className="onze-campingplekken-cursive">onze campingplekken</p3>
-        <div className="campingplekken-total">
-            < IndividueleCampingplek 
-            name="CAMPINGPLEK A"
-            price="€100"
-            description="Lorem ipsum dolor sit amet, consectetur adipiscing elit."
-            /> 
-            < IndividueleCampingplek 
-            name="CAMPINGPLEK B"
-            price="€95"
-            description="Lorem ipsum dolor sit amet, consectetur adipiscing elit."
-            /> 
-            < IndividueleCampingplek 
-            name="CAMPINGPLEK C"
-            price="€97"
-            description="Lorem ipsum dolor sit amet, consectetur adipiscing elit."
-            /> 
-            < IndividueleCampingplek 
-            name="CAMPINGPLEK D"
-            price="€96"
-            description="Lorem ipsum dolor sit amet, consectetur adipiscing elit."
-            /> 
-            < IndividueleCampingplek 
-            name="CAMPINGPLEK E"
-            price="€103"
-            description="Nulla aliquam tempor odio, eget viverra nisi posuere sit."
-            /> 
-            < IndividueleCampingplek 
-            name="CAMPINGPLEK F"
-            price="€99"
-            description="Nulla aliquam tempor odio, eget viverra nisi posuere sit."
-            /> 
-            < IndividueleCampingplek 
-            name="CAMPINGPLEK G"
-            price="€107"
-            description="Nulla aliquam tempor odio, eget viverra nisi posuere sit."
-            /> 
-        </div>
-    </>
+    return (
+        <>
+            <h3 className="onze-campingplekken">ONZE CAMPINGPLEKKEN</h3>
+            <p3 className="onze-campingplekken-cursive">onze campingplekken</p3>
+            <div className="campingplekken-total">
+                {renderCampingplek("CAMPINGPLEK A", "€100", "Lorem ipsum dolor sit amet, consectetur adipiscing elit.")}
+                {renderCampingplek("CAMPINGPLEK B", "€95", "Lorem ipsum dolor sit amet, consectetur adipiscing elit.")}
+                {renderCampingplek("CAMPINGPLEK C", "€97", "Lorem ipsum dolor sit amet, consectetur adipiscing elit.")}
+                {renderCampingplek("CAMPINGPLEK D", "€96", "Lorem ipsum dolor sit amet, consectetur adipiscing elit.")}
+                {renderCampingplek("CAMPINGPLEK E", "€103", "Nulla aliquam tempor odio, eget viverra nisi posuere sit.")}
+                {renderCampingplek("CAMPINGPLEK F", "€99", "Nulla aliquam tempor odio, eget viverra nisi posuere sit.")}
+                {renderCampingplek("CAMPINGPLEK G", "€107", "Nulla aliquam tempor odio, eget viverra nisi posuere sit.")}
+                {renderCampingplek("CAMPINGPLEK H", "€105", "Nulla aliquam tempor odio, eget viverra nisi posuere sit.", "Stroom")}
+            </div>
+        </>
     );
-};
+}
+
+function renderCampingplek(name, price, description, stroom) {
+    return (
+        <div className="campeerplek" key={name}>
+            <img src="../images/Filler.png" alt="Filler" className="filler-photo" />
+            <div className="campeerplek-info">
+                <div className="campingplek-header">
+                    <h4 className="campingplek-name">{name}</h4>
+                    <p3 className="campingplek-stroom">{stroom}</p3>
+                </div>
+                <p3 className="campingplek-price">{price}</p3>
+                <p3 className="campingplek-description">{description}</p3>
+            </div>
+        </div>
+    );
+}
+
+
