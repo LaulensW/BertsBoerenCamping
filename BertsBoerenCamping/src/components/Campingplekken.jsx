@@ -29,8 +29,10 @@ function renderCampingplek(name, price, description, stroom) {
                     <h4 className="campingplek-name">{name}</h4>
                     <p3 className="campingplek-stroom">{stroom}</p3>
                 </div>
-                <p3 className="campingplek-price">{price}</p3>
-                <p3 className="campingplek-description">{description}</p3>
+                <div className="camping-text">
+                    <p3 className="campingplek-price">{price}</p3>
+                    <p3 className="campingplek-description">{description}</p3>
+                </div>
             </div>
         </div>
     );
