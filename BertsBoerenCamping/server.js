@@ -69,13 +69,6 @@ app.post('/api/login', (req, res) => {
         const match = await bcrypt.compare(password, result[0].wachtwoord);
         if (match) {
           res.status(200).json({ message: 'Login successful' });
-          
-
-          // Hier ben ik mee bezig - Niek
-          // db.query('SELECT * FROM baliemedewerker WHERE rol = ?', [rol], (err, result) => {
-          // })
-
-
         } else {
           res.status(401).json({ error: 'Invalid password' });
         }
