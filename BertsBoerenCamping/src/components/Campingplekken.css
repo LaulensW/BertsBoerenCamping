@@ -19,7 +19,7 @@
 }
 .campingplekken-total{
     display: flex;
-    overflow: auto;
+    overflow-x: scroll;
 }
 .campeerplek{
     border-radius: 15px;
