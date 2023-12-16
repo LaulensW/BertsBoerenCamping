@@ -5,6 +5,7 @@ import Campingplekken from '../components/Campingplekken';
 import BoekenInfo from '../components/BoekenInfo';
 import FAQs from '../components/FAQs';
 import Reviews from '../components/Reviews';
+import CampingWave from '../assets/campingplek-wave.svg';
 
 const Home = () => {
   return (
@@ -14,6 +15,7 @@ const Home = () => {
     </Layout>
     < CallToAction />
     < Campingplekken />
+      <img src={CampingWave}  alt='campingwave' className='campingwave' width='100%'/>
     < BoekenInfo />
     < FAQs />
     < Reviews />
