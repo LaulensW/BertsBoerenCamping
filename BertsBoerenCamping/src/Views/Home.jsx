@@ -14,6 +14,7 @@ const Home = () => {
     </Layout>
     < CallToAction />
     < Campingplekken />
+    <img src='.../assets/campingplek-wave.svg'/>
     < BoekenInfo />
     < FAQs />
     < Reviews />
