@@ -1,9 +1,11 @@
 import React from 'react';
 import './Reviews.css';
+import ReviewsWave from '../assets/reviews-wave.svg';
 
 export default function Reviews() {
     return (
         <>
+           <img src={ReviewsWave}  alt='reviewswave' className='reviewswave'/>
             <h3 className="reviews">REVIEWS</h3>
             <p3 className="reviews-cursive">reviews</p3>
             <div className="reviews-total">

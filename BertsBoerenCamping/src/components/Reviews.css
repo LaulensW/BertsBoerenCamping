@@ -1,7 +1,7 @@
 .reviews{
     font-size: 40px;
     font-weight: var(--font-weight-semibold);
-    margin: 72px 0;
+    margin: 160px 0;
     color: var(--primary-color);
     display: flex;    
     position: absolute; 
@@ -13,7 +13,7 @@
     font-size: 40px;
     color: #E7E4E1;
     letter-spacing: 3px;
-    margin-top: 89px;
+    margin-top: 177px;
     display: flex;
     justify-content: center;
 }
