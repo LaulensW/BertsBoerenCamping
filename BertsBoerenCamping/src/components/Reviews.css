@@ -50,3 +50,9 @@
     margin: 56px 0 32px 0;
     height: 40px;
 }
+.reviewswave{
+    position: absolute;
+    display: flex;
+    width: 100%;
+    margin-top: 73px;
+}
