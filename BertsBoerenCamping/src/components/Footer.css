@@ -1,0 +1,26 @@
+.footer-container{
+    background-color: var(--primary-color);
+    padding: 45px 104px 24px 439px;
+}
+.footer{
+    color: var(--neutral-color);
+    display: flex;
+    flex-wrap: wrap;
+}
+.heading{
+    font-size: 20px;
+    position: absolute;
+}
+.heading-cursive{
+    font-family: 'Homemade Apple', cursive;
+    letter-spacing: 1px;
+    margin-top: 4px;
+    color: #A0AD9E;
+}
+.footer-heading-1{
+    margin-right: 266px;
+}
+
+.footer-heading-2{
+    margin-right: 241px;
+}
