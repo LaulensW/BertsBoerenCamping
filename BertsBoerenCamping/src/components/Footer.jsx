@@ -19,9 +19,13 @@ const Footer = () => {
                 <div className="footer-heading-3">
                     <h6 className="heading">CONTACT</h6>
                     <p className="heading-cursive">contact</p>
+                    <img src="../images/footer-facebook.png" width="40px"/>
+                    <br></br>
                     <a href="#">info@example.com</a>
                     <p className="'heading-email"></p>
+                    <label for="footer-email">Maandelijkse nieuwsbrief</label><br></br>
                     <input type="email" placeholder="Email" id="footer-email"/>
+                    <br></br>
                     <input type="submit" placholder="Verzenden" id="footer-email-btn"/>
                 </div>
             </div>

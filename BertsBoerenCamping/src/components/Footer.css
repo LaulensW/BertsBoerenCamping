@@ -6,6 +6,7 @@
     color: var(--neutral-color);
     display: flex;
     flex-wrap: wrap;
+    text-decoration: none;
 }
 .heading{
     font-size: 20px;
@@ -18,9 +19,51 @@
     color: #A0AD9E;
 }
 .footer-heading-1{
-    margin-right: 266px;
+    color: var(--neutral-color);
+    padding-right: 266px;
 }
-
+.footer-heading-1 a{
+    color: var(--neutral-color);
+    text-decoration: none;
+}
 .footer-heading-2{
     margin-right: 241px;
+}
+.footer-heading-2 a{
+    color: var(--neutral-color);
+    text-decoration: none;
+}
+.footer-heading-3{
+    border: 2px solid red;
+}
+.footer-heading-3 a{
+    color: var(--neutral-color);
+    text-decoration: none;
+}
+input[type=email]{
+    font-family: 'IBM Plex Mono', monospace;
+    color: var(--secondary-color);
+    padding: 16px;
+    font-size:16px;
+    width: 296px;
+    border-radius: 100px;
+    border: none;
+    display: flex;
+}
+input[type=submit]{
+    font-family: 'IBM Plex Mono', monospace;
+    background-color: var(--Button-color);
+    color: var(--neutral-color);
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    border-radius: 100px;
+    display: flex;
+    align-items: center;
+    padding: 16px;
+    font-size: 16px;
+    transition: background-color 0.3s ease-in-out;
+}
+input[type=submit]:hover{
+    background-color:var(--secondary-color);
 }
