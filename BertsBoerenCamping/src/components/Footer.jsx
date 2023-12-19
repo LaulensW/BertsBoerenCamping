@@ -22,26 +22,28 @@ const Footer = () => {
                 <div className="footer-heading-3">
                     <h6 className="heading">CONTACT</h6> <p className="heading-cursive">contact</p>
                     <div className="img-logo">
-                        <img src="../images/footer-facebook.png" className="logo-indi" width="40px"/>
-                        <img src="../images/footer-instagram.png" className="logo-indi" width="40px"/>
-                        <img src="../images/footer-linkedin.png" className="logo-indi" width="40px"/>
+                        <img src="../images/footer-facebook.png" className="logo-indi"/>
+                        <img src="../images/footer-instagram.png" className="logo-indi"/>
+                        <img src="../images/footer-linkedin.png" className="logo-indi"/>
                     </div>
                     <br/>
                     <a href="#">Adres</a>
                     <a href="#">info@example.com</a>
                     <a href="#">+01 234 567 89</a>
                     <a href="#">+01 234 567 89</a>
-                    <p className="'heading-email"></p>
                     <br/>
                     <label for="footer-email">Maandelijkse nieuwsbrief</label>
                     <input type="email" placeholder="Email" id="footer-email"/>
-                    <br></br>
+                    <br/>
                     <input type="submit" placholder="Verzenden" id="footer-email-btn"/>
                 </div>
             </div>
-            <p className="bottom-text">©2023 BertsBoerenCamping</p>
-            <p className="bottom-text">Terms</p>
-            <p className="bottom-text">Privacy</p>
+
+            <div className="bottom-text">
+                <p className="bottom-text-indi">©2023 BertsBoerenCamping</p>
+                <a href="#" className="bottom-text-indi">Terms</a>
+                <a href="#" className="bottom-text-indi">Privacy</a>
+            </div>
         </div>
         </>
     );

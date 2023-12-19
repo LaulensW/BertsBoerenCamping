@@ -1,7 +1,7 @@
 .footer-container{
     background-color: var(--primary-color);
     color: var(--neutral-color);
-    padding: 45px 0px 24px 439px;
+    padding: 45px 0px 24px 10px;
 }
 .footer{
     color: var(--neutral-color);
@@ -56,6 +56,7 @@
     display: flex;
     margin-right: 16px;
     cursor: pointer;
+    width: 40px;
 }
 label{
     margin-bottom: 13px;
@@ -89,5 +90,12 @@ input[type=submit]:hover{
     background-color:var(--secondary-color);
 }
 .bottom-text{
-
+    display: flex;
+    justify-content: center;
+    padding-right: 64px;
+}
+.bottom-text-indi{
+    margin: 0 32px 0 32px;
+    color:var(--neutral-color);
+    text-decoration: none;
 }
