@@ -1,7 +1,12 @@
 import React, { useState } from 'react';
 import './LoginForm.css';
+import { useNavigate } from 'react-router-dom';
+// import { Route } from 'react-router-dom';
+// import DashboardPage from '../Views/DashboardPage';
 
 const LoginForm = () => {
+  const navigate = useNavigate();
+
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
@@ -28,6 +33,7 @@ const handleLogin = async (e) => {
       setEmail('');
       setPassword('');
       // Redirect or perform any other action
+      navigate('/dashboard');
     } else {
       const data = await response.json();
       setError(data.error || 'Login failed');
