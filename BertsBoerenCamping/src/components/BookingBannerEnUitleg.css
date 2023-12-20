@@ -47,8 +47,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin: 78px 0 0 6%;
-    width: 87%
+    margin: 78px 12% 0 12%;
 }
 .boeken-uitleg-tekst{
     color: var(--secondary-color);

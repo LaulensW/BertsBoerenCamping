@@ -32,6 +32,11 @@
     margin-right: 50px;
     text-decoration: none;
     color: var(--secondary-color); /* Adjust the text color as needed */
+    font-weight: var(--font-weight-semibold);
+    transition: 0.3s ease-in-out;
+  }
+  .nav-button:hover{
+    color: var(--primary-color);
   }
   
   .search-field {
