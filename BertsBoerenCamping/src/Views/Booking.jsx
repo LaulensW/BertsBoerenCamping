@@ -9,6 +9,7 @@ const Booking = () => {
       <Layout> 
       <h2></h2>
       <BookingBannerEnUitleg />
+      <br/>
       <BookingForm />
       </Layout> 
       
