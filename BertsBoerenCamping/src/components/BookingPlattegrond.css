@@ -14,19 +14,12 @@
 .rectangle-plekken{
     background-color:cornflowerblue;
     color: var(--neutral-color);
-    border-radius: 15px;
     font-size: 40px;
-    font-weight: var(--font-weight-semibold);
+    font-weight: var(--font-weight-semibold);   
+    border-radius: 15px;
     display: flex;
     justify-content: center;
     align-items: center;
     position: absolute;
     cursor: pointer
-}
-.rectangle{
-    border-radius: 15px;
-    box-shadow: 0px 0px 10px rgba(74, 64, 52, 0.5);
-    background-color:darkolivegreen;
-    margin: 72px 0 160px 1092px;
-    position: relative;
 }
