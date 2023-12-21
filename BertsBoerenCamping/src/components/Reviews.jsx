@@ -2,6 +2,7 @@ import React from 'react';
 import './Reviews.css';
 import ReviewsWave from '../assets/reviews-wave.svg';
 
+
 export default function Reviews() {
     return (
         <>
