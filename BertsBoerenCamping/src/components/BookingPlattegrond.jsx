@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import './BookingPlattegrond.css';
 
 const BookingPlattegrond = () => {
@@ -7,10 +8,16 @@ const BookingPlattegrond = () => {
         <h1 className="plattegrond-title">PLATTEGROND</h1>
         <div className="booking-plattegrond">
             <div className="rectangle">
-                <div className="rectangle-plekken" width="287px" height="134px">A</div>
+                <Link to="/about"><div className="rectangle-plekken" style={{width:"287px", height:"134px", margin: "32px 0 0 223px"}}>A</div></Link>
+                <Link to="/about"><div className="rectangle-plekken" style={{width:"287px", height:"134px", margin: "265px 0 0 223px"}}>B</div></Link> 
             </div>
-            
-        </div>          
+        </div>      
+
+        <div className="booking-legenda">
+            <div className="rectangle-kegenda">
+
+            </div>
+        </div>    
         
         </>
     )
