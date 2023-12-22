@@ -1,6 +1,12 @@
-.plattegrond-title{
+.plattegrond-title, .legenda-title{
     color: var(--primary-color);
     display: flex;
+    position: absolute;
+}
+.booking-plattegrond{
+    display: flex;
+    justify-content: center;
+    border: 2px solid red;
 }
 .rectangle{
     border-radius: 15px;
@@ -8,8 +14,9 @@
     background-color: darkseagreen;
     width: 968px;
     height: 775px;
-    margin: 72px 0 160px 84px;
+    margin: 72px 0 160px 0px;
     position: relative;
+    display: flex;
 }
 .rectangle-plekken{
     background-color:cornflowerblue;
@@ -22,4 +29,22 @@
     align-items: center;
     position: absolute;
     cursor: pointer
+}
+.rectangle-legenda{
+    width: 296px;
+    height: 312px;
+    margin: 72px 0 0 40px;
+    background-color:cadetblue;
+    border-radius: 15px;
+}
+.rectangle-legenda-inside{
+    margin: 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 72px;
+    border-radius: 15px;
+    font-size: 16px;
+    font-weight: var(--font-weight-semibold);
+    color: var(--neutral-color);
 }
