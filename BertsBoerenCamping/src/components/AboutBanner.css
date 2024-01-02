@@ -1,5 +1,4 @@
 .banner{
-    border: 3px solid red;
     display: flex;
     justify-content: center;
 }
@@ -15,6 +14,7 @@
     font-family: 'Homemade Apple', cursive;
     position: absolute;
     margin: 100px 0 0 0;
+    letter-spacing: 3px;
     font-size: 56px;
     color: #A0AD9E
 }
@@ -26,7 +26,34 @@
     color: var(--neutral-color);
     z-index: 5;
 }
+.wie-zijn-wij{
+    margin-top: 72px;
+}
 .wie-zijn-wij-photo{
     width: 520px;
     height: 585px;
+    display: flex;
+    position: absolute;
+    border-radius: 15px;
+    box-shadow: 0px 0px 10px rgba(74, 64, 52, 0.5);
+}
+.wie-zijn-wij-title{
+    position: absolute;
+    font-size: 40px;
+    font-weight: var(--font-weight-semibold);
+    color: var(--primary-color);
+}
+.wie-zijn-wij-title-cursive{
+    font-family: 'Homemade Apple', cursive;
+    letter-spacing: 3px;
+    margin-left: 4px;
+    font-size: 40px;
+    color: #E7E4E1;
+}
+.wie-zijn-wij-tekst{
+    color: var(--secondary-color);
+    font-size: 16px;
+    display: flex;
+    margin: 15px 0 0 585px;
+    text-align: left;
 }
