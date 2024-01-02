@@ -1,16 +1,20 @@
 import React from 'react';
 import './AboutBanner.css';
-import BannerWave from '../assets/about-banner-wave.svg';
+import Wave from '../assets/about-banner-wave.svg';
 
-const AboutBanner = () => {
+const Banner = () => {
     return(  
         <>
-        <div className="about-banner">
-            <img src="../images/About_Banner.png" alt="Banner" className="banner-background"/>
-            
+        <div className="banner">
+            <p className="banner-title-cursive">over ons</p>
+            <h className="banner-title">OVER ONS</h>
+            <img src={Wave} alt="Wave" className="banner-wave"/>
+            <img src="../images/Banner_Background.png" alt="Banner" className="banner-background"/>
         </div>
+        
+        <img src="../images/Filler.png" className="wie-zijn-wij-photo"/>
         </>
     );
 };
 
-export default AboutBanner;
+export default Banner;
