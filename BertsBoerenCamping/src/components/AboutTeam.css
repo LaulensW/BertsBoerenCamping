@@ -1,3 +1,24 @@
 .ons-team-wave{
+    display: flex;
     width: 100%;
+    border: solid 3px pink;
+}
+.ons-team{
+    display: flex;
+    justify-content: center;
+}
+.ons-team-title-cursive{
+    color: #E7E4E1;
+    text-shadow: none;
+    font-family: "Homemade Apple", cursive;
+    font-size: 40px;
+    margin: 0;
+    border: 2px solid purple;
+}
+.ons-team-title{
+    color: var(--primary-color);
+    font-weight: var(--font-weight-semibold);
+    font-size: 40px;
+    border: 2px solid green;
+    z-index: 10;
 }
