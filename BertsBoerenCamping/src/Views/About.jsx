@@ -9,7 +9,7 @@ const About = () => {
       <Layout>      
         < Banner />
       </Layout>  
-      < OnsTeam />      
+        < OnsTeam /> 
     </>
   );
 };

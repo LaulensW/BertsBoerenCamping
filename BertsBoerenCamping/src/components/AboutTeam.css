@@ -1,11 +1,15 @@
 .ons-team-wave{
+    position: absolute;
     display: flex;
     width: 100%;
-    border: solid 3px pink;
 }
 .ons-team{
+    padding: 0 7%;
+}
+.ons-team-title-combo{
     display: flex;
     justify-content: center;
+    margin-top: 160px;
 }
 .ons-team-title-cursive{
     color: #E7E4E1;
@@ -13,6 +17,8 @@
     font-family: "Homemade Apple", cursive;
     font-size: 40px;
     margin: 0;
+    letter-spacing: 3px;
+    margin: 7px 0 0 0;
     border: 2px solid purple;
 }
 .ons-team-title{
@@ -21,4 +27,10 @@
     font-size: 40px;
     border: 2px solid green;
     z-index: 10;
+}
+.ons-team-profile-photo{
+    width: 184px;
+    height: auto;
+    border-radius: 100px; 
+    margin: 53px 40px 16px 0;
 }
