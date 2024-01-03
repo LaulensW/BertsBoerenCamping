@@ -45,9 +45,10 @@
     margin: 8px 0;
     font-weight: var(--font-weight-normal);
 }
-.rating-image{
+.review-rating{
+    height: 56px;
+    width: min-content;
     margin: 56px 0 32px 0;
-    height: 40px;
 }
 .reviewswave{
     position: absolute;
