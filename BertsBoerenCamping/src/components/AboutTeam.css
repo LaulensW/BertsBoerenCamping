@@ -4,9 +4,9 @@
     width: 100%;
 }
 .ons-team{
-    padding: 0 7% 160px 7%;
+    padding: 0 7%;
 }
-.ons-team-title-combo{
+.title-combo{
     display: flex;
     justify-content: center;
     margin-top: 160px;
@@ -38,7 +38,7 @@
     margin-right: 40px;
 }
 .team-image{
-    width: 184px;
+    width: 176px;
     height: auto;
     border-radius: 100px;
     margin: 53px 0 16px 0;

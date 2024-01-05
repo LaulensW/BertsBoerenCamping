@@ -7,7 +7,7 @@ export default function OnsTeam() {
         <>
         <img src={Wave} alt="ons-team-wave" className="ons-team-wave"/> 
         <div className="ons-team">
-            <div className="ons-team-title-combo">
+            <div className="title-combo">
                 <h className="ons-team-title">ONS TEAM</h>
                 <p className="ons-team-title-cursive">ons team</p> 
             </div>
