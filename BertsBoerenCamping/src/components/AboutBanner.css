@@ -12,7 +12,6 @@
 }
 .banner-title-cursive{
     font-family: 'Homemade Apple', cursive;
-    position: absolute;
     margin: 100px 0 0 0;
     letter-spacing: 3px;
     font-size: 56px;
@@ -54,6 +53,6 @@
     color: var(--secondary-color);
     font-size: 16px;
     display: flex;
-    margin: 15px 0 0 585px;
+    margin: 15px 0 0 40.3%;
     text-align: left;
 }
