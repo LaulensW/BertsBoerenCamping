@@ -10,13 +10,14 @@ const BookingPlattegrond = () => {
         <div className="booking-plattegrond">
             <div className="rectangle">
                 <Link to="/about"><div className="rectangle-plekken" style={{width:"287px", height:"134px", margin: "32px 0 0 223px"}}>A</div></Link>
-            </div>             
-                <div className="rectangle-legenda">
+            </div>                  
+        </div>
+        
+        <div className="rectangle-legenda">
                     <div className="rectangle-legenda-inside" style={{backgroundColor: "#A0AD9E"}}>Ingang</div>
                     <div className="rectangle-legenda-inside"style={{backgroundColor: "#DCADA8"}}>Toiletten</div>
                     <div className="rectangle-legenda-inside" style={{backgroundColor: "#828A66"}}>Campingplekken</div>
                 </div>
-        </div>
         </>
     )
 };
