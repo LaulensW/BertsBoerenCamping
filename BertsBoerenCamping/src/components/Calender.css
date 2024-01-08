@@ -1,0 +1,39 @@
+.calendar {
+    display: flex;
+    justify-content: space-between;
+    background: #60775D; /* Change to the color of your choice */
+  }
+  
+  .month {
+    display: flex;
+    flex-direction: column;
+    width: 45%; /* Adjust based on your layout */
+    border: 1px solid #ccc; /* Change to the color of your choice */
+  }
+  
+  .month-label {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    background: #ccc; /* Change to the color of your choice */
+    color: #333; /* Change to the color of your choice */
+  }
+  
+  .weekdays, .days {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+  }
+  
+  .day {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 40px; /* Adjust based on your layout */
+    border: 1px solid #ccc; /* Change to the color of your choice */
+  }
+  
+  .current-day {
+    background: #ff0000; /* Change to the color of your choice */
+    color: #fff; /* Change to the color of your choice */
+  }
+  
