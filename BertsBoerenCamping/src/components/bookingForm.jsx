@@ -166,6 +166,10 @@ const BookingForm = () => {
 
       <Calender />
     </div>
+    <div className="total-box">
+        <h2>Total</h2>
+        {/* Content to display total */}
+    </div>
   </div>
   );
 };

@@ -22,6 +22,7 @@ const Calender = () => {
       endDate={endDate}
       selectsRange
       inline
+      monthsShown={2}
     />
   );
 };
