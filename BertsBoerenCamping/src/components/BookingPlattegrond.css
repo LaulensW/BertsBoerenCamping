@@ -1,11 +1,21 @@
+.plattegrond-en-legenda{
+    display: flex;
+    justify-content: space-between;
+}
+.rectangle{
+    width: 100px;
+    height: 100px;
+    background-color: red
+}
+.plattegrond-total{
+    border: 2px solid red;
+}
+.legenda-total{
+    border: 2px solid rebeccapurple;
+}
 .plattegrond-title, .legenda-title{
     color: var(--primary-color);
-    display: flex;
-    position: absolute;
-}
-.booking-plattegrond{
-    display: flex;
-    border: 2px solid red;
+    margin: 0 0 72px 0; 
 }
 .rectangle{
     border-radius: 15px;
@@ -30,7 +40,6 @@
 .rectangle-legenda{
     width: 296px;
     height: 312px;
-    margin: 72px 0 0 40px;
     background-color:cadetblue;
     border-radius: 15px;
     display: flex;
