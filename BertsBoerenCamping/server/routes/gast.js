@@ -7,6 +7,36 @@ router.get('/', async (req, res) => { // bij sequelize gebruik je await zodat de
     res.json(lijstVanGasten);
 });
 
+router.get('/', async (req, res) => {
+    const lijstVanGastenTotaal = await gast.findAll({
+        include: [{
+            model: gast,
+            as: 'gast'
+        }]
+    });
+    res.json(lijstVanGastenTotaal);
+});
+
+// Hier ben ik nu mee bezig -- Niek
+// Ik wil graag in plaats van alleen de tabel boeking tegelijkertijd ook van gasten opvragen.
+// Proberen meerdere gegevens te combineren als 1 output
+
+// const { boeking, gast } = require('../models');
+
+// router.get('/', async (req, res) => {
+//     const lijstVanBoekingen = await boeking.findAll({
+//         include: [{
+//             model: gast,
+//             as: 'gast' // replace with the alias you used in the relation
+//         }]
+//     });
+//     res.json(lijstVanBoekingen);
+// });
+
+// Hier ben ik nu mee bezig -- Niek
+
+
+
 router.post('/', async (req, res) => {
     const post = req.body;
     await gast.create(post);

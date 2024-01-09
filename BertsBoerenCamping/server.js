@@ -3,7 +3,6 @@
 const express = require('express');
 const cors = require('cors');
 const mysql2 = require('mysql2');
-const bcrypt = require('bcrypt');
 const app = express();
 const { appendFile } = require('fs');
 
@@ -23,7 +22,7 @@ app.use('/boeking', boekingRouter);
 const kampeerplekRouter = require('./server/routes/kampeerplek');
 app.use('/kampeerplek', kampeerplekRouter);
 const werknemerRouter = require('./server/routes/werknemer');
-app.use('/api', werknemerRouter);
+app.use('/werknemer', werknemerRouter);
 
 
 db.sequelize.sync().then(() => {
