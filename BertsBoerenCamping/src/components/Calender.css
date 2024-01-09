@@ -1,39 +1,66 @@
-.calendar {
-    display: flex;
-    justify-content: space-between;
-    background: #60775D; /* Change to the color of your choice */
+/* Calendar container */
+.react-datepicker {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  padding: 16px;
+  background-color: #fff;
+}
+
+/* Header */
+.react-datepicker__header {
+  background-color: var(--neutral-color);
+  border-bottom: 1px solid #ccc;
+}
+
+/* Navigation buttons */
+.react-datepicker__navigation {
+  top: 16px;
+  border: none;
+  background: none;
+  cursor: pointer;
+  &:hover {
+    opacity: 0.6;
   }
-  
-  .month {
-    display: flex;
-    flex-direction: column;
-    width: 45%; /* Adjust based on your layout */
-    border: 1px solid #ccc; /* Change to the color of your choice */
+}
+
+/* Month and year dropdowns */
+.react-datepicker__current-month,
+.react-datepicker-year-dropdown__options {
+  color: #333;
+  font-size: 16px;
+}
+
+/* Day names */
+.react-datepicker__day-name {
+  color: #333;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+/* Individual days */
+.react-datepicker__day {
+  color: #333;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+  &:hover {
+    background-color: #f0f0f0;
   }
-  
-  .month-label {
-    display: flex;
-    justify-content: space-between;
-    padding: 10px;
-    background: #ccc; /* Change to the color of your choice */
-    color: #333; /* Change to the color of your choice */
-  }
-  
-  .weekdays, .days {
-    display: grid;
-    grid-template-columns: repeat(7, 1fr);
-  }
-  
-  .day {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 40px; /* Adjust based on your layout */
-    border: 1px solid #ccc; /* Change to the color of your choice */
-  }
-  
-  .current-day {
-    background: #ff0000; /* Change to the color of your choice */
-    color: #fff; /* Change to the color of your choice */
-  }
-  
+}
+
+/* Selected range */
+.react-datepicker__day--selected,
+.react-datepicker__day--in-selecting-range,
+.react-datepicker__day--in-range {
+  background-color: var(--primary-color);
+  color: #fff;
+  border-radius: 4px;
+}
+
+/* Today's date */
+.react-datepicker__day--today {
+  font-weight: bold;
+  background-color: lightgreen;
+  border-radius: 4px;
+  color: #333;
+}

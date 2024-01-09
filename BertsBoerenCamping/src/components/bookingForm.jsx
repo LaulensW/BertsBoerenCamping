@@ -38,13 +38,14 @@ const BookingForm = () => {
         <h2>Additional Information</h2>
         <h4>Ontdek de charme van het platteland en reserveer uw onvergetelijke campingervaring bij ons. Wij zijn enthousiast om u te verwelkomen op onze sfeervolle boerderij. Vul het onderstaande formulier in om uw verblijf te boeken en geniet binnenkort van de rust en natuurlijke schoonheid die onze camping te bieden heeft. Bij vragen staan wij altijd voor u klaar. <br />Tot snel op Berts Boeren Camping!</h4>
       </div>
-      <div className="campeerplek">
+      <div className="boeking-box">
       <section className='customer-info'>
       <div className="form-section left-section">
         <form>
           <div>
-            <label htmlFor="voornaam">Voornaam:</label>
+            <label htmlFor="voornaam"></label>
             <input
+              placeholder='Voornaam'
               type="text"
               id="voornaam"
               name="voornaam"
@@ -53,8 +54,9 @@ const BookingForm = () => {
             />
           </div>
           <div>
-            <label htmlFor="tussenvoegsel">Tussenvoegsel:</label>
+            <label htmlFor="tussenvoegsel"></label>
             <input
+              placeholder='Tussenvoegsel'
               type="text"
               id="tussenvoegsel"
               name="tussenvoegsel"
@@ -63,8 +65,9 @@ const BookingForm = () => {
             />
           </div>
           <div>
-            <label htmlFor="achternaam">Achternaam:</label>
+            <label htmlFor="achternaam"></label>
             <input
+              placeholder='Achternaam'
               type="text"
               id="achternaam"
               name="achternaam"
@@ -73,8 +76,9 @@ const BookingForm = () => {
             />
           </div>
           <div>
-            <label htmlFor="email">Email:</label>
+            <label htmlFor="email"></label>
             <input
+              placeholder='Email'
               type="email"
               id="email"
               name="email"
@@ -83,8 +87,9 @@ const BookingForm = () => {
             />
           </div>
           <div>
-            <label htmlFor="telefoonnummer">Telefoonnummer:</label>
+            <label htmlFor="telefoonnummer"></label>
             <input
+              placeholder='Telefoonnummer'
               type="tel"
               id="telefoonnummer"
               name="telefoonnummer"
@@ -149,7 +154,8 @@ const BookingForm = () => {
 </section>   
 
       <div className="form-section common-section">
-        <label htmlFor="accommodatieType">Welke type accommodatie wilt u huren:</label>
+        <label htmlFor="accommodatieType">Welke type accommodatie wilt u huren: </label>
+        <br />
         <select
           id="accommodatieType"
           name="accommodatieType"
@@ -165,10 +171,10 @@ const BookingForm = () => {
       </div>
 
       <Calender />
+      <button className='volgende'>Volgende</button>
     </div>
     <div className="total-box">
         <h2>Total</h2>
-        {/* Content to display total */}
     </div>
   </div>
   );
