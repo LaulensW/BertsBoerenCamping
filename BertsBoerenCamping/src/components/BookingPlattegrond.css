@@ -2,11 +2,7 @@
     display: flex;
     justify-content: space-between;
 }
-.rectangle{
-    width: 100px;
-    height: 100px;
-    background-color: red
-}
+
 .plattegrond-title, .legenda-title{
     color: var(--primary-color);
     font-size: 40px;    
