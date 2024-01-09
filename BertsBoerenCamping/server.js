@@ -15,7 +15,6 @@ app.use(express.json());
 
 const db = require('./server/models') // Dit zal over de bestanden in de map ./server/models gaan 
 
-
 // Routers
 const gastRouter = require('./server/routes/gast');
 app.use('/gast', gastRouter);
@@ -23,6 +22,8 @@ const boekingRouter = require('./server/routes/boeking');
 app.use('/boeking', boekingRouter);
 const kampeerplekRouter = require('./server/routes/kampeerplek');
 app.use('/kampeerplek', kampeerplekRouter);
+const werknemerRouter = require('./server/routes/werknemer');
+app.use('/api', werknemerRouter);
 
 
 db.sequelize.sync().then(() => {
