@@ -8,14 +8,14 @@ import BookingPlattegrond from '../components/BookingPlattegrond';
 const Booking = () => {
   return (
     <div>
+      <img src={PlattegrondWave} style={{position: "absolute", marginTop:"685px"}}width="100%"/>
       <Layout> 
-      <h2></h2>
       <BookingBannerEnUitleg />
-      <br/>      
-      <img src={PlattegrondWave} width="100%"/>
+      <div style={{height: "157px"}}/>
       <BookingPlattegrond />
       <BookingForm />
       </Layout> 
+      
       
     </div>
   );

@@ -20,9 +20,13 @@
 }
 .booking-banner{
     border-radius: 15px;
+    display: flex;
+    justify-content: center;
+    width: 100%;
 }
 .banner-wave{
     position: absolute;
+    width: 100%;
 }
 .hoe-moet-je-boeken-title{
     color: var(--primary-color);
