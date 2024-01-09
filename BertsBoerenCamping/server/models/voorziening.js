@@ -10,6 +10,11 @@ module.exports = (sequelize, DataTypes) => {
         }
     });
 
+    voorziening.associate = (models) => {
+        voorziening.hasMany(models.boeking, {
+        });
+    };
+
     return voorziening;
     
 }

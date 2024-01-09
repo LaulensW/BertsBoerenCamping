@@ -1,3 +1,6 @@
+const leeftijdsgroepaantal = require("./leeftijdsgroepaantal");
+const voorziening = require("./voorziening");
+
 module.exports = (sequelize, DataTypes) => {
     const boeking = sequelize.define("boeking", {
         aankomst: {
@@ -28,6 +31,20 @@ module.exports = (sequelize, DataTypes) => {
         boeking.hasMany(models.leeftijdsgroepaantal, { // Een boeking kan meerdere leeftijdsgroepaantallen hebben
         });
     };
+
+    boeking.associate = (models => {
+        boeking.hasMany(models.voorziening, { // Een boeking kan meerdere voorzieningen hebben
+            onDelete: "cascade", // (Nog niet zeker of dit moet)
+        })
+    })
+
+
+    boeking.associate = (models) => {
+        boeking.belongsTo(models.werknemer, {
+        });
+    };
+
+    
 
     return boeking;
     

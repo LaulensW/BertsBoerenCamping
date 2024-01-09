@@ -14,7 +14,15 @@ module.exports = (sequelize, DataTypes) => {
         }
     });
 
+    leeftijdsgroepaantal.associate = (models) => {
+        leeftijdsgroepaantal.belongsTo(models.boeking, {
+        });
+    };
 
+    leeftijdsgroepaantal.associate = (models) => {
+        leeftijdsgroepaantal.belongsTo(models.boeking, {
+        });
+    };
 
     return leeftijdsgroepaantal;
 }

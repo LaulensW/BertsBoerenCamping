@@ -14,6 +14,11 @@ module.exports = (sequelize, DataTypes) => {
         }
     });
 
+    kampeerplek.associate = (models) => {
+        kampeerplek.belongsTo(models.boeking, {
+        });
+    };
+
     return kampeerplek;
     
 }
