@@ -1,8 +1,8 @@
-const boeking = require("./boeking");
-const werknemer = require("./werknemer");
+const Boeking = require("./Boeking");
+const Werknemer = require("./Werknemer");
 
 module.exports = (sequelize, DataTypes) => {
-    const admin = sequelize.define("admin", {
+    const Admin = sequelize.define("admin", {
         gebruikersnaam: {
             type: DataTypes.STRING,
             allowNull: false,
@@ -13,24 +13,26 @@ module.exports = (sequelize, DataTypes) => {
         }
     });
 
-    admin.associate = (models) => {
-        admin.hasMany(models.boeking, { // Een admin heeft toegang tot alle boekingen
+
+
+    Admin.associate = (models) => {
+        Admin.hasMany(models.Boeking, { // Een admin heeft toegang tot alle boekingen
         });
     };
-    boeking.associate = (models) => {
-        boeking.belongsTo(models.admin, {
+    Boeking.associate = (models) => {
+        Boeking.belongsTo(models.Admin, {
         });
     };
 
-    admin.associate = (models) => {
-        admin.hasMany(models.werknemer, { // Een admin heeft toegang tot alle werknemers
+    Admin.associate = (models) => {
+        Admin.hasMany(models.Werknemer, { // Een admin heeft toegang tot alle werknemers
         });
     };
-    werknemer.associate = (models) => {
-        werknemer.belongsTo(models.admin, {
+    Werknemer.associate = (models) => {
+        Werknemer.belongsTo(models.Admin, {
         });
     };
 
-    return admin;
+    return Admin;
     
 }

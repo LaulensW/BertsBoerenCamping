@@ -1,28 +1,28 @@
 module.exports = (sequelize, DataTypes) => {
-    const leeftijdsgroepaantal = sequelize.define("leeftijdsgroepaantal", {
-        aantalkinderen: {
+    const LeeftijdsgroepAantal = sequelize.define("LeeftijdsgroepAantal", {
+        aantalKinderen: {
             type: DataTypes.INTEGER,
             allowNull: false,
         },
-        aantaltieners: {
+        aantalTieners: {
             type: DataTypes.INTEGER,
             allowNull: false,
         },
-        aantalvolwassenen: {
+        aantalVolwassenen: {
             type: DataTypes.INTEGER,
             allowNull: false,
         }
     });
 
-    leeftijdsgroepaantal.associate = (models) => {
-        leeftijdsgroepaantal.belongsTo(models.boeking, {
+    LeeftijdsgroepAantal.associate = (models) => {
+        LeeftijdsgroepAantal.belongsTo(models.Boeking, {
         });
     };
 
-    leeftijdsgroepaantal.associate = (models) => {
-        leeftijdsgroepaantal.belongsTo(models.boeking, {
+    LeeftijdsgroepAantal.associate = (models) => {
+        LeeftijdsgroepAantal.belongsTo(models.Boeking, {
         });
     };
 
-    return leeftijdsgroepaantal;
+    return LeeftijdsgroepAantal;
 }

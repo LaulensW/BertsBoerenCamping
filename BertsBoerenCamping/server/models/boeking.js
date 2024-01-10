@@ -1,8 +1,8 @@
-const leeftijdsgroepaantal = require("./leeftijdsgroepaantal");
-const voorziening = require("./voorziening");
+const LeeftijdsGroepAantal = require("./LeeftijdsgroepAantal");
+const Voorziening = require("./Voorziening");
 
 module.exports = (sequelize, DataTypes) => {
-    const boeking = sequelize.define("boeking", {
+    const Boeking = sequelize.define("Boeking", {
         aankomst: {
             type: DataTypes.DATE,
             allowNull: false,
@@ -11,9 +11,9 @@ module.exports = (sequelize, DataTypes) => {
             type: DataTypes.DATE,
             allowNull: false,
         },
-        boekingsprijs: {
+        boekingprijs: {
             type: DataTypes.DECIMAL(4, 2),
-            allowNull: false,
+            allowNull: true,
         },
         voorkeur: {
             type: DataTypes.STRING,
@@ -21,31 +21,30 @@ module.exports = (sequelize, DataTypes) => {
         },
     });
 
-    boeking.associate = (models) => {
-        boeking.hasMany(models.kampeerplek, { // Een boeking kan meerdere kampeerplekken hebben
+    Boeking.associate = (models) => {
+        Boeking.hasMany(models.Kampeerplek, { // Een boeking kan meerdere kampeerplekken hebben
             onDelete: "cascade", // Wanneer een boeking wordt verwijderd, worden ook de kampeerplekken van die boeking verwijderd
         });
     };
 
-    boeking.associate = (models) => {
-        boeking.hasMany(models.leeftijdsgroepaantal, { // Een boeking kan meerdere leeftijdsgroepaantallen hebben
+    Boeking.associate = (models) => {
+        Boeking.hasMany(models.LeeftijdsgroepAantal, { // Een boeking kan meerdere leeftijdsgroepaantallen hebben
         });
     };
 
-    boeking.associate = (models => {
-        boeking.hasMany(models.voorziening, { // Een boeking kan meerdere voorzieningen hebben
+    Boeking.associate = (models => {
+        Boeking.hasMany(models.Voorziening, { // Een boeking kan meerdere voorzieningen hebben
             onDelete: "cascade", // (Nog niet zeker of dit moet)
         })
     })
 
-
-    boeking.associate = (models) => {
-        boeking.belongsTo(models.werknemer, {
+    Boeking.associate = (models) => {
+        Boeking.belongsTo(models.Werknemer, {
         });
     };
 
     
 
-    return boeking;
+    return Boeking;
     
 }

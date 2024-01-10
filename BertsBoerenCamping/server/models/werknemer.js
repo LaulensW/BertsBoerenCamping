@@ -1,5 +1,5 @@
 module.exports = (sequelize, DataTypes) => {
-    const werknemer = sequelize.define("werknemer", {
+    const Werknemer = sequelize.define("Werknemer", {
         voornaam: {
             type: DataTypes.STRING,
             allowNull: false,
@@ -26,11 +26,11 @@ module.exports = (sequelize, DataTypes) => {
         }
     });
 
-    werknemer.associate = (models) => {
-        werknemer.hasMany(models.boeking, { // Een werknemer kan meerdere boekingen inzien
+    Werknemer.associate = (models) => {
+        Werknemer.hasMany(models.Boeking, { // Een werknemer kan meerdere boekingen inzien
         });
     };
 
-    return werknemer;
+    return Werknemer;
     
 }

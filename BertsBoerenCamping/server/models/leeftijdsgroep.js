@@ -1,5 +1,5 @@
 module.exports = (sequelize, DataTypes) => {
-    const leeftijdsgroep = sequelize.define("leeftijdsgroep", {
+    const Leeftijdsgroep = sequelize.define("Leeftijdsgroep", {
         leeftijdsgroepprijs: {
             type: DataTypes.DECIMAL(10, 2),
             allowNull: false,
@@ -10,11 +10,11 @@ module.exports = (sequelize, DataTypes) => {
         }
     });    
 
-    leeftijdsgroep.associate = (models) => {
-        leeftijdsgroep.hasMany(models.leeftijdsgroepaantal, { // Een leeftijdsgroep kan meerdere leeftijdsgroepaantallen hebben
+    Leeftijdsgroep.associate = (models) => {
+        Leeftijdsgroep.hasMany(models.LeeftijdsgroepAantal, { // Een leeftijdsgroep kan meerdere leeftijdsgroepaantallen hebben
         });
     };
 
-    return leeftijdsgroep;
+    return Leeftijdsgroep;
     
 }

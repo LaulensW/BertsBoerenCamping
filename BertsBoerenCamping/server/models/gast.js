@@ -1,7 +1,7 @@
-const boeking = require("./boeking");
+const Boeking = require("./Boeking");
 
 module.exports = (sequelize, DataTypes) => {
-    const gast = sequelize.define("gast", {
+    const Gast = sequelize.define("Gast", {
         voornaam: {
             type: DataTypes.STRING,
             allowNull: false,
@@ -24,16 +24,16 @@ module.exports = (sequelize, DataTypes) => {
         }
     });
 
-    gast.associate = (models) => {
-        gast.hasMany(models.boeking, { // Een gast kan meerdere boekingen hebben
+    Gast.associate = (models) => {
+        Gast.hasMany(models.Boeking, { // Een gast kan meerdere boekingen hebben
             onDelete: "cascade", // Wanneer een gast wordt verwijderd, worden ook de boekingen van die gast verwijderd
         });
     };
-    boeking.associate = (models) => {
-        boeking.belongsTo(models.gast, {
+    Boeking.associate = (models) => {
+        Boeking.belongsTo(models.Gast, {
         });
     };
 
-    return gast;
+    return Gast;
 
 }

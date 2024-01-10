@@ -1,5 +1,5 @@
 module.exports = (sequelize, DataTypes) => {
-    const kampeerplek = sequelize.define("kampeerplek", {
+    const Kampeerplek = sequelize.define("Kampeerplek", {
         locatie: {
             type: DataTypes.STRING,
             allowNull: false,
@@ -14,11 +14,11 @@ module.exports = (sequelize, DataTypes) => {
         }
     });
 
-    kampeerplek.associate = (models) => {
-        kampeerplek.belongsTo(models.boeking, {
+    Kampeerplek.associate = (models) => {
+        Kampeerplek.belongsTo(models.Boeking, {
         });
     };
 
-    return kampeerplek;
+    return Kampeerplek;
     
 }

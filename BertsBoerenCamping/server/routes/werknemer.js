@@ -1,7 +1,7 @@
 const express = require('express');
 const router =  express.Router(); // Dit is een express router object
 const bcrypt = require('bcrypt'); // Add this line
-const { werknemer } = require('../models'); //Dit zal over de bestanden in de map ./server/models gaan
+const { Werknemer } = require('../models'); //Dit zal over de bestanden in de map ./server/models gaan
 
 // Baliemedewerker registreren
 router.post('/register', async (req, res) => {
@@ -13,7 +13,7 @@ router.post('/register', async (req, res) => {
   
     // Stopt baliemedewerker gegevens in de database
     try {
-      const newWerknemer = await werknemer.create({
+      const newWerknemer = await Werknemer.create({
         voornaam,
         tussenvoegsel,
         achternaam,
@@ -33,7 +33,7 @@ router.post('/register', async (req, res) => {
     const { email, password } = req.body;
   
     try {
-      const existingWerknemer = await werknemer.findOne({ where: { email } });
+      const existingWerknemer = await Werknemer.findOne({ where: { email } });
       if (existingWerknemer) {
         const match = await bcrypt.compare(password, existingWerknemer.wachtwoord);
         if (match) {
