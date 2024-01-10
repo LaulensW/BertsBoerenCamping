@@ -17,7 +17,7 @@
 }
 .rectangle{
     border-radius: 15px;
-    box-shadow: 0px 0px 10px rgba(74, 64, 52, 0.5);
+    box-shadow: 0px 0px 20px rgba(74, 64, 52, 0.25);
     background-color:var(--neutral-color);
     padding: 32px;
     width: 968px;
@@ -43,7 +43,7 @@
     height: 312px;
     margin-top: 38px;
     background-color: var(--neutral-color);
-    box-shadow: 0px 0px 10px rgba(74, 64, 52, 0.5);
+    box-shadow: 0px 0px 20px rgba(74, 64, 52, 0.25);
     border-radius: 15px;
     display: flex;
     flex-direction: column;
@@ -62,6 +62,7 @@
 .button-reserveren{
     background-color: var(--Button-color);
     color: var(--neutral-color);
+    box-shadow: 0px 0px 20px rgba(74, 64, 52, 0.25);
     font-weight: var(--font-weight-semibold); 
     font-family: 'IBM Plex Mono', monospace;
     font-size: 32px;
