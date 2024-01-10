@@ -34,9 +34,16 @@ const BookingForm = () => {
   return (
     <div className="booking-form-container">
       <div className="info-box">
-        {/* Your information box content goes here */}
-        <h2>Additional Information</h2>
-        <h4>Ontdek de charme van het platteland en reserveer uw onvergetelijke campingervaring bij ons. Wij zijn enthousiast om u te verwelkomen op onze sfeervolle boerderij. Vul het onderstaande formulier in om uw verblijf te boeken en geniet binnenkort van de rust en natuurlijke schoonheid die onze camping te bieden heeft. Bij vragen staan wij altijd voor u klaar. <br />Tot snel op Berts Boeren Camping!</h4>
+        <h2>Reserveer uw kampeerplaats en/of accommodatie. </h2>
+        <a>
+          Ontdek de charme van het platteland en reserveer uw onvergetelijke
+          campingervaring bij ons. Wij zijn enthousiast om u te verwelkomen op
+          onze sfeervolle boerderij. Vul het onderstaande formulier in om uw
+          verblijf te boeken en geniet binnenkort van de rust en natuurlijke
+          schoonheid die onze camping te bieden heeft. Bij vragen staan wij
+          altijd voor u klaar. <br />
+          <br></br>Tot snel op Berts Boeren Camping!
+        </a>
       </div>
       <div className="boeking-box">
       <section className='customer-info'>
@@ -174,7 +181,7 @@ const BookingForm = () => {
       <button className='volgende'>Volgende</button>
     </div>
     <div className="total-box">
-        <h2>Total</h2>
+      <h2>Total</h2>
     </div>
   </div>
   );
