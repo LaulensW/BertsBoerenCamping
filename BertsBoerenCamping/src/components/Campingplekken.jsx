@@ -1,11 +1,13 @@
 import React from 'react';
 import './Campingplekken.css';
+import CampingWave from '../assets/campingplek-wave.svg';
 
 export default function Campingplekken() {
     return (
         <>
             <h3 className="onze-campingplekken">ONZE CAMPINGPLEKKEN</h3>
-            <p3 className="onze-campingplekken-cursive">onze campingplekken</p3>
+            <p3 className="onze-campingplekken-cursive">onze campingplekken</p3> 
+            <img src={CampingWave}  alt='campingwave' className='wave'/>
             <div className="campingplekken-total">
                 {renderCampingplek("CAMPINGPLEK A", "€100", "Lorem ipsum dolor sit amet, consectetur adipiscing elit.")}
                 {renderCampingplek("CAMPINGPLEK B", "€95", "Lorem ipsum dolor sit amet, consectetur adipiscing elit.")}
@@ -16,6 +18,7 @@ export default function Campingplekken() {
                 {renderCampingplek("CAMPINGPLEK G", "€107", "Nulla aliquam tempor odio, eget viverra nisi posuere sit.")}
                 {renderCampingplek("CAMPINGPLEK H", "€105", "Nulla aliquam tempor odio, eget viverra nisi posuere sit.", "Stroom")}
             </div>
+           
         </>
     );
 }
@@ -29,8 +32,10 @@ function renderCampingplek(name, price, description, stroom) {
                     <h4 className="campingplek-name">{name}</h4>
                     <p3 className="campingplek-stroom">{stroom}</p3>
                 </div>
-                <p3 className="campingplek-price">{price}</p3>
-                <p3 className="campingplek-description">{description}</p3>
+                <div className="camping-text">
+                    <p3 className="campingplek-price">{price}</p3>
+                    <p3 className="campingplek-description">{description}</p3>
+                </div>
             </div>
         </div>
     );

@@ -35,8 +35,6 @@ function BookingList() {
               <strong>Email:</strong> {booking.email}<br />
               <strong>Telefoonnummer:</strong> {booking.telefoonnummer}<br />
               <strong>Voorkeuren:</strong> {booking.voorkeuren}<br />
-              <strong>Aankomst:</strong> {booking.aankomst}<br />
-              <strong>Vertrek:</strong> {booking.vertrek}<br />
             </div>
             <button className="booking-delete-button" onClick={() => handleDelete(booking.id)}>
               Delete
