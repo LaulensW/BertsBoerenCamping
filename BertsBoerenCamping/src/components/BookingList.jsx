@@ -31,10 +31,10 @@ function BookingList() {
         {bookings.map(booking => (
           <li key={booking.id} className="booking-item">
             <div className="booking-details">
-              <strong>Name:</strong> {booking.voornaam} {booking.tussenvoegsel} {booking.Achternaam}<br />
+              <strong>Naam:</strong> {booking.voornaam} {booking.tussenvoegsel} {booking.Achternaam}<br />
               <strong>Email:</strong> {booking.email}<br />
-              <strong>Phone:</strong> {booking.telefoonnummer}<br />
-              <strong>Preferences:</strong> {booking.voorkeuren}<br />
+              <strong>Telefoonnummer:</strong> {booking.telefoonnummer}<br />
+              <strong>Voorkeuren:</strong> {booking.voorkeuren}<br />
             </div>
             <button className="booking-delete-button" onClick={() => handleDelete(booking.id)}>
               Delete
