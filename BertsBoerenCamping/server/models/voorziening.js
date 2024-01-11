@@ -10,6 +10,7 @@ module.exports = (sequelize, DataTypes) => {
         }
     });
 
+    // Een voorziening kan meerdere boekingen hebben
     Voorziening.associate = (models) => {
         Voorziening.hasMany(models.Boeking, {
         });

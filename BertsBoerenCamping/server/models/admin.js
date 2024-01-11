@@ -14,9 +14,9 @@ module.exports = (sequelize, DataTypes) => {
     });
 
 
-
+    // Een admin heeft toegang tot alle boekingen
     Admin.associate = (models) => {
-        Admin.hasMany(models.Boeking, { // Een admin heeft toegang tot alle boekingen
+        Admin.hasMany(models.Boeking, { 
         });
     };
     Boeking.associate = (models) => {
@@ -24,8 +24,9 @@ module.exports = (sequelize, DataTypes) => {
         });
     };
 
+    // Een admin heeft toegang tot alle werknemers
     Admin.associate = (models) => {
-        Admin.hasMany(models.Werknemer, { // Een admin heeft toegang tot alle werknemers
+        Admin.hasMany(models.Werknemer, { 
         });
     };
     Werknemer.associate = (models) => {
