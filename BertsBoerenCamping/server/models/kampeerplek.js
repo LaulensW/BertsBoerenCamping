@@ -14,6 +14,7 @@ module.exports = (sequelize, DataTypes) => {
         }
     });
 
+    // Een kampeerplek hoort bij een boeking
     Kampeerplek.associate = (models) => {
         Kampeerplek.belongsTo(models.Boeking, {
         });

@@ -10,8 +10,9 @@ module.exports = (sequelize, DataTypes) => {
         }
     });    
 
+    // Een leeftijdsgroep kan meerdere leeftijdsgroepaantallen (aantal personen per leeftijdsgroep) hebben
     Leeftijdsgroep.associate = (models) => {
-        Leeftijdsgroep.hasMany(models.LeeftijdsgroepAantal, { // Een leeftijdsgroep kan meerdere leeftijdsgroepaantallen hebben
+        Leeftijdsgroep.hasMany(models.LeeftijdsgroepAantal, {
         });
     };
 

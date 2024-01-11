@@ -24,8 +24,9 @@ module.exports = (sequelize, DataTypes) => {
         }
     });
 
+    // Een gast kan meerdere boekingen hebben
     Gast.associate = (models) => {
-        Gast.hasMany(models.Boeking, { // Een gast kan meerdere boekingen hebben
+        Gast.hasMany(models.Boeking, { 
             onDelete: "cascade", // Wanneer een gast wordt verwijderd, worden ook de boekingen van die gast verwijderd
         });
     };

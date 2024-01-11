@@ -21,29 +21,31 @@ module.exports = (sequelize, DataTypes) => {
         },
     });
 
+    // Een boeking kan meerdere kampeerplekken hebben
     Boeking.associate = (models) => {
-        Boeking.hasMany(models.Kampeerplek, { // Een boeking kan meerdere kampeerplekken hebben
+        Boeking.hasMany(models.Kampeerplek, { 
             onDelete: "cascade", // Wanneer een boeking wordt verwijderd, worden ook de kampeerplekken van die boeking verwijderd
         });
     };
 
+    // Een boeking kan meerdere leeftijdsgroepaantallen hebben
     Boeking.associate = (models) => {
-        Boeking.hasMany(models.LeeftijdsgroepAantal, { // Een boeking kan meerdere leeftijdsgroepaantallen hebben
+        Boeking.hasMany(models.LeeftijdsgroepAantal, {
         });
     };
 
+    // Een boeking kan meerdere voorzieningen hebben
     Boeking.associate = (models => {
-        Boeking.hasMany(models.Voorziening, { // Een boeking kan meerdere voorzieningen hebben
+        Boeking.hasMany(models.Voorziening, { 
             onDelete: "cascade", // (Nog niet zeker of dit moet)
         })
     })
 
+    // Een boeking kan bekeken worden door een werknemer
     Boeking.associate = (models) => {
         Boeking.belongsTo(models.Werknemer, {
         });
     };
-
-    
 
     return Boeking;
     
