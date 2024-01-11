@@ -11,9 +11,9 @@ const Navbar = () => {
           </Link>
         </div>
         <div className="navbar-right">
-          <Link to="/booking" className="nav-button">BOEKEN</Link>
-          <Link to="/about" className="nav-button">OVER ONS</Link>
-          <input type="text" placeholder="Search" className="search-field" />
+          <Link to="/booking" className="nav-button">Boeken</Link>
+          <Link to="/about" className="nav-button">Over ons</Link>
+          <input type="text" placeholder="Zoeken" className="search-field" />
           <Link to="/Login" className="login-button">
           Login
         </Link>

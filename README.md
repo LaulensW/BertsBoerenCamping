@@ -9,6 +9,7 @@ School project berts boeren camping
   <li>Conner - Front-end</li>
   <li>Robin - Front-end</li>
   <li>Niek - Back-end</li>
+  <li>Marin - Back-end</li>
 </ul>
 <br>
 
