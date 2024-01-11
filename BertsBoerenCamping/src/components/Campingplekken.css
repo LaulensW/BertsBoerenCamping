@@ -19,14 +19,14 @@
 }
 .campingplekken-total{
     display: flex;
-    overflow: auto;
-
+    overflow-x: scroll;
 }
 .campeerplek{
     border-radius: 15px;
+    background-color: var(--neutral-color);
     display: inline-flex;
     flex-direction: column;
-    margin: 24px 20px 40px 20px;
+    margin: 24px 20px 32px 20px;
     box-shadow: 0px 0px 25px rgba(74, 64, 52, 0.2);
 }
 .filler-photo{
@@ -38,7 +38,6 @@
     display: flex;
     justify-content: space-between;
 }
-    
 .campingplek-name{
     display: flex;
     font-size: 24px;
@@ -48,7 +47,7 @@
 .campingplek-price{
     font-size: 16px;
     font-weight: var(--font-weight-semibold);
-    margin: 8px 0 0 16px;
+    margin: 8px 0 8px 0px;
     color: var(--neutral-color);
     background-color: var(--Button-color);
     display: flex;
@@ -61,9 +60,18 @@
 .campingplek-description{
     color: var(--secondary-color);
     font-size: 16px;
-    margin: 8px 16px 16px 16px;
 }
 .campingplek-stroom{
     font-size: 16px;
     float: right;
+}
+.camping-text{
+    margin: 8px 16px 16px 16px;
+}
+.wave{
+    z-index: -10;
+    width: 100%;
+    position: absolute;
+    margin-top: 445px;
+    display: flex;
 }
