@@ -1,14 +1,18 @@
 import React from 'react';
 import Layout from '../components/Layout';
+import Banner from '../components/AboutBanner';
+import OnsTeam from '../components/AboutTeam';
+import Bedrijven from '../components/AboutBenN';
 
 const About = () => {
   return (
-    <div>
-      <Layout>  
-      <h2>About Page</h2>
-      {/* Content specific to the about page */}
-      </Layout>
-    </div>
+    <>
+      <Layout>      
+        < Banner />
+      </Layout>  
+        < OnsTeam /> 
+        <Bedrijven/>
+    </>
   );
 };
 
