@@ -4,7 +4,6 @@
     display: flex;
 }
 .call-to-action{
-    border: 2px solid red;
     position: absolute;
     margin: 246px 0 0 7%;
 }

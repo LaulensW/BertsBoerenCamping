@@ -9,28 +9,27 @@ export default function Campingplekken() {
             <p3 className="onze-campingplekken-cursive">onze campingplekken</p3> 
             <img src={CampingWave}  alt='campingwave' className='wave'/>
             <div className="campingplekken-total">
-                {renderCampingplek("CAMPINGPLEK A", "€100", "Lorem ipsum dolor sit amet, consectetur adipiscing elit.")}
-                {renderCampingplek("CAMPINGPLEK B", "€95", "Lorem ipsum dolor sit amet, consectetur adipiscing elit.")}
-                {renderCampingplek("CAMPINGPLEK C", "€97", "Lorem ipsum dolor sit amet, consectetur adipiscing elit.")}
-                {renderCampingplek("CAMPINGPLEK D", "€96", "Lorem ipsum dolor sit amet, consectetur adipiscing elit.")}
-                {renderCampingplek("CAMPINGPLEK E", "€103", "Nulla aliquam tempor odio, eget viverra nisi posuere sit.")}
-                {renderCampingplek("CAMPINGPLEK F", "€99", "Nulla aliquam tempor odio, eget viverra nisi posuere sit.")}
-                {renderCampingplek("CAMPINGPLEK G", "€107", "Nulla aliquam tempor odio, eget viverra nisi posuere sit.")}
-                {renderCampingplek("CAMPINGPLEK H", "€105", "Nulla aliquam tempor odio, eget viverra nisi posuere sit.", "Stroom")}
+                {renderCampingplek("CAMPINGPLEK A", "Filler.png", "€45 per nacht", "Een campingplek geschikt voor campers, caravans en tenten. Beschikt ook stroom en drinkwater.")}
+                {renderCampingplek("CAMPINGPLEK B", "Filler.png", "€36 per nacht", "Een campingplek geschikt voor campers, caravans en tenten. Beschikt ook stroom en drinkwater.")}
+                {renderCampingplek("CAMPINGPLEK C", "Filler.png", "€51 per nacht", "Een campingplek geschikt voor campers, caravans en tenten. Beschikt ook stroom en drinkwater.")}
+                {renderCampingplek("CAMPINGPLEK D", "Filler.png", "€30 per nacht", "Een campingplek geschikt voor campers, caravans en tenten. Beschikt ook stroom en drinkwater.")}
+                {renderCampingplek("CAMPINGPLEK E", "Filler.png", "€58 per nacht", "Een campingplek geschikt voor campers, caravans en tenten. Beschikt ook stroom en drinkwater.")}
+                {renderCampingplek("CAMPINGPLEK F", "Filler.png", "€42 per nacht", "Een campingplek geschikt voor campers, caravans en tenten. Beschikt ook stroom en drinkwater.")}
+                {renderCampingplek("CAMPINGPLEK G", "Filler.png", "€53 per nacht", "Een campingplek geschikt voor campers, caravans en tenten. Beschikt ook stroom en drinkwater.")}
+                {renderCampingplek("CAMPINGPLEK H", "Filler.png", "€48 per nacht", "Een campingplek geschikt voor campers, caravans en tenten. Beschikt ook stroom en drinkwater.")}
             </div>
            
         </>
     );
 }
 
-function renderCampingplek(name, price, description, stroom) {
+function renderCampingplek(name, filler, price, description, stroom) {
     return (
         <div className="campeerplek" key={name}>
-            <img src="../images/Filler.png" alt="Filler" className="filler-photo" />
+            <img src={`/images/${filler}`} alt="campingplek" className="filler-photo" />
             <div className="campeerplek-info">
                 <div className="campingplek-header">
                     <h4 className="campingplek-name">{name}</h4>
-                    <p3 className="campingplek-stroom">{stroom}</p3>
                 </div>
                 <div className="camping-text">
                     <p3 className="campingplek-price">{price}</p3>
