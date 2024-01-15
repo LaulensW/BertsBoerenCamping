@@ -2,6 +2,7 @@
     background-color: var(--primary-color);
     color: var(--neutral-color);
     padding: 45px 0px 24px 10px;
+    margin-top: 160px;
 }
 .footer{
     color: var(--neutral-color);
