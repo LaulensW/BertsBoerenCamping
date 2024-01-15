@@ -1,15 +1,15 @@
 module.exports = (sequelize, DataTypes) => {
     const LeeftijdsgroepAantal = sequelize.define("LeeftijdsgroepAantal", {
         aantalKinderen: {
-            type: DataTypes.INTEGER,
+            type: DataTypes.INTEGER(10),
             allowNull: false,
         },
         aantalTieners: {
-            type: DataTypes.INTEGER,
+            type: DataTypes.INTEGER(10),
             allowNull: false,
         },
         aantalVolwassenen: {
-            type: DataTypes.INTEGER,
+            type: DataTypes.INTEGER(10),
             allowNull: false,
         }
     });

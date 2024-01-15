@@ -1,8 +1,8 @@
 const express = require('express');
 const router =  express.Router(); // Dit is een express router object
-const { Boeking } = require('../models'); //Dit zal over de bestanden in de map ./server/models gaan
+const { Boeking, Gast, Kampeerplek, leeftijdsgroepaantal } = require('../models'); //Dit zal over de bestanden in de map ./server/models gaan
 
-// vraag alle boekingen op
+// vraag alle boekingen + gastinfo op
 router.get('/', async (req, res) => { // bij sequelize gebruik je await zodat de code wacht op de uitkomst van de functie
     const lijstVanBoekingen = await Boeking.findAll();
     res.json(lijstVanBoekingen);

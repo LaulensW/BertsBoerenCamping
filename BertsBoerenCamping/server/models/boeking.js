@@ -1,5 +1,4 @@
 const LeeftijdsGroepAantal = require("./LeeftijdsgroepAantal");
-const Voorziening = require("./Voorziening");
 
 module.exports = (sequelize, DataTypes) => {
     const Boeking = sequelize.define("Boeking", {
@@ -16,7 +15,7 @@ module.exports = (sequelize, DataTypes) => {
             allowNull: true,
         },
         voorkeur: {
-            type: DataTypes.STRING,
+            type: DataTypes.STRING(255),
             allowNull: true,
         },
     });
@@ -34,12 +33,10 @@ module.exports = (sequelize, DataTypes) => {
         });
     };
 
-    // Een boeking kan meerdere voorzieningen hebben
-    Boeking.associate = (models => {
-        Boeking.hasMany(models.Voorziening, { 
-            onDelete: "cascade", // (Nog niet zeker of dit moet)
-        })
-    })
+    Boeking.associate = (models) => {
+        Boeking.belongsTo(models.Gast, {
+        });
+    };
 
     // Een boeking kan bekeken worden door een werknemer
     Boeking.associate = (models) => {
