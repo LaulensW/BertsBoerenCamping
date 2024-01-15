@@ -1,7 +1,7 @@
 module.exports = (sequelize, DataTypes) => {
     const Leeftijdsgroep = sequelize.define("Leeftijdsgroep", {
         leeftijdsgroepprijs: {
-            type: DataTypes.DECIMAL(10, 2),
+            type: DataTypes.DECIMAL(6, 2),
             allowNull: false,
         },
         beschrijving: {

@@ -6,7 +6,7 @@ function BookingList() {
 
   useEffect(() => {
     // Fetch booking data when the component mounts
-    fetch('http://localhost:3001/gast')
+    fetch('http://localhost:3001/boeking')
       .then(response => response.json())
       .then(data => setBookings(data))
       .catch(error => console.error('Error fetching data:', error));
@@ -17,7 +17,7 @@ function BookingList() {
     setBookings(prevBookings => prevBookings.filter(booking => booking.id !== id));
 
     // Make a request to delete the booking from the database
-    fetch(`http://localhost:3001/gast/${id}`, {
+    fetch(`http://localhost:3001/boeking/${id}`, {
       method: 'DELETE',
     })
       .then(response => response.json())

@@ -18,6 +18,16 @@ router.get('/', async (req, res) => {
     res.json(lijstGastenBoeking);
 });
 
+router.delete('/:id', async (req, res) => {
+    const id = req.params.GastId;
+    await Gast.destroy({
+        where: {
+            id: id
+        }
+    });
+    res.json(id);
+});
+
 router.put('/:id', async (req, res) => {
     const id = req.params.id;
     const post = req.body;
@@ -29,14 +39,6 @@ router.put('/:id', async (req, res) => {
     res.json(post);
 });
 
-router.delete('/:id', async (req, res) => {
-    const id = req.params.id;
-    await Gast.destroy({
-        where: {
-            id: id
-        }
-    });
-    res.json(id);
-});
+
 
 module.exports = router;

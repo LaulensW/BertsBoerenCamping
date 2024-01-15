@@ -1,5 +1,3 @@
-const LeeftijdsGroepAantal = require("./LeeftijdsgroepAantal");
-
 module.exports = (sequelize, DataTypes) => {
     const Boeking = sequelize.define("Boeking", {
         aankomst: {
@@ -11,10 +9,10 @@ module.exports = (sequelize, DataTypes) => {
             allowNull: false,
         },
         boekingprijs: {
-            type: DataTypes.DECIMAL(4, 2),
+            type: DataTypes.DECIMAL(6, 2),
             allowNull: true,
         },
-        voorkeur: {
+        voorkeuren: {
             type: DataTypes.STRING(255),
             allowNull: true,
         },

@@ -11,13 +11,12 @@ app.use(express.json());
 
 
 const db = require('./server/models') // Dit zal over de bestanden in de map ./server/models gaan 
-const { Werknemer } = require('./server/models')
 
 // Routers
-const gastRouter = require('./server/routes/gast');
-app.use('/gast', gastRouter);
 const boekingRouter = require('./server/routes/boeking');
 app.use('/boeking', boekingRouter);
+const gastRouter = require('./server/routes/gast');
+app.use('/gast', gastRouter);
 const kampeerplekRouter = require('./server/routes/kampeerplek');
 app.use('/kampeerplek', kampeerplekRouter);
 const werknemerRouter = require('./server/routes/werknemer');
@@ -25,18 +24,6 @@ app.use('/werknemer', werknemerRouter);
 
 
 db.sequelize.sync().then(async () => {
-  // Load users for standard login
-  try {
-    const existingWerknemer = await Werknemer.findAll();
-
-    if (existingWerknemer.length === 0) {
-      await Werknemer.create({ name: 'admin@admin.nl' }, { wachtwoord: 'Admin' });
-    }
-  } catch (error) {
-    console.error('Error loading Werknemers:', error);
-  }
-
-
   // Listen on port
   app.listen(port, () => {
     console.log(`Server listening at http://localhost:${port}`);
