@@ -5,7 +5,7 @@ const CallToAction = () => {
     return(
         <>
         <div className="call-to-action">
-            <h1 className="cta-title">Van boerderij naar camping</h1>
+            <h6 className="cta-title">Van boerderij naar camping</h6>
             <p1 className="cta-title-cursive">Van boerderij naar camping </p1>
             <p className="cta-beschrijving">Een ontspanning voor alle leeftijden</p>
             <button className="boeken-button">NU BOEKEN</button>  

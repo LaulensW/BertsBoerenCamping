@@ -10,6 +10,7 @@
 .cta-title{
     font-size: 56px;
     color: var(--neutral-color);
+    font-weight: var(--font-weight-semibold);
     position: absolute;
 }
 .cta-title-cursive{
