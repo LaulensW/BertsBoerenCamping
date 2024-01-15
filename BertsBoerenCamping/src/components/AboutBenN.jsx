@@ -6,8 +6,8 @@ export default function BedrijvenEnNominaties(){
     <>
     <div className="bedrijven-nominaties">
         <div className="title-combo">
-            <h className="ons-team-title">BEDRIJVEN DIE MET ONS WERKEN</h>
-            <p className="ons-team-title-cursive">bedrijven die met ons werken</p> 
+            <h className="subtitle-title">BEDRIJVEN DIE MET ONS WERKEN</h>
+            <p className="subtitle-title-cursive">bedrijven die met ons werken</p> 
         </div>
         <div className="bedrijven-nominaties-total">
             {renderBedrijfofNominatie("","Filler.png")}
@@ -21,8 +21,8 @@ export default function BedrijvenEnNominaties(){
 
     <div className="bedrijven-nominaties">
         <div className="title-combo">
-            <h className="ons-team-title">NOMINATIES DIE WIJ GEWONNEN HEBBEN </h>
-            <p className="ons-team-title-cursive">nominaties die wij hebben gewonnen</p> 
+            <h className="subtitle-title">NOMINATIES DIE WIJ GEWONNEN HEBBEN </h>
+            <p className="subtitle-title-cursive">nominaties die wij hebben gewonnen</p> 
         </div>
         <div className="bedrijven-nominaties-total">
             {renderBedrijfofNominatie("","Filler.png")}

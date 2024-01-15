@@ -11,11 +11,12 @@
     margin-top: 20px;
 }
 .banner-title-cursive{
+    position: absolute;
     font-family: 'Homemade Apple', cursive;
-    margin: 100px 0 0 0;
-    letter-spacing: 3px;
     font-size: 56px;
-    color: #A0AD9E
+    letter-spacing: 3px;
+    margin-top: 98px;
+    color: #A0AD9E;
 }
 .banner-title{
     position: absolute;
