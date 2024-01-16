@@ -7,8 +7,8 @@ body {
 
 
 .info-box {
-  grid-column: 1/3;
-  grid-row: 1;
+  grid-column: 1/4;
+  grid-row: 2;
   border-radius: 15px;
   background-color: var(--neutral-color);
   padding: 20px;
@@ -24,7 +24,7 @@ body {
 }
 
 .info-box a {
-  max-width: 600px;
+  max-width: 800px;
   margin-top: 40px;
   display: block;
   line-height: 1.6;
@@ -86,7 +86,7 @@ form select {
 
 .customer-info {
   grid-column: 1; 
-  grid-row: 2; 
+  grid-row: 3; 
 }
 
 .volgende {
@@ -99,7 +99,7 @@ form select {
   display: inline-block;
   font-size: 16px;
   border-radius: 12px;
-  margin: 4px 2px;
+  margin: 10px 20px;
   cursor: pointer;
   transition-duration: 0.4s;
 }
@@ -110,11 +110,40 @@ form select {
 
 .total-box {
   grid-column: 2; 
-  grid-row: 2;
+  grid-row: 3;
   padding: 20px;
   border-radius: 8px;
   box-shadow: 0px 0px 15px rgba(74, 64, 52, 0.1);
 }
+
+.banner{
+  grid-column: 1/4;
+  grid-row: 1;
+}
+.banner-background{
+  border-radius: 15px;
+}
+.banner-wave{
+  position: absolute;
+  width: 100%;
+  margin-top: 20px;
+}
+.banner-title-cursive{
+  font-family: 'Homemade Apple', cursive;
+  margin: 100px 0 0 0;
+  letter-spacing: 3px;
+  font-size: 56px;
+  color: #A0AD9E
+}
+.banner-title{
+  position: absolute;
+  margin-top: 90px;
+  font-size: 56px;
+  font-weight: var(--font-weight-semibold);
+  color: var(--neutral-color);
+  z-index: 5;
+}
+
 
 @media (max-width: 768px) {
   .booking-form-container {

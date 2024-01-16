@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import Calender from './Calender';
-import './BookingForm.css'
+import './BookingForm.css';
+import Wave from '../assets/about-banner-wave.svg';
 
 const BookingForm = () => {
   const [formData, setFormData] = useState({
@@ -33,6 +34,12 @@ const BookingForm = () => {
 
   return (
     <div className="booking-form-container">
+              <div className="banner">
+            <p className="banner-title-cursive">Reserveren</p>
+            <h className="banner-title">RESERVEREN</h>
+            <img src={Wave} alt="Wave" className="banner-wave"/>
+            <img src="../images/Banner_Background.png" alt="Banner" className="banner-background"/>
+        </div>
       <div className="info-box">
         <h2>Reserveer uw kampeerplaats en/of accommodatie. </h2>
         <a>
@@ -181,7 +188,7 @@ const BookingForm = () => {
       <button className='volgende'>Volgende</button>
     </div>
     <div className="total-box">
-      <h2>Total</h2>
+      <h2>Totaal</h2>
     </div>
   </div>
   );

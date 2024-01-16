@@ -70,3 +70,31 @@
   border-radius: 4px;
   color: #333;
 }
+
+.banner{
+  display: flex;
+  justify-content: center;
+}
+.banner-background{
+  border-radius: 15px;
+}
+.banner-wave{
+  position: absolute;
+  width: 100%;
+  margin-top: 20px;
+}
+.banner-title-cursive{
+  font-family: 'Homemade Apple', cursive;
+  margin: 100px 0 0 0;
+  letter-spacing: 3px;
+  font-size: 56px;
+  color: #A0AD9E
+}
+.banner-title{
+  position: absolute;
+  margin-top: 90px;
+  font-size: 56px;
+  font-weight: var(--font-weight-semibold);
+  color: var(--neutral-color);
+  z-index: 5;
+}
