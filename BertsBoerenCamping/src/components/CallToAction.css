@@ -3,6 +3,9 @@
     z-index: 0;
     display: flex;
 }
+.cta-achtergrond-responsive{
+    display: none;
+}
 h1{
     font-size: 56px;
     position: absolute;
@@ -45,4 +48,59 @@ p{
 }
 .boeken-button:hover {
     background-color: #C28E88;
+}
+
+
+@media (max-width: 390px){
+    .cta-achtergrond{
+
+        display: none;
+    }
+    .cta-achtergrond-responsive{
+        display: flex;
+        width: 100%;
+        height: 690px;
+        z-index: 0;
+    }
+    h1{
+        font-size: 32px;
+        color: var(--neutral-color);
+        margin: 50% 8% 0 8%;
+        text-shadow: 0px 0px 10px rgba(74, 64, 52, 0.5);
+    }
+    p1{
+        font-family: 'Homemade Apple', cursive;
+        font-size: 32px;
+        letter-spacing: 0px;
+        color: rgba(248, 245, 242, 20%);
+        margin: 50% 20% 0 8%;
+        text-shadow: 0px 0px 10px rgba(74, 64, 52, 0.5);
+    }
+    p{
+        z-index: 5;
+        font-size: 16px;
+        color: var(--neutral-color);
+        position: absolute;
+        margin: 355px 8% 0 8%;
+        text-shadow: 0px 0px 10px rgba(74, 64, 52, 0.5);
+    }
+    .boeken-button{
+        font-family:'IBM Plex Mono', monospace;
+        position: absolute;
+        cursor: pointer;
+        margin: 408px 8% 0 8%;
+        padding: 20px 100px;
+        font-size: 20px;
+        line-height: 35.2px;
+        font-weight: var(--font-weight-semibold);
+        color: var(--neutral-color);
+        background-color: var(--Button-color);
+        border: none;
+        border-radius: 15px;
+        box-shadow: 0px 0px 10px rgba(74, 64, 52, 0.5);
+        transition: background-color 0.3s ease-in-out;
+    }
+    .boeken-button:hover {
+        background-color: #C28E88;
+    }
 }
