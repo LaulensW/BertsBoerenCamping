@@ -6,7 +6,7 @@ function BookingList() {
 
   useEffect(() => {
     // Fetch booking data when the component mounts
-    fetch('http://localhost:3001/api/gast')
+    fetch('http://localhost:3001/gast')
       .then(response => response.json())
       .then(data => setBookings(data))
       .catch(error => console.error('Error fetching data:', error));
@@ -14,10 +14,10 @@ function BookingList() {
 
   const handleDelete = (id) => {
     // Update the local state (remove the booking from the list)
-    setBookings(prevBookings => prevBookings.filter(booking => booking.IdGast !== id));
+    setBookings(prevBookings => prevBookings.filter(booking => booking.id !== id));
 
     // Make a request to delete the booking from the database
-    fetch(`http://localhost:3001/api/gast/${id}`, {
+    fetch(`http://localhost:3001/gast/${id}`, {
       method: 'DELETE',
     })
       .then(response => response.json())
@@ -29,14 +29,14 @@ function BookingList() {
     <div className="booking-list-container">
       <ul>
         {bookings.map(booking => (
-          <li key={booking.IdGast} className="booking-item">
+          <li key={booking.id} className="booking-item">
             <div className="booking-details">
-              <strong>Name:</strong> {booking.Voornaam} {booking.TussenVoegsel} {booking.Achternaam}<br />
-              <strong>Email:</strong> {booking.Email}<br />
-              <strong>Phone:</strong> {booking.Telefoonnummer}<br />
-              <strong>Preferences:</strong> {booking.Voorkeuren}<br />
+              <strong>Naam:</strong> {booking.voornaam} {booking.tussenvoegsel} {booking.Achternaam}<br />
+              <strong>Email:</strong> {booking.email}<br />
+              <strong>Telefoonnummer:</strong> {booking.telefoonnummer}<br />
+              <strong>Voorkeuren:</strong> {booking.voorkeuren}<br />
             </div>
-            <button className="booking-delete-button" onClick={() => handleDelete(booking.IdGast)}>
+            <button className="booking-delete-button" onClick={() => handleDelete(booking.id)}>
               Delete
             </button>
           </li>

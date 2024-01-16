@@ -11,6 +11,29 @@ body {
 :root{
     --primary-color: #60775d;
     --secondary-color: #4a4034;
-    --neutral-color: #f5f0ec;
+    --neutral-color: #f8f5f2;
     --Button-color: #eccfcc;
+    --font-weight-semibold: 900;
+    --font-weight-normal: 500;
 }
+
+::-webkit-scrollbar {
+    width: 15px;
+    height: 15px;
+}
+::-webkit-scrollbar-button{
+    color:#f8f5f2;
+    background-color: #f8f5f2;
+}
+::-webkit-scrollbar-track {
+    background: #f8f5f2; 
+  }
+::-webkit-scrollbar-thumb {
+    margin: 100px;
+    background:#A0AD9E;
+    border-radius: 20px;
+    border: 4px solid #f8f5f2;
+}
+
+
+  
