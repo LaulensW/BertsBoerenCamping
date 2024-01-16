@@ -18,19 +18,19 @@ module.exports = (sequelize, DataTypes) => {
         },
     });
 
-    // Een boeking kan meerdere kampeerplekken hebben
-    Boeking.associate = (models) => {
-        Boeking.hasMany(models.Kampeerplek, { 
-            onDelete: "cascade", // Wanneer een boeking wordt verwijderd, worden ook de kampeerplekken van die boeking verwijderd
-        });
-    };
-
     // Een boeking kan meerdere leeftijdsgroepaantallen hebben
     Boeking.associate = (models) => {
         Boeking.hasMany(models.LeeftijdsgroepAantal, {
+            onDelete: "cascade", // Wanneer een boeking wordt verwijderd, wordt ook het LeeftijdsgroepAantal van die boeking verwijderd
         });
     };
 
+    // Een boeking kan je koppelen aan een bestaande kampeerplek
+    Boeking.associate = (models) => {
+        Boeking.belongsTo(models.Kampeerplek, { foreignKey: 'KampeerplekId' });
+    };
+
+    // Een boeking zit aan een gast gekoppeld
     Boeking.associate = (models) => {
         Boeking.belongsTo(models.Gast, {
         });

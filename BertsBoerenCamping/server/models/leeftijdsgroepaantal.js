@@ -20,5 +20,10 @@ module.exports = (sequelize, DataTypes) => {
         });
     };
 
+    LeeftijdsgroepAantal.associate = (models) => {
+        LeeftijdsgroepAantal.belongsTo(models.Leeftijdsgroep, {
+        });
+    };
+
     return LeeftijdsgroepAantal;
 }

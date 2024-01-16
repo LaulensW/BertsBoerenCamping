@@ -29,9 +29,9 @@ module.exports = (sequelize, DataTypes) => {
                 defaults: { leeftijdsgroepprijs: 35, beschrijving: 'volwassenen' },
             });
 
-            console.log('standaardwaarden zijn toegevoegd.');
+            console.log('standaardwaarden leeftijdsgroepprijs zijn toegevoegd.');
         } catch (error) {
-                console.error('Fout bij het toevoegen standaardwaarden', error);
+                console.error('Fout bij het toevoegen standaardwaarden leeftijdsgroepprijs', error);
             }
     }
 

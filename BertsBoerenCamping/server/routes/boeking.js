@@ -1,24 +1,26 @@
 const express = require('express');
 const router =  express.Router(); // Dit is een express router object
-const { Boeking, Gast, sequelize } = require('../models'); //Dit zal over de bestanden in de map ./server/models gaan
+const { Boeking, Gast, Kampeerplek, sequelize } = require('../models'); //Dit zal over de bestanden in de map ./server/models gaan
 
-// gast + boeking aanmaken
+// gast + boeking maken + kampeerplek koppelen
 router.post('/gastboeking', async (req, res) => {
-    const { gastInput , boekingInput } = req.body; // destructuring
+    const { gastInput , boekingInput, kampeerplekInput } = req.body; // destructuring
 
     const transaction = await sequelize.transaction();
 
     try {
+        // gast gegevens
         const createdGast = await Gast.create(gastInput, { transaction });
-
-        const createdBoeking = await Boeking.create({ ...boekingInput, GastId: createdGast.id }, { transaction });
-
-        await transaction.commit(); // wanneer beide transacties succesvol zijn, commit je de transactie
+        // boeking koppelen aan gast + kampeergegevens koppelen aan boeking
+        const createdBoeking = await Boeking.create({ ...boekingInput, GastId: createdGast.id, KampeerplekId: kampeerplekInput.id }, { transaction });
+        // wanneer beide transacties succesvol zijn, commit je de transactie
+        await transaction.commit();
 
         res.json({ gastInput: createdGast, boekingInput: createdBoeking});
 
     } catch (error) {
-        await transaction.rollback(); // wanneer een transactie fout is zal de transactie worden gerollbacked
+        // wanneer een transactie fout is zal de transactie worden gerollbacked
+        await transaction.rollback(); 
 
         res.status(500).json({ error: error.message });
     }
@@ -34,7 +36,10 @@ router.post('/', async (req, res) => {
 // alle boeking + gast info opvragen
 router.get('/gastboeking', async (req, res) => { 
     const boekingen = await Gast.findAll({ // await, zodat de code wacht op de uitkomst van de functie
-        include: Boeking // Include Gast data
+        include: [{
+            model: Boeking, // Include Boeking + Kampeerplek data
+            include: Kampeerplek
+        }]
     });
     res.json(boekingen);
 });
