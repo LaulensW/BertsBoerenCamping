@@ -1,30 +1,25 @@
 .footer-container{
     background-color: var(--primary-color);
     color: var(--neutral-color);
-    padding: 45px 0px 24px 10px;
+    padding: 45px 0px 24px 0px;
     margin-top: 160px;
 }
 .footer{
     color: var(--neutral-color);
     display: flex;
     text-decoration: none;
-    justify-content: center;
+    justify-content: space-evenly;
 }
 .heading{
     font-size: 20px;
-    position: absolute;
-}
-.heading-cursive{
-    font-family: 'Homemade Apple', cursive;
-    letter-spacing: 1px;
-    margin-top: 4px;
-    color: #A0AD9E;
+    display: flex;
+    z-index: 10px;
+    margin-bottom: 8%;
 }
 .footer-heading-1{
     color: var(--neutral-color);
     display: flex;
     flex-direction: column;
-    margin: 0 133px 0 0;
 }
 .footer-heading-1 a{
     color: var(--neutral-color);
@@ -34,7 +29,6 @@
 .footer-heading-2{
     display: flex;
     flex-direction: column;
-    margin: 0 133px 0 133px;
 }
 .footer-heading-2 a{
     color: var(--neutral-color);
@@ -44,7 +38,6 @@
 .footer-heading-3{
     display: flex;
     flex-direction: column;
-    margin: 0 0 0 133px;
 }
 .footer-heading-3 a{
     color: var(--neutral-color);
@@ -92,11 +85,11 @@ input[type=submit]:hover{
 }
 .bottom-text{
     display: flex;
-    justify-content: center;
-    padding-right: 64px;
+    justify-content: space-around;
 }
 .bottom-text-indi{
-    margin: 0 32px 0 32px;
+    font-size: 14px;
+    margin-top: 32px;
     color:var(--neutral-color);
     text-decoration: none;
 }

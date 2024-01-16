@@ -14,12 +14,12 @@ const Home = () => {
     <Layout>
       {/* Home-specific content */}
     </Layout>
-    < Footer />
     < CallToAction />
     < Campingplekken />
     < BoekenInfo />
     < FAQs />
-    < Reviews />
+    < Reviews />  
+    < Footer />
     </>
   );
 };

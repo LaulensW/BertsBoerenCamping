@@ -3,6 +3,7 @@ import Layout from '../components/Layout';
 import Banner from '../components/AboutBanner';
 import OnsTeam from '../components/AboutTeam';
 import Bedrijven from '../components/AboutBenN';
+import Footer from '../components/Footer';
 
 const About = () => {
   return (
@@ -12,6 +13,7 @@ const About = () => {
       </Layout>  
         < OnsTeam /> 
         <Bedrijven/>
+        <Footer />
     </>
   );
 };
