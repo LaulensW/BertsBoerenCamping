@@ -2,9 +2,9 @@ const express = require('express');
 const router =  express.Router(); // Dit is een express router object
 const { Boeking, Gast, sequelize } = require('../models'); //Dit zal over de bestanden in de map ./server/models gaan
 
-// maak een nieuwe boeking aan
-router.post('/', async (req, res) => {
-    const { gastInput ,boekingInput } = req.body; // destructuring
+// gast + boeking aanmaken
+router.post('/gastboeking', async (req, res) => {
+    const { gastInput , boekingInput } = req.body; // destructuring
 
     const transaction = await sequelize.transaction();
 
@@ -24,10 +24,24 @@ router.post('/', async (req, res) => {
     }
 });
 
-// vraag alle boekingen + gast info op
-router.get('/', async (req, res) => { 
+// boeking aanmaken
+router.post('/', async (req, res) => {
+    const boekingInput = req.body;
+    await Boeking.create(boekingInput);
+    res.json(boekingInput);
+});
+
+// alle boeking + gast info opvragen
+router.get('/gastboeking', async (req, res) => { 
     const boekingen = await Gast.findAll({ // await, zodat de code wacht op de uitkomst van de functie
         include: Boeking // Include Gast data
+    });
+    res.json(boekingen);
+});
+
+// alle boekingen ophalen
+router.get('/', async (req, res) => { 
+    const boekingen = await Boeking.findAll({ // await, zodat de code wacht op de uitkomst van de functie
     });
     res.json(boekingen);
 });
@@ -35,7 +49,7 @@ router.get('/', async (req, res) => {
 // verwijder een boeking
 router.delete('/:id', async (req, res) => {
     const id = req.params.id;
-    await Gast.destroy({
+    await Boeking.destroy({
         where: {
             id: id
         }

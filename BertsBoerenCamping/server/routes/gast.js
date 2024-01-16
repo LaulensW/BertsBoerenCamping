@@ -2,24 +2,23 @@ const express = require('express');
 const router =  express.Router(); // Dit is een express router object
 const { Gast } = require('../models'); //Dit zal over de bestanden in de map ./server/models gaan
 
+// gast aanmaken
 router.post('/', async (req, res) => {
     const post = req.body;
     await Gast.create(post);
     res.json(post);
 });
 
+// alle gasten ophalen
 router.get('/', async (req, res) => {
-    const lijstGastenBoeking = await Gast.findAll({
-        include: [{
-            model: Boeking,
-            as: 'Boekings' // replace with the alias you used in the relation
-        }]
+    const lijstGasten = await Gast.findAll({
     });
-    res.json(lijstGastenBoeking);
+    res.json(lijstGasten);
 });
 
+// verwijder een gast (+ boeking wordt automatisch verwijderd)
 router.delete('/:id', async (req, res) => {
-    const id = req.params.GastId;
+    const id = req.params.id;
     await Gast.destroy({
         where: {
             id: id
@@ -28,6 +27,7 @@ router.delete('/:id', async (req, res) => {
     res.json(id);
 });
 
+// update een gast
 router.put('/:id', async (req, res) => {
     const id = req.params.id;
     const post = req.body;

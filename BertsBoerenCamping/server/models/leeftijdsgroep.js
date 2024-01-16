@@ -5,10 +5,35 @@ module.exports = (sequelize, DataTypes) => {
             allowNull: false,
         },
         beschrijving: {
-            type: DataTypes.STRING(10),
+            type: DataTypes.STRING(15),
             allowNull: false,
         }
     });    
+
+    // vaste waarden voor leeftijdsgroepen
+    async function toevoegenLeeftijdsgroep() {
+        try {
+            // standaardwaarde kinderen
+            await Leeftijdsgroep.findOrCreate({
+                where: { leeftijdsgroepprijs: 15, beschrijving: 'kinderen' }, 
+                defaults: { leeftijdsgroepprijs: 15, beschrijving: 'kinderen' },
+            });
+            // standaardwaarde tieners
+            await Leeftijdsgroep.findOrCreate({
+                where: { leeftijdsgroepprijs: 25, beschrijving: 'tieners' }, 
+                defaults: { leeftijdsgroepprijs: 25, beschrijving: 'tieners' },
+            });
+            // standaardwaarde volwassenen
+            await Leeftijdsgroep.findOrCreate({
+                where: { leeftijdsgroepprijs: 35, beschrijving: 'volwassenen' }, 
+                defaults: { leeftijdsgroepprijs: 35, beschrijving: 'volwassenen' },
+            });
+
+            console.log('standaardwaarden zijn toegevoegd.');
+        } catch (error) {
+                console.error('Fout bij het toevoegen standaardwaarden', error);
+            }
+    }
 
     // Een leeftijdsgroep kan meerdere leeftijdsgroepaantallen (aantal personen per leeftijdsgroep) hebben
     Leeftijdsgroep.associate = (models) => {
@@ -16,6 +41,7 @@ module.exports = (sequelize, DataTypes) => {
         });
     };
 
+    toevoegenLeeftijdsgroep();
+
     return Leeftijdsgroep;
-    
-}
+};
