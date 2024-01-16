@@ -81,7 +81,7 @@ input[type=submit]{
     transition: background-color 0.3s ease-in-out;
 }
 input[type=submit]:hover{
-    background-color:var(--secondary-color);
+    background-color:#B07D78;
 }
 .bottom-text{
     display: flex;
