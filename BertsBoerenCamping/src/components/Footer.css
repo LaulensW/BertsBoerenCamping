@@ -1,0 +1,102 @@
+.footer-container{
+    background-color: var(--primary-color);
+    color: var(--neutral-color);
+    padding: 45px 0px 24px 10px;
+    margin-top: 160px;
+}
+.footer{
+    color: var(--neutral-color);
+    display: flex;
+    text-decoration: none;
+    justify-content: center;
+}
+.heading{
+    font-size: 20px;
+    position: absolute;
+}
+.heading-cursive{
+    font-family: 'Homemade Apple', cursive;
+    letter-spacing: 1px;
+    margin-top: 4px;
+    color: #A0AD9E;
+}
+.footer-heading-1{
+    color: var(--neutral-color);
+    display: flex;
+    flex-direction: column;
+    margin: 0 133px 0 0;
+}
+.footer-heading-1 a{
+    color: var(--neutral-color);
+    text-decoration: none;
+    margin: 4px 0;
+}
+.footer-heading-2{
+    display: flex;
+    flex-direction: column;
+    margin: 0 133px 0 133px;
+}
+.footer-heading-2 a{
+    color: var(--neutral-color);
+    text-decoration: none;
+    margin: 4px 0;
+}
+.footer-heading-3{
+    display: flex;
+    flex-direction: column;
+    margin: 0 0 0 133px;
+}
+.footer-heading-3 a{
+    color: var(--neutral-color);
+    text-decoration: none;
+}
+.img-logo{
+    display: flex;
+}
+.logo-indi{
+    display: flex;
+    margin-right: 16px;
+    cursor: pointer;
+    width: 40px;
+}
+label{
+    margin-bottom: 13px;
+}
+input[type=email]{
+    font-family: 'IBM Plex Mono', monospace;
+    color: var(--secondary-color);
+    padding: 16px;
+    font-size:16px;
+    width: 296px;
+    border-radius: 100px;
+    border: none;
+    display: flex;
+}
+input[type=submit]{
+    font-family: 'IBM Plex Mono', monospace;
+    background-color: var(--Button-color);
+    color: var(--neutral-color);
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    border-radius: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 16px;
+    font-size: 16px;
+    transition: background-color 0.3s ease-in-out;
+}
+input[type=submit]:hover{
+    background-color:var(--secondary-color);
+}
+.bottom-text{
+    display: flex;
+    justify-content: center;
+    padding-right: 64px;
+}
+.bottom-text-indi{
+    margin: 0 32px 0 32px;
+    color:var(--neutral-color);
+    text-decoration: none;
+}
