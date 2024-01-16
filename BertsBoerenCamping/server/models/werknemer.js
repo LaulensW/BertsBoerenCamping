@@ -26,10 +26,8 @@ module.exports = (sequelize, DataTypes) => {
         }
     });
 
-    // Een werknemer kan meerdere boekingen inzien
     Werknemer.associate = (models) => {
-        Werknemer.hasMany(models.Boeking, {
-        });
+        Werknemer.hasMany(models.Boeking);
     };
 
     return Werknemer;

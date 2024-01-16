@@ -18,28 +18,13 @@ module.exports = (sequelize, DataTypes) => {
         },
     });
 
-    // Een boeking kan meerdere leeftijdsgroepaantallen hebben
     Boeking.associate = (models) => {
         Boeking.hasMany(models.LeeftijdsgroepAantal, {
             onDelete: "cascade", // Wanneer een boeking wordt verwijderd, wordt ook het LeeftijdsgroepAantal van die boeking verwijderd
         });
-    };
-
-    // Een boeking kan je koppelen aan een bestaande kampeerplek
-    Boeking.associate = (models) => {
         Boeking.belongsTo(models.Kampeerplek, { foreignKey: 'KampeerplekId' });
-    };
-
-    // Een boeking zit aan een gast gekoppeld
-    Boeking.associate = (models) => {
-        Boeking.belongsTo(models.Gast, {
-        });
-    };
-
-    // Een boeking kan bekeken worden door een werknemer
-    Boeking.associate = (models) => {
-        Boeking.belongsTo(models.Werknemer, {
-        });
+        Boeking.belongsTo(models.Gast, { foreignKey: 'GastId' });
+        Boeking.belongsTo(models.Werknemer, { foreignKey: 'WerknemerId' });
     };
 
     return Boeking;

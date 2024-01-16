@@ -14,15 +14,9 @@ module.exports = (sequelize, DataTypes) => {
         }
     });
 
-    // Het LeeftijdsgroepAantal (aantal personen per leeftijdsgroep) hoort bij een boeking
     LeeftijdsgroepAantal.associate = (models) => {
-        LeeftijdsgroepAantal.belongsTo(models.Boeking, {
-        });
-    };
-
-    LeeftijdsgroepAantal.associate = (models) => {
-        LeeftijdsgroepAantal.belongsTo(models.Leeftijdsgroep, {
-        });
+        LeeftijdsgroepAantal.belongsTo(models.Boeking, { foreignKey: 'BoekingId' });
+        LeeftijdsgroepAantal.belongsTo(models.Leeftijdsgroep, { foreignKey: 'LeeftijdsgroepId' });
     };
 
     return LeeftijdsgroepAantal;

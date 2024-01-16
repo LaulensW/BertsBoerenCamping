@@ -60,7 +60,7 @@ module.exports = (sequelize, DataTypes) => {
 
     // Een kampeerplek hoort bij een boeking
     Kampeerplek.associate = (models) => {
-        Kampeerplek.hasMany(models.Boeking, { foreignKey: 'KampeerplekId' });
+        Kampeerplek.hasMany(models.Boeking);
     };
 
     toevoegenKampeerplekken();
