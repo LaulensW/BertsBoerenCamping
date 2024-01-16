@@ -1,22 +1,22 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import './Navbar.css'
 
 const Navbar = () => {
     return (
       <nav className="navbar-container">
         <div className="navbar-left">
-          <Link to="/" className="logo-link">
+          <NavLink to="/" className="logo-link">
             <img src= "../images/BBC_LOGO.png" alt="Logo" className="logo" />
-          </Link>
+          </NavLink>
         </div>
         <div className="navbar-right">
-          <Link to="/booking" className="nav-button">BOEKEN</Link>
-          <Link to="/about" className="nav-button">OVER ONS</Link>
+          <NavLink to="/booking" className="nav-button">BOEKEN</NavLink>
+          <NavLink to="/about" className="nav-button">OVER ONS</NavLink>
           <input type="text" placeholder="Search" className="search-field" />
-          <Link to="/Login" className="login-button">
+          <NavLink to="/Login" className="login-button">
           Login
-        </Link>
+        </NavLink>
         </div>
       </nav>
     );

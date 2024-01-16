@@ -26,8 +26,8 @@
     display: flex;
     align-items: center;
   }
-  
-  .nav-button {
+
+  .nav-button{
     font-size: 18px;
     margin-right: 50px;
     text-decoration: none;
@@ -35,10 +35,13 @@
     font-weight: var(--font-weight-semibold);
     transition: 0.3s ease-in-out;
   }
+
   .nav-button:hover{
-    color: var(--primary-color);
+    color: #A0AD9E;
   }
-  
+  .nav-button.active{
+    color: #A0AD9E;
+  }
   .search-field {
     margin-right: 10px;
     padding: 5px;
