@@ -47,7 +47,7 @@ app.post('/api/register', async (req, res) => {
   VALUES (?, ?, ?, ?, ?, ?)
   `;
 
-  // Stopt baliemedewerker gegevens in de database
+  /*// Stopt baliemedewerker gegevens in de database
   db.query(query, [voornaam, tussenvoegsel, achternaam, email, rol, hashedPassword], (err, results) => {
     if (err) {
       console.error('Error registering user:', err);
@@ -55,8 +55,29 @@ app.post('/api/register', async (req, res) => {
     } else {
       res.status(201).send('User registered successfully');
     }
-  });
+  });*/
+
+  // -M
+  // Stopt baliemedewerker gegevens in de database
+  try {
+    const newWerknemer = await Werknemer.create({
+      voornaam,
+      tussenvoegsel,
+      achternaam,
+      email,
+      rol,
+      hashedPassword
+    });
+    res.status(201).send('User registered successfully');
+  } catch {
+    console.error('Error registering user:', err);
+    res.status(500).send('Internal Server Error');
+  }
+  //
+
 });
+
+
 /*
 // Baliemedewerker login
 app.post('/api/login', async (req, res) => {
@@ -100,13 +121,22 @@ app.post('/api/login', async (req, res) => {
 });*/
 
 
-// -M
+// -M   - maybe just try to implement this code in the new code with a fresh start without all the downloads, just a small reset since the merge wasn't going well either
+//        maybe there is something inherently wrong. It should work but doesn't even work after the "const {email ..." part.
 // Baliemedewerker Login
 app.post('/api/login', async (req, res) => {
   const { email, password } = req.body;
+
+  //
+  console.log('Attempt to log in with email', email);
+
   try {
-    // const result = await db.QueryPromise('SELECT * FROM baliemedewerker WHERE email = ?', [email]);
-    const result = db.query('SELECT * FROM baliemedewerker WHERE email = ?', [email]);
+    console.log("1");
+    // const result = db.query('SELECT * FROM baliemedewerker WHERE email = ?', [email]);
+    //const existingwerknemer = await werknemer.findOne({where: {email}});
+    const result = await baliemedewerker.fineOne({where: {email}});
+    console.log("some text to not confuse me");
+    console.log(result.length);
 
     if (result.length > 0) {
       const match = await bcrypt.compare(password, result[0].wachtwoord);
