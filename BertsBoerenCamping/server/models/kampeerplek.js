@@ -20,36 +20,41 @@ module.exports = (sequelize, DataTypes) => {
         }
     });
 
+    // Een kampeerplek hoort bij een boeking
+    Kampeerplek.associate = (models) => {
+        Kampeerplek.hasMany(models.Boeking);
+    };
+
     // vaste waaren voor kampeerplekken
     async function toevoegenKampeerplekken() {
         try {
             await Kampeerplek.findOrCreate({
-                where: { locatie: "A", accomodatietype: "Tent", kampeerplekprijs: 10 },
-                defaults: { locatie: "A", accomodatietype: "Tent", kampeerplekprijs: 10 }
+                where: { id: 1, locatie: "A", accomodatietype: "Tent", kampeerplekprijs: 10 },
+                defaults: { id: 1, locatie: "A", accomodatietype: "Tent", kampeerplekprijs: 10 }
             });
             await Kampeerplek.findOrCreate({
-                where: { locatie: "B", accomodatietype: "Tent", kampeerplekprijs: 10 },
-                defaults: { locatie: "B", accomodatietype: "Tent", kampeerplekprijs: 10 }
+                where: { id: 2,  locatie: "B", accomodatietype: "Tent", kampeerplekprijs: 10 },
+                defaults: { id: 2, locatie: "B", accomodatietype: "Tent", kampeerplekprijs: 10 }
             });
             await Kampeerplek.findOrCreate({
-                where: { locatie: "C", accomodatietype: "Tent", kampeerplekprijs: 10 },
-                defaults: { locatie: "C", accomodatietype: "Tent", kampeerplekprijs: 10 }
+                where: { id: 3, locatie: "C", accomodatietype: "Tent", kampeerplekprijs: 10 },
+                defaults: { id: 3, locatie: "C", accomodatietype: "Tent", kampeerplekprijs: 10 }
             });
             await Kampeerplek.findOrCreate({
-                where: { locatie: "D", accomodatietype: "Kamper of Caravan", kampeerplekprijs: 20 },
-                defaults: { locatie: "D", accomodatietype: "Kamper of Caravan", kampeerplekprijs: 20 }
+                where: { id: 4, locatie: "D", accomodatietype: "Kamper of Caravan", kampeerplekprijs: 20 },
+                defaults: { id: 4, locatie: "D", accomodatietype: "Kamper of Caravan", kampeerplekprijs: 20 }
             });
             await Kampeerplek.findOrCreate({
-                where: { locatie: "E", accomodatietype: "Kamper of Caravan", kampeerplekprijs: 20 },
-                defaults: { locatie: "E", accomodatietype: "Kamper of Caravan", kampeerplekprijs: 20 }
+                where: { id: 5, locatie: "E", accomodatietype: "Kamper of Caravan", kampeerplekprijs: 20 },
+                defaults: { id: 5, locatie: "E", accomodatietype: "Kamper of Caravan", kampeerplekprijs: 20 }
             });
             await Kampeerplek.findOrCreate({
-                where: { locatie: "F", accomodatietype: "Kamper of Caravan", kampeerplekprijs: 20 },
-                defaults: { locatie: "F", accomodatietype: "Kamper of Caravan", kampeerplekprijs: 20 },
+                where: { id: 6, locatie: "F", accomodatietype: "Kamper of Caravan", kampeerplekprijs: 20 },
+                defaults: { id: 6, locatie: "F", accomodatietype: "Kamper of Caravan", kampeerplekprijs: 20 },
             });
             await Kampeerplek.findOrCreate({
-                where: { locatie: "G", accomodatietype: "Kamper of Caravan", kampeerplekprijs: 20 },
-                defaults: { locatie: "G", accomodatietype: "Kamper of Caravan", kampeerplekprijs: 20 }
+                where: { id: 7, locatie: "G", accomodatietype: "Kamper of Caravan", kampeerplekprijs: 20 },
+                defaults: { id: 7, locatie: "G", accomodatietype: "Kamper of Caravan", kampeerplekprijs: 20 }
             });
 
             console.log('standaardwaarden kampeerplekken zijn toegevoegd')
@@ -58,13 +63,9 @@ module.exports = (sequelize, DataTypes) => {
         }
     }
 
-    // Een kampeerplek hoort bij een boeking
-    Kampeerplek.associate = (models) => {
-        Kampeerplek.hasMany(models.Boeking);
-    };
-
     toevoegenKampeerplekken();
 
-    return Kampeerplek;
-    
-}
+    return Kampeerplek;   
+
+    module.exports.toevoegenKampeerplekken = toevoegenKampeerplekken;
+};

@@ -10,6 +10,11 @@ module.exports = (sequelize, DataTypes) => {
         }
     });    
 
+    // Een leeftijdsgroep kan meerdere leeftijdsgroepaantallen (aantal personen per leeftijdsgroep) hebben
+    Leeftijdsgroep.associate = (models) => {
+        Leeftijdsgroep.hasMany(models.LeeftijdsgroepAantal);
+    };
+
     // vaste waarden voor leeftijdsgroepen
     async function toevoegenLeeftijdsgroep() {
         try {
@@ -35,12 +40,10 @@ module.exports = (sequelize, DataTypes) => {
             }
     }
 
-    // Een leeftijdsgroep kan meerdere leeftijdsgroepaantallen (aantal personen per leeftijdsgroep) hebben
-    Leeftijdsgroep.associate = (models) => {
-        Leeftijdsgroep.hasMany(models.LeeftijdsgroepAantal);
-    };
-
     toevoegenLeeftijdsgroep();
 
     return Leeftijdsgroep;
+
+    module.exports.toevoegenLeeftijdsgroep = this.toevoegenLeeftijdsgroep;
 };
+
