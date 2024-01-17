@@ -20,12 +20,6 @@ const Footer = () => {
 
                 <div className="footer-heading-3">
                     <h6 className="heading">CONTACT</h6>
-                    <div className="img-logo">
-                        <img src="../images/footer-facebook.png" className="logo-indi"/>
-                        <img src="../images/footer-instagram.png" className="logo-indi"/>
-                        <img src="../images/footer-linkedin.png" className="logo-indi"/>
-                    </div>
-                    <br/>
                     <a href="#">Adres</a>
                     <a href="#">info@example.com</a>
                     <a href="#">+01 234 567 89</a>

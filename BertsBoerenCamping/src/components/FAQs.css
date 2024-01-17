@@ -90,23 +90,21 @@
     }
     .faq-title{
         font-size: 16px;
+        margin-right: 3%;
     }
     .faq-description{
         font-size: 16px;
         display: flex;
     }
-    
     .faq-content{
         display: flex;
         justify-content: space-between;
         align-items: center;
     
     }
-    
     .dropdown-icon{
         font-size: 12px;
     }
-    
     .faq-answer{
         margin-top: 30px;
     }

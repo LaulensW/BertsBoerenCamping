@@ -115,4 +115,11 @@
     .camping-text{
         margin: 8px 12px 0px 12px;
     }
+    .wave{
+        z-index: -10;
+        width: 100%;
+        position: absolute;
+        margin-top: 445px;
+        display: flex;
+    }
 }
