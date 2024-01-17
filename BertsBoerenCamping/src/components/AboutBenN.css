@@ -27,7 +27,6 @@
 
 @media (max-width: 430px){
     .bedrijven-nominaties-total{
-        border: 3px solid red;
         margin-top: 72px;
         display: flex;
         justify-content: center;       
