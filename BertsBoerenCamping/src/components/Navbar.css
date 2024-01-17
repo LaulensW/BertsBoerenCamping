@@ -84,6 +84,7 @@ select:focus {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  flex-wrap: wrap;
   padding: 20px 20px 0 20px;
   color: #fff; /* Adjust the text color as needed */
 }
@@ -99,18 +100,21 @@ select:focus {
 }
 
 .logo {
-  width: 180px; /* Adjust the logo width as needed */
+  width: 120px; /* Adjust the logo width as needed */
   height: auto;
+  margin-left: 120px;
 }
 
 .navbar-right {
   display: flex;
+  justify-content: space-evenly;
   align-items: center;
+  flex-wrap: wrap;
 }
 
 .nav-button {
-  font-size: 18px;
-  margin-right: 50px;
+  font-size: 16px;
+  margin: 0 25px 15px 25px;
   text-decoration: none;
   color: var(--secondary-color); /* Adjust the text color as needed */
 }
