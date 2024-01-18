@@ -42,6 +42,7 @@ const BookingForm = () => {
         </div>
       <div className="info-box">
         <h2>Reserveer uw kampeerplaats en/of accommodatie. </h2>
+        <p2>reserveer uw kampeerplaats en/of accommodatie. </p2>
         <a>
           Ontdek de charme van het platteland en reserveer uw onvergetelijke
           campingervaring bij ons. Wij zijn enthousiast om u te verwelkomen op
