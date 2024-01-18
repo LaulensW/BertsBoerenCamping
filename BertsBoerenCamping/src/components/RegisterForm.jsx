@@ -8,36 +8,55 @@ const RegisterForm = () => {
     const [email, setEmail] = useState('');
     const [rol, setRol] = useState('');
     const [wachtwoord, setWachtwoord] = useState('');
-    const [error, setError] = useState('');
+    const [passwordError, setPasswordError] = useState('');
     const [loading, setLoading] = useState(false);
   
+    const isPasswordValid = (password) => {
+      const regex = /^(?=.*[!@#$%^&*])[A-Za-z\d!@#$%^&*]{8,}$/;
+      return regex.test(password);
+    };
+  
+    const handlePasswordChange = (password) => {
+      setWachtwoord(password);
+      if (!isPasswordValid(password)) {
+        setPasswordError('Wachtwoord moet minimaal 8 Tekens hebben en moet ook een speciale teken hebben.');
+      } else {
+        setPasswordError('');
+      }
+    };
+  
     const handleRegister = async () => {
-        try {
-          const response = await fetch('http://localhost:3001/werknemer/register', {
-            method: 'POST',
-            headers: {
-              'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({ voornaam, tussenvoegsel, achternaam, email, rol, wachtwoord }),
-          });
-    
-          if (response.ok) {
-            console.log('Registration successful');
-            setError('');
-            setVoornaam('');
-            setTussenvoegsel('');
-            setAchternaam('');
-            setEmail('');
-            setRol('');
-            setWachtwoord('');
-          } else {
-            const data = await response.text();
-            console.error('Registration failed:', data);
-          }
-        } catch (error) {
-          console.error('Error during registration:', error);
+      try {
+        if (!isPasswordValid(wachtwoord)) {
+          setPasswordError('Wachtwoord moet minimaal 8 Tekens hebben en moet ook een speciale teken hebben.');
+          return;
         }
-      };
+  
+        const response = await fetch('http://localhost:3001/werknemer/register', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({ voornaam, tussenvoegsel, achternaam, email, rol, wachtwoord }),
+        });
+  
+        if (response.ok) {
+          console.log('Registration successful');
+          setPasswordError('');
+          setVoornaam('');
+          setTussenvoegsel('');
+          setAchternaam('');
+          setEmail('');
+          setRol('');
+          setWachtwoord('');
+        } else {
+          const data = await response.text();
+          console.error('Registration failed:', data);
+        }
+      } catch (error) {
+        console.error('Error during registration:', error);
+      }
+    };
     
   
     return (
@@ -93,19 +112,19 @@ const RegisterForm = () => {
             />
         </div>
         <div className="input-field">
-            <label htmlFor="wachtwoord">Wachtwoord:</label>
-            <input
-                type="password"
-                id="wachtwoord"
-                value={wachtwoord}
-                onChange={(e) => setWachtwoord(e.target.value)}
-                className="input"
-            />
-        </div>
-        {error && <div style={{ color: 'red' }}>{error}</div>}
-        <button type="submit" disabled={loading} className="submit-button">
-            {loading ? 'Registering...' : 'Register'}
-        </button>
+        <label htmlFor="wachtwoord">Wachtwoord:</label>
+        <input
+          type="password"
+          id="wachtwoord"
+          value={wachtwoord}
+          onChange={(e) => handlePasswordChange(e.target.value)}
+          className="input"
+        />
+        {passwordError && <div style={{ color: 'red' }}>{passwordError}</div>}
+      </div>
+      <button type="submit" disabled={loading} className="submit-button">
+        {loading ? 'Registering...' : 'Register'}
+      </button>
     </form>
     );
   };
