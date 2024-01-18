@@ -11,13 +11,13 @@ const BookingPlattegrond = () => {
      
                 <div className="booking-plattegrond">
                     <div className="rectangle">
-                        <div className="rectangle-plekken" style={{width:"174px", height:"180px", margin: "0 0 0 0px", backgroundColor: "#4A4034", cursor: "default"}}></div>
-                        <div className="rectangle-plekken" style={{width:"128px", height:"226px", margin: "0 0 0 840px", backgroundColor: "#4A4034", cursor: "default"}}></div>
-                        <div className="rectangle-plekken" style={{width:"174px", height:"271px", margin: "196px 0 0 0px", backgroundColor: "#4A4034", cursor: "default"}}></div>
-                        <div className="rectangle-plekken" style={{width:"128px", height:"166px", margin: "242px 0 0 840px", backgroundColor: "#4A4034", cursor: "default"}}></div>
-                        <div className="rectangle-plekken" style={{width:"190px", height:"194px", margin: "549px 0 0 775px", backgroundColor: "#4A4034", cursor: "default"}}></div>
-                        <div className="rectangle-plekken" style={{width:"166px", height:"219px", margin: "524px 0 0 0px", backgroundColor: "#A0AD9E", cursor: "default"}}></div>
-                        <div className="rectangle-plekken" style={{width:"72px", height:"32px", margin: "8px 0 0 94px", backgroundColor: "#DCADA8", cursor: "default", borderRadius: "10px"}}></div>
+                        <div className="rectangle-plekken" style={{width:"174px", height:"180px", margin: "0 0 0 0px", backgroundColor: "#4A4034"}}></div>
+                        <div className="rectangle-plekken" style={{width:"128px", height:"226px", margin: "0 0 0 840px", backgroundColor: "#4A4034"}}></div>
+                        <div className="rectangle-plekken" style={{width:"174px", height:"271px", margin: "196px 0 0 0px", backgroundColor: "#4A4034"}}></div>
+                        <div className="rectangle-plekken" style={{width:"128px", height:"166px", margin: "242px 0 0 840px", backgroundColor: "#4A4034"}}></div>
+                        <div className="rectangle-plekken" style={{width:"190px", height:"194px", margin: "549px 0 0 775px", backgroundColor: "#4A4034"}}></div>
+                        <div className="rectangle-plekken" style={{width:"166px", height:"219px", margin: "524px 0 0 0px", backgroundColor: "#A0AD9E"}}></div>
+                        <div className="rectangle-plekken" style={{width:"72px", height:"32px", margin: "8px 0 0 94px", backgroundColor: "#DCADA8", borderRadius: "10px"}}></div>
 
                         <div className="rectangle-plekken" style={{width:"287px", height:"134px", margin: "0 0 0 223px"}}>A</div>
                         <div className="rectangle-plekken" style={{width:"267px", height:"134px", margin: "0 0 0 525px"}}>B</div>
