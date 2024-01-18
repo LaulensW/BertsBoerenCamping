@@ -35,7 +35,7 @@ const BookingForm = () => {
   return (
     <div className="booking-form-container">
               <div className="banner">
-            <p className="banner-title-cursive">Reserveren</p>
+            <p className="banner-title-cursive">reserveren</p>
             <h className="banner-title">RESERVEREN</h>
             <img src={Wave} alt="Wave" className="banner-wave"/>
             <img src="../images/Banner_Background.png" alt="Banner" className="banner-background"/>
