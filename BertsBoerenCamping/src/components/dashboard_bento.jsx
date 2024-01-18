@@ -17,13 +17,25 @@ const DashboardBento = () => {
       </div>
       <div className="grid-container">
         <div className="box">
-          To Do lijst
+          <section className='title-combo-dashboard'>
+            <h className='dashboard-title'>TO DO LIJST</h>
+            <p className='dashboard-title-cursive'>To do lijst</p>
+          </section>
           <TodoList />
         </div>
-        <div className="box">Boekingen
+        <div className="box">
+          <section className='title-combo-dashboard'>
+            <h className='dashboard-title'>BOEKINGEN</h>
+            <p className='dashboard-title-cursive'>Boekingen</p>
+          </section>
             <BookingList />
         </div>
-        <div className="box">Anuleringen</div>
+        <div className="box">
+          <section className='title-combo-dashboard'>
+            <h className='dashboard-title'>ANNULERINGEN</h>
+            <p className='dashboard-title-cursive'>Annuleringen</p>
+          </section>
+        </div>
       </div>
     </div>
   );
