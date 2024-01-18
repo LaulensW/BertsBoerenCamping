@@ -169,8 +169,24 @@ const BookingForm = () => {
 </section>   
 
       <div className="form-section common-section">
+      <label htmlFor="accommodatieType">Welke campingplek wilt u huren: </label>
+        <select
+          id="campingType"
+          name="campingType"
+          value={formData.campingType}
+          onChange={handleSelectChange}
+        >
+          <option value="Selecteer">Selecteer</option>
+          <option value="A">A</option>
+          <option value="B">B</option>
+          <option value="C">C</option>
+          <option value="D">D</option>
+          <option value="E">E</option>
+          <option value="F">F</option>
+          <option value="G">G</option>
+        </select>
+
         <label htmlFor="accommodatieType">Welke type accommodatie wilt u huren: </label>
-        <br />
         <select
           id="accommodatieType"
           name="accommodatieType"
