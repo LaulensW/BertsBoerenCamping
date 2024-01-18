@@ -1,6 +1,6 @@
 const express = require('express');
 const router =  express.Router(); // Dit is een express router object
-const { Boeking, Gast, Kampeerplek, LeeftijdsgroepAantal, sequelize } = require('../models'); //Dit zal over de bestanden in de map ./server/models gaan
+const { Boeking, Gast, Kampeerplek, LeeftijdsgroepAantal, Leeftijdsgroep, sequelize } = require('../models'); //Dit zal over de bestanden in de map ./server/models gaan
 
 // koppeling gast + boeking + kampeerplek -> http://localhost:3001/boeking/gastboeking
 // koppeling boeking los -> http://localhost:3001/boeking
@@ -16,10 +16,10 @@ router.post('/gastboeking', async (req, res) => {
         const createdGast = await Gast.create(gastInput, { transaction });
 
         // boeking koppelen aan gast + kampeergegevens koppelen aan boeking
-        const createdBoeking = await Boeking.create({ ...boekingInput, GastId: createdGast.id, Kampeerplek: kampeerplekInput.id }, { transaction });
+        const createdBoeking = await Boeking.create({ ...boekingInput, GastId: createdGast.id, KampeerplekId: kampeerplekInput.id }, { transaction });
 
         // leeftijdsgroepAantal gegevens
-        const createdLeeftijdsgroepAantal = await LeeftijdsgroepAantal.create(leeftijdsgroepAantalInput, { transaction });
+        const createdLeeftijdsgroepAantal = await LeeftijdsgroepAantal.create({ ...leeftijdsgroepAantalInput, BoekingId: createdBoeking.id }, { transaction });
 
         // kampeerplek gegevens
         const existingKampeerplek = await Kampeerplek.findByPk(kampeerplekInput.id, { transaction });
@@ -37,17 +37,6 @@ router.post('/gastboeking', async (req, res) => {
     }
 });
 
-// // alle gasten + boekingen + kampeerplekken info ophalen
-// router.get('/gastboeking', async (req, res) => { 
-//     const boekingen = await Gast.findAll({
-//         include: [{
-//             model: Boeking,
-//             include: [Kampeerplek, LeeftijdsgroepAantal]
-//         }]
-//     });
-//     res.json(boekingen);
-// });
-
 router.get('/gastboeking', async (req, res) => {
     try {
         const boekingen = await Boeking.findAll({
@@ -59,7 +48,8 @@ router.get('/gastboeking', async (req, res) => {
                     model: Kampeerplek
                 },
                 {
-                    model: LeeftijdsgroepAantal
+                    model: LeeftijdsgroepAantal,
+                        include: Leeftijdsgroep
                 }
             ]
         });
