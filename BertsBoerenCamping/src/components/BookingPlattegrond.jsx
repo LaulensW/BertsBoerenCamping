@@ -41,7 +41,6 @@ const BookingPlattegrond = () => {
                 </div>   
             </div>  
         </div>
-        <button className="button-reserveren">GEEN VOORKEUR, GA NAAR RESERVEREN</button>
         </>
     )
 };
