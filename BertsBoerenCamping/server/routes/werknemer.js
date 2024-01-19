@@ -52,4 +52,28 @@ router.post('/register', async (req, res) => {
     }
   });
 
+  // werknemer verwijderen op id
+router.delete('/:id', async (req, res) => {
+    const id = req.params.id;
+    try {
+        const werknemer = await Werknemer.findByPk(id);
+        await werknemer.destroy();
+        res.send('Werknemer is verwijderd');
+    } catch (err) {
+        console.error('Error deleting werknemer', err);
+        res.status(500).send('Internal Server Error');
+    }
+});
+
+// alle werknemers verwijderen
+router.delete('/all', async (req, res) => {
+    try {
+        await Werknemer.destroy({ where: {} });
+        res.send('Alle werknemers zijn verwijderd');
+    } catch (err) {
+        console.error('Error deleting werknemers', err);
+        res.status(500).send('Internal Server Error');
+    }
+});
+
 module.exports = router;
