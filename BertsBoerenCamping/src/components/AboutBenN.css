@@ -1,0 +1,25 @@
+.bedrijven-nominaties-total{
+    background-color: var(--primary-color);
+    margin-top: 72px;
+    display: flex;
+    justify-content: center;
+    padding: 0 7%;
+}
+.logo-image{
+    border-radius: 100px;
+    width: 112px;
+    height: auto;
+    position: absolute; 
+}
+.circle{
+    background-color: var(--neutral-color);
+    width: 176px;
+    height: 176px;
+    border-radius: 100px;
+}
+.bedrijf-nominatie-info{
+    display: flex;
+    align-items: center;
+    justify-content: center;  
+    margin: 32px 48px 32px 0;
+}

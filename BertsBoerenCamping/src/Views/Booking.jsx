@@ -4,6 +4,7 @@ import Layout from '../components/Layout';
 import BookingBannerEnUitleg from '../components/BookingBannerEnUitleg';
 import PlattegrondWave from '../assets/booking-plattegrond-wave.svg';
 import BookingPlattegrond from '../components/BookingPlattegrond';
+import Footer from '../components/Footer';
 
 const Booking = () => {
   return (
@@ -15,8 +16,7 @@ const Booking = () => {
       <BookingPlattegrond />
       <BookingForm />
       </Layout> 
-      
-      
+
     </div>
   );
 };
