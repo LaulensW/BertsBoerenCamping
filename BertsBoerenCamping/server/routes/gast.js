@@ -4,7 +4,7 @@ const { Gast } = require('../models'); //Dit zal over de bestanden in de map ./s
 
 // koppeling maken gast -> http://localhost:3001/gast
 
-// gast aanmaken
+// gast aanmaken (LET OP: Zit ook al in route -> boeking.js)
 router.post('/', async (req, res) => {
     const post = req.body;
     await Gast.create(post);

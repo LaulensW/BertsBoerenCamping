@@ -2,11 +2,8 @@ const express = require('express');
 const router =  express.Router(); // Dit is een express router object
 const { Boeking, Gast, Kampeerplek, LeeftijdsgroepAantal, Leeftijdsgroep, sequelize } = require('../models'); //Dit zal over de bestanden in de map ./server/models gaan
 
-// koppeling gast + boeking + kampeerplek -> http://localhost:3001/boeking/gastboeking
-// koppeling boeking los -> http://localhost:3001/boeking
-
-// gast + boeking maken + kampeerplek koppelen
-router.post('/gastboeking', async (req, res) => {
+// gast + boeking maken
+router.post('/gastboeking', async (req, res) => { // = http://localhost:3001/boeking/gastboeking
     const { gastInput , boekingInput, leeftijdsgroepAantalInput, kampeerplekInput} = req.body;
 
     const transaction = await sequelize.transaction();
@@ -37,64 +34,51 @@ router.post('/gastboeking', async (req, res) => {
     }
 });
 
-router.get('/gastboeking', async (req, res) => {
+// volledige boekingen ophalen
+router.get('/gastboeking', async (req, res) => { // = http://localhost:3001/boeking/gastboeking
     try {
-        const boekingen = await Boeking.findAll({
-            include: [
-                {
-                    model: Gast
-                },
-                {
+        const gasten = await Gast.findAll({
+            include: [{
+                model: Boeking,
+                include: [{
                     model: Kampeerplek
-                },
-                {
+                }, {
                     model: LeeftijdsgroepAantal,
-                        include: Leeftijdsgroep
-                }
-            ]
+                    include: [{ model: Leeftijdsgroep }]
+                }]
+            }]
         });
-
-        res.json(boekingen);
+        res.json(gasten);
     } catch (error) {
         res.status(500).json({ error: error.message });
     }
 });
 
-// boeking aanmaken
-router.post('/', async (req, res) => {
-    const boekingInput = req.body;
-    await Boeking.create(boekingInput);
-    res.json(boekingInput);
-});
+//optioneel
 
-// alle boekingen ophalen
-router.get('/', async (req, res) => { 
-    const boekingen = await Boeking.findAll({ // await, zodat de code wacht op de uitkomst van de functie
+    // boeking los aanmaken
+    router.post('/', async (req, res) => { // = http://localhost:3001/boeking/
+        const boekingInput = req.body;
+        await Boeking.create(boekingInput);
+        res.json(boekingInput);
     });
-    res.json(boekingen);
-});
 
-// update een boeking
-router.put('/:id', async (req, res) => {
-    const id = req.params.id;
-    const post = req.body;
-    await Boeking.update(post, {
-        where: {
-            id: id
-        }
+    // alle boekingen ophalen
+    router.get('/', async (req, res) => { 
+        const boekingen = await Boeking.findAll({ // await, zodat de code wacht op de uitkomst van de functie
+        });
+        res.json(boekingen);
     });
-    res.json(post);
-});
 
-// verwijder een boeking
-router.delete('/:id', async (req, res) => {
-    const id = req.params.id;
-    await Boeking.destroy({
-        where: {
-            id: id
-        }
+    // verwijder een boeking
+    router.delete('/:id', async (req, res) => {
+        const id = req.params.id;
+        await Boeking.destroy({
+            where: {
+                id: id
+            }
+        });
+        res.json(id);
     });
-    res.json(id);
-});
 
 module.exports = router;
