@@ -4,6 +4,9 @@
 }
 .banner-background{
     border-radius: 15px;
+    display: flex;
+    justify-content: center;
+    width: 100%;
 }
 .banner-wave{
     position: absolute;
