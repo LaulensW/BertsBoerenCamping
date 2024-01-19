@@ -32,7 +32,7 @@ const BookingPlattegrond = () => {
             </div>
 
             <div className="legenda-total">
-            <h1 className="legenda-title" style={{margin: "0 0 0 3.7%"}}>LEGENDA</h1>
+            <h1 className="legenda-title" style={{margin: "0 0 0 6%"}}>LEGENDA</h1>
             <p1 className="legenda-title-cursive">legenda</p1>  
                 <div className="rectangle-legenda">
                     <div className="rectangle-legenda-inside" style={{backgroundColor: "#A0AD9E"}}>Ingang</div>
