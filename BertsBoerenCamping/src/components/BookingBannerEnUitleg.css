@@ -1,0 +1,59 @@
+.banner-boeken-title{
+    position: absolute;
+    margin-top: 90px;
+    font-size: 56px;
+    font-weight: var(--font-weight-semibold);
+    color: var(--neutral-color);
+    z-index: 5;
+}
+.banner-boeken-title-cursive{
+    font-family: 'Homemade Apple', cursive;
+    position: absolute;
+    margin: 100px 0 0 0;
+    font-size: 56px;
+    color: #A0AD9E;
+}
+.banner{
+    display: flex;
+    justify-content: center;
+    z-index: -5;
+}
+.booking-banner{
+    border-radius: 15px;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+.banner-wave{
+    position: absolute;
+    width: 100%;
+}
+.hoe-moet-je-boeken-title{
+    color: var(--primary-color);
+    font-weight: var(--font-weight-semibold);
+    display: flex;
+    justify-content: center;
+    font-size: 40px;
+}
+.hoe-moet-je-boeken-title-cursive{
+    font-family: 'Homemade Apple', cursive;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    color: #E7E4E1;
+    font-size: 40px;
+    letter-spacing: 2px;
+    z-index: -1;
+}
+.boeken-uitleg{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 78px 0 0 0;
+}
+.boeken-uitleg-tekst{
+    color: var(--secondary-color);
+    font-size: 16px;
+    margin-top: 50px;
+    text-align: left;
+}
