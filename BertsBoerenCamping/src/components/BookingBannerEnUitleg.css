@@ -1,33 +1,4 @@
-.banner-boeken-title{
-    position: absolute;
-    margin-top: 90px;
-    font-size: 56px;
-    font-weight: var(--font-weight-semibold);
-    color: var(--neutral-color);
-    z-index: 5;
-}
-.banner-boeken-title-cursive{
-    font-family: 'Homemade Apple', cursive;
-    position: absolute;
-    margin: 100px 0 0 0;
-    font-size: 56px;
-    color: #A0AD9E;
-}
-.banner{
-    display: flex;
-    justify-content: center;
-    z-index: -5;
-}
-.booking-banner{
-    border-radius: 15px;
-    display: flex;
-    justify-content: center;
-    width: 100%;
-}
-.banner-wave{
-    position: absolute;
-    width: 100%;
-}
+
 .hoe-moet-je-boeken-title{
     color: var(--primary-color);
     font-weight: var(--font-weight-semibold);

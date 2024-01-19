@@ -6,10 +6,10 @@ const Banner = () => {
     return(
         <>
         <div className="banner">
-            <p className="banner-boeken-title-cursive">boeken</p>
-            <h className="banner-boeken-title">BOEKEN</h>
+            <p className="banner-title-cursive">boeken</p>
+            <h className="banner-title">BOEKEN</h>
             <img src={BookingWave} alt="banner wave" className="banner-wave"/>
-            <img src="../images/Booking_Banner.png" className="booking-banner"/>
+            <img src="../images/Booking_Banner.png" className="banner-background"/>
         </div>
 
         <div className="boeken-uitleg">
