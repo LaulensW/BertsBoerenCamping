@@ -20,6 +20,8 @@ const kampeerplekRouter = require('./server/routes/kampeerplek');
 app.use('/kampeerplek', kampeerplekRouter);
 const werknemerRouter = require('./server/routes/werknemer');
 app.use('/werknemer', werknemerRouter);
+const todolijstRouter = require('./server/routes/todolijst');
+app.use('/todolijst', todolijstRouter);
 
 db.sequelize.sync().then(async () => {
   // Listen on port
