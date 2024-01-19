@@ -3,14 +3,14 @@
     z-index: 0;
     display: flex;
 }
-h1{
+.cta-title{
     font-size: 56px;
     position: absolute;
     color: var(--neutral-color);
     margin: 246px 0 0 104px;
     text-shadow: 0px 0px 10px rgba(74, 64, 52, 0.5);
 }
-p1{
+.cta-title-cursive{
     font-family: 'Homemade Apple', cursive;
     font-size: 56px;
     letter-spacing: 3px;
@@ -44,5 +44,5 @@ p{
     transition: background-color 0.3s ease-in-out;
 }
 .boeken-button:hover {
-    background-color: #C28E88;
+    background-color:#B07D78;
 }

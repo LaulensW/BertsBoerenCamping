@@ -6,7 +6,7 @@ function BookingList() {
 
   useEffect(() => {
     // Fetch booking data when the component mounts
-    fetch('http://localhost:3001/gast')
+    fetch('http://localhost:3001/boeking/gastboeking')
       .then(response => response.json())
       .then(data => setBookings(data))
       .catch(error => console.error('Error fetching data:', error));
