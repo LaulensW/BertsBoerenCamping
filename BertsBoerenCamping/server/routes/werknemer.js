@@ -3,6 +3,8 @@ const router =  express.Router(); // Dit is een express router object
 const bcrypt = require('bcrypt'); // Add this line
 const { Werknemer } = require('../models'); //Dit zal over de bestanden in de map ./server/models gaan
 
+// koppeling maken http://localhost:3001/werknemer
+
 // Baliemedewerker registreren
 router.post('/register', async (req, res) => {
     const { voornaam, tussenvoegsel, achternaam, email, rol, wachtwoord } = req.body;

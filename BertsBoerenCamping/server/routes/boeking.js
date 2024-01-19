@@ -1,47 +1,84 @@
 const express = require('express');
 const router =  express.Router(); // Dit is een express router object
-const { Boeking } = require('../models'); //Dit zal over de bestanden in de map ./server/models gaan
+const { Boeking, Gast, Kampeerplek, LeeftijdsgroepAantal, Leeftijdsgroep, sequelize } = require('../models'); //Dit zal over de bestanden in de map ./server/models gaan
 
-// vraag alle boekingen op
-router.get('/', async (req, res) => { // bij sequelize gebruik je await zodat de code wacht op de uitkomst van de functie
-    const lijstVanBoekingen = await Boeking.findAll();
-    res.json(lijstVanBoekingen);
+// gast + boeking maken
+router.post('/gastboeking', async (req, res) => { // = http://localhost:3001/boeking/gastboeking
+    const { gastInput , boekingInput, leeftijdsgroepAantalInput, kampeerplekInput} = req.body;
+
+    const transaction = await sequelize.transaction();
+
+    try {
+        // gast gegevens
+        const createdGast = await Gast.create(gastInput, { transaction });
+
+        // boeking koppelen aan gast + kampeergegevens koppelen aan boeking
+        const createdBoeking = await Boeking.create({ ...boekingInput, GastId: createdGast.id, KampeerplekId: kampeerplekInput.id }, { transaction });
+
+        // leeftijdsgroepAantal gegevens
+        const createdLeeftijdsgroepAantal = await LeeftijdsgroepAantal.create({ ...leeftijdsgroepAantalInput, BoekingId: createdBoeking.id }, { transaction });
+
+        // kampeerplek gegevens
+        const existingKampeerplek = await Kampeerplek.findByPk(kampeerplekInput.id, { transaction });
+        
+        // wanneer alle transacties succesvol zijn, commit je de transactie
+        await transaction.commit();
+
+        res.json({ gastInput: createdGast, boekingInput: createdBoeking, leeftijdsgroepAantalInput: createdLeeftijdsgroepAantal, kampeerplekInput: existingKampeerplek });
+
+    } catch (error) {
+        // wanneer een transactie fout is zal de transactie worden gerollbacked
+        await transaction.rollback(); 
+
+        res.status(500).json({ error: error.message });
+    }
 });
 
-// gastId is de id van de gast die bij de boeking hoort
-router.get('/:gastId', async (req, res) => {
-    const lijstVanBoekingen = await Boeking.findAll();
-    res.json(lijstVanBoekingen);
+// volledige boekingen ophalen
+router.get('/gastboeking', async (req, res) => { // = http://localhost:3001/boeking/gastboeking
+    try {
+        const gasten = await Gast.findAll({
+            include: [{
+                model: Boeking,
+                include: [{
+                    model: Kampeerplek
+                }, {
+                    model: LeeftijdsgroepAantal,
+                    include: [{ model: Leeftijdsgroep }]
+                }]
+            }]
+        });
+        res.json(gasten);
+    } catch (error) {
+        res.status(500).json({ error: error.message });
+    }
 });
 
-// maak een nieuwe boeking aan
-router.post('/', async (req, res) => {
-    const post = req.body;
-    await Boeking.create(post);
-    res.json(post);
-});
+//optioneel
 
-// update een boeking
-router.put('/:id', async (req, res) => {
-    const id = req.params.id;
-    const post = req.body;
-    await Boeking.update(post, {
-        where: {
-            id: id
-        }
+    // boeking los aanmaken
+    router.post('/', async (req, res) => { // = http://localhost:3001/boeking/
+        const boekingInput = req.body;
+        await Boeking.create(boekingInput);
+        res.json(boekingInput);
     });
-    res.json(post);
-});
 
-// verwijder een boeking
-router.delete('/:id', async (req, res) => {
-    const id = req.params.id;
-    await Boeking.destroy({
-        where: {
-            id: id
-        }
+    // alle boekingen ophalen
+    router.get('/', async (req, res) => { 
+        const boekingen = await Boeking.findAll({ // await, zodat de code wacht op de uitkomst van de functie
+        });
+        res.json(boekingen);
     });
-    res.json(id);
-}); 
+
+    // verwijder een boeking
+    router.delete('/:id', async (req, res) => {
+        const id = req.params.id;
+        await Boeking.destroy({
+            where: {
+                id: id
+            }
+        });
+        res.json(id);
+    });
 
 module.exports = router;
