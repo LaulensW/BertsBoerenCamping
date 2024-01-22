@@ -53,6 +53,7 @@ const BookingForm = () => {
           <br></br>Tot snel op Berts Boeren Camping!
         </a>
       </div>
+      
       <div className="boeking-box">
       <section className='customer-info'>
       <div className="form-section left-section">
