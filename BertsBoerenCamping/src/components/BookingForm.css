@@ -34,10 +34,11 @@ body {
 }
 
 .info-box a {
-  max-width: 800px;
+  max-width: 833px;
   margin-top: 40px;
   display: block;
-  line-height: 1.6;
+  text-align: left;
+  line-height: 22.4px;
   font-size: 16px;
   margin-bottom: 40px;
   color: var(--secondary-color);
@@ -64,15 +65,12 @@ body {
 form {
   display: flex;
   flex-direction: column;
-  gap: 15px;
   padding: 32px 32px 0 32px;
   border-radius: 10px;
 }
 
 .booking-form-container form div{
   display: flex;
-  gap: 10px;
-  align-items: center;
 }
 
 
@@ -80,6 +78,7 @@ form input,
 select{
   flex: 1;
   padding: 12px;
+  margin-bottom: 16px;
   border-radius: 10px;
   border: 1px solid #ccc;
   color: var(--secondary-color);
@@ -93,13 +92,14 @@ select{
 .right-side {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: start;
 }
 
 .common-section{
   padding: 32px;
   display: flex;
   flex-direction: column;
+  text-align: start;
   border-radius: 8px;
 }
 
@@ -118,14 +118,14 @@ label{
 .volgende {
   background-color: var(--primary-color); 
   border: none;
-  color: white;
-  padding: 15px 32px;
+  color: var(--neutral-color);
+  padding: 16px 32px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
   font-size: 16px;
   border-radius: 12px;
-  margin: 10px 20px;
+  margin: 32px 20px;
   cursor: pointer;
   transition-duration: 0.4s;
 }
