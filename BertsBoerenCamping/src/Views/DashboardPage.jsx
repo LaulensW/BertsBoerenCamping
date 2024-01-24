@@ -1,7 +1,7 @@
 import React from 'react';
 import DashboardBento from '../components/dashboard_bento.jsx';
 import Layout from '../components/Layout';
-
+import Footer from '../components/Footer';
 
 function DashboardPage() {
   return (
@@ -9,6 +9,7 @@ function DashboardPage() {
       <Layout>
       <  DashboardBento />
       </Layout>
+      <Footer/>
     </div>
   );
 }
