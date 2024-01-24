@@ -52,3 +52,51 @@
     color: #ADA39F;
     font-size: 16px
 }
+
+
+@media (max-width: 430px){
+    .ons-team{
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    .title-combo{
+        display: flex;
+        justify-content: center;
+        margin: 110px 5% 0 10%;
+        width: 80%;
+    }
+    .ons-team-title-cursive{
+        display: flex;
+        justify-content: center;
+        font-size: 24px;
+        margin: 2px 0 0 0;
+        width: 80%;
+    }
+    .ons-team-title{
+        display: flex;
+        justify-content: center;
+        font-size: 24px;
+    }
+    .team-total{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    .team-info{
+        margin-right: 0px;
+    }
+    .team-image{
+        width: 144px;
+        height: auto;
+    }
+    .team-employee{
+        font-size: 16px;
+        padding-bottom: 4px;
+    }
+    .team-position{
+        color: #ADA39F;
+        font-size: 14px
+    }
+}

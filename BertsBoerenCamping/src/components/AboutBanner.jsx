@@ -10,6 +10,7 @@ const Banner = () => {
             <p className="banner-title-cursive">over ons</p>
             <img src={Wave} alt="Wave" className="banner-wave"/>
             <img src="../images/Banner_Background.png" alt="Banner" className="banner-background"/>
+            <img src="../images/Banner_Background_Responsive.png" alt="Banner" className="banner-background-responsive"/>
         </div>
         <div className="wie-zijn-wij">
             <img src="../images/Wie-zijn-wij.png" className="wie-zijn-wij-photo"/>

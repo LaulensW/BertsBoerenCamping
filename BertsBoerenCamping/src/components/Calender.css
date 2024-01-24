@@ -1,0 +1,100 @@
+/* Calendar container */
+.react-datepicker {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  padding: 16px;
+  background-color: #fff;
+}
+
+/* Header */
+.react-datepicker__header {
+  background-color: var(--neutral-color);
+  border-bottom: 1px solid #ccc;
+}
+
+/* Navigation buttons */
+.react-datepicker__navigation {
+  top: 16px;
+  border: none;
+  background: none;
+  cursor: pointer;
+  &:hover {
+    opacity: 0.6;
+  }
+}
+
+/* Month and year dropdowns */
+.react-datepicker__current-month,
+.react-datepicker-year-dropdown__options {
+  color: #333;
+  font-size: 16px;
+}
+
+/* Day names */
+.react-datepicker__day-name {
+  color: #333;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+/* Individual days */
+.react-datepicker__day {
+  color: #333;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+  &:hover {
+    background-color: #f0f0f0;
+  }
+}
+
+
+
+/* Selected range */
+.react-datepicker__day--selected{
+  background-color: var(--primary-color);
+}
+
+.react-datepicker__day--selected,
+.react-datepicker__day--in-selecting-range,
+.react-datepicker__day--in-range {
+  background-color: var(--primary-color);
+  color: #fff;
+  border-radius: 4px;
+}
+
+/* Today's date */
+.react-datepicker__day--today {
+  font-weight: bold;
+  background-color: lightgreen;
+  border-radius: 4px;
+  color: #333;
+}
+
+.banner{
+  display: flex;
+  justify-content: center;
+}
+.banner-background{
+  border-radius: 15px;
+}
+.banner-wave{
+  position: absolute;
+  width: 100%;
+  margin-top: 20px;
+}
+.banner-title-cursive{
+  font-family: 'Homemade Apple', cursive;
+  margin: 100px 0 0 0;
+  letter-spacing: 3px;
+  font-size: 56px;
+  color: #A0AD9E
+}
+.banner-title{
+  position: absolute;
+  margin-top: 90px;
+  font-size: 56px;
+  font-weight: var(--font-weight-semibold);
+  color: var(--neutral-color);
+  z-index: 5;
+}

@@ -6,7 +6,7 @@ const Register = () => {
   return (
     <div>
       <Layout> 
-        <h2>Register Page</h2>
+        <h2>Account Aanmaken</h2>
         <LoginForm />
       </Layout> 
     </div>
