@@ -12,14 +12,14 @@ const RegisterForm = () => {
     const [loading, setLoading] = useState(false);
   
     const isPasswordValid = (password) => {
-      const regex = /^(?=.*[!@#$%^&*])[A-Za-z\d!@#$%^&*]{8,}$/;
+    const regex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[^\da-zA-Z]).{8,}$/;
       return regex.test(password);
     };
   
     const handlePasswordChange = (password) => {
       setWachtwoord(password);
       if (!isPasswordValid(password)) {
-        setPasswordError('Wachtwoord moet minimaal 8 Tekens hebben en moet ook een speciale teken hebben.');
+        setPasswordError('Wachtwoord dient minimaal 8 tekens, een hoofdletter, een cijfer en een speciaal teken te bevatten.');
       } else {
         setPasswordError('');
       }
