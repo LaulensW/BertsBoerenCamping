@@ -53,28 +53,32 @@
 
 
 @media (max-width: 430px){
+    .faqs{
+        width: 80%;
+        margin: 160px 0 0 8%;
+    }
     .faqs-title{
         font-size: 24px;
-        margin: 1050px 0 0 0px;
+        margin: 800px 0 0 0px;
         color: var(--primary-color);
         display: flex;    
         position: none; 
         justify-content: center;
-        width: 100%;
+        width: 80%;
     }
     .faqs-title-cursive{
         font-family: 'Homemade Apple', cursive;
         color: #E7E4E1;
         letter-spacing: 3px;
         font-size: 24px;
-        margin: 1050px 0 0 0px;
+        margin: 810px 0 0 0px;
         display: flex;    
         position: none; 
         justify-content: center;
         width: 100%;
     }
     .faq-totaal{
-        margin: 1148px 8% 0 8%;
+        margin: 48px 8% 0 8%;
     }
     
     .faq-solo{

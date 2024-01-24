@@ -20,35 +20,31 @@
     margin-top: 8px;
 }
 .description{
-    margin-top: 16px;
+    margin-top: 120px;
     color: var(--secondary-color);
 }
 
 
 @media (max-width: 430px){
     .hoe-moet-je-boeken{
-        display: flex;    
-        position: absolute; 
-        width: 100%;
-        justify-content: center;
-        font-size: 24px;
-        margin: 110px 0 0 0;
+        width: 80%;
     }
-    .hoe-moet-je-boeken-cursive{
+    .hoe-moet-je-boeken-title{
+        font-size: 24px;
+        margin: 0;
+        border: 2px solid red;
+    }
+    .hoe-moet-je-boeken-title-cursive{
         font-family: 'Homemade Apple', cursive;
         font-size: 24px;
-        margin: 118px 0 0 0;
-        display: flex;    
-        position: absolute; 
-        width: 100%;
-        justify-content: center;
-        font-size: 24px;
+        margin: 8px 0 0 0;
+        bordeR: 2px solid blue;
     }
     .description{
+        font-size: 16px;
         display: flex;
-        position: absolute;
         justify-content: center;
-        margin: 190px 8% 0 8%;
-        width: 80%;
+        margin: 120px 8% 0 8%;
+        width: 100%;
     }
 }

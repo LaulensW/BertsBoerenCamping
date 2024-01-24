@@ -4,6 +4,7 @@
 }
 
 .plattegrond-title, .legenda-title{
+    font-weight: var(--font-weight-semibold);
     color: var(--primary-color);
     font-size: 40px;    
     position: absolute;
