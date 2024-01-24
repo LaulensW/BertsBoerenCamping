@@ -13,6 +13,7 @@ const CallToAction = () => {
             <img src="../images/CTA_Achtergrond.png" alt="Call To Action Achtergrond" className="cta-achtergrond"/>   
             <img src="../images/CTA_Achtergrond_Responsive.png" alt="Call To Action" className="cta-achtergrond-responsive"/>
         </div>
+        <img src="../images/CTA_Achtergrond.png" alt="Call To Action Achtergrond" className="cta-achtergrond"/>  
         </>
     );
 };

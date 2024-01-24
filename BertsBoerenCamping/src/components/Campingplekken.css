@@ -42,19 +42,20 @@
     display: flex;
     font-size: 24px;
     color: var(--primary-color);
+    font-weight: var(--font-weight-semibold);
     margin: 16px 0 0 16px;
 }
 .campingplek-price{
     font-size: 16px;
     font-weight: var(--font-weight-semibold);
-    margin: 8px 0 8px 0px;
+    margin: 8px 0 8px 0;
     color: var(--neutral-color);
     background-color: var(--Button-color);
     display: flex;
     justify-content: center;
     align-items: center;
-    width:60px;
-    height: 27px;
+    padding: 6px;
+    width: 150px;
     border-radius: 8px;
 }
 .campingplek-description{

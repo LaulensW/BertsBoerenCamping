@@ -19,6 +19,7 @@ export default function FaqsTotaal() {
 
     return (
         <>
+        <div className="faqs">
             <p3 className="faqs-title-cursive">veelgestelde vragen</p3>
             <h3 className="faqs-title">VEELGESTELDE VRAGEN</h3>
 
@@ -33,6 +34,7 @@ export default function FaqsTotaal() {
                     </div>
                 ))}
             </div>
+        </div>
         </>
     );
 };

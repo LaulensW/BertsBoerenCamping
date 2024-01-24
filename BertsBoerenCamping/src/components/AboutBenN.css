@@ -1,13 +1,15 @@
 .bedrijven-nominaties-total{
-    background-color: var(--primary-color);
     margin-top: 72px;
     display: flex;
     justify-content: center;
     padding: 0 7%;
+    flex-wrap: wrap;
+}
+.rectangle-achtergrond{
+    background-color: var(--primary-color);
 }
 .logo-image{
-    border-radius: 100px;
-    width: 112px;
+    width: 140px;
     height: auto;
     position: absolute; 
 }

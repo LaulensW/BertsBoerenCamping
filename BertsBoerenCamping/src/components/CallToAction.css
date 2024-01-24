@@ -9,38 +9,36 @@
 .cta-title{
     font-size: 56px;
     position: absolute;
+    margin: 246px 0 0 7%;
+}
+.cta-title{
+    font-size: 56px;
     color: var(--neutral-color);
-    margin: 246px 0 0 104px;
-    text-shadow: 0px 0px 10px rgba(74, 64, 52, 0.5);
+    font-weight: var(--font-weight-semibold);
+    position: absolute;
 }
 .cta-title-cursive{
     font-family: 'Homemade Apple', cursive;
     font-size: 56px;
     letter-spacing: 3px;
-    position: absolute;
-    color: rgba(248, 245, 242, 20%);
-    margin: 259px 0 0 104px;
-    text-shadow: 0px 0px 10px rgba(74, 64, 52, 0.5);
+    color:#f8f5f24a ;
 }
-p{
+.cta-beschrijving{
     z-index: 5;
     font-size: 20px;
     color: var(--neutral-color);
-    position: absolute;
-    margin: 355px 0 0 104px;
     text-shadow: 0px 0px 10px rgba(74, 64, 52, 0.5);
 }
 .boeken-button{
     font-family:'IBM Plex Mono', monospace;
-    position: absolute;
-    cursor: pointer;
-    margin: 408px 0 0 104px;
-    padding: 32px 160px;
+    font-weight: var(--font-weight-semibold);
     font-size: 32px;
     line-height: 35.2px;
-    font-weight: var(--font-weight-semibold);
     color: var(--neutral-color);
     background-color: var(--Button-color);
+    cursor: pointer;
+    padding: 32px 160px;
+    margin-top: 32px;
     border: none;
     border-radius: 15px;
     box-shadow: 0px 0px 10px rgba(74, 64, 52, 0.5);
