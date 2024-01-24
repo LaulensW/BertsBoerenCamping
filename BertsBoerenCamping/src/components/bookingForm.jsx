@@ -186,24 +186,6 @@ const BookingForm = () => {
           <option value="F">F</option>
           <option value="G">G</option>
         </select>
-    try {
-      const response = await fetch('http://localhost:3001/gast', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(formData),
-      });
-  
-      if (response.ok) {
-        setShowSuccessAlert(true);
-        setShowErrorAlert(false);
-        setTimeout(() => {
-          navigate('/');
-        }, 2000); 
-      } else {
-        console.error('Error:', response.statusText);
-      }
 
         <label htmlFor="accommodatieType">Welke type accommodatie wilt u huren: </label>
         <select
