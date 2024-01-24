@@ -9,14 +9,13 @@ export default function Campingplekken() {
             <p3 className="onze-campingplekken-cursive">onze campingplekken</p3> 
             <img src={CampingWave}  alt='campingwave' className='wave'/>
             <div className="campingplekken-total">
-                {renderCampingplek("CAMPINGPLEK A", "Filler.png", "€45 per nacht", "Een campingplek geschikt voor campers, caravans en tenten. Beschikt ook stroom en drinkwater.")}
-                {renderCampingplek("CAMPINGPLEK B", "Filler.png", "€36 per nacht", "Een campingplek geschikt voor campers, caravans en tenten. Beschikt ook stroom en drinkwater.")}
-                {renderCampingplek("CAMPINGPLEK C", "Filler.png", "€51 per nacht", "Een campingplek geschikt voor campers, caravans en tenten. Beschikt ook stroom en drinkwater.")}
-                {renderCampingplek("CAMPINGPLEK D", "Filler.png", "€30 per nacht", "Een campingplek geschikt voor campers, caravans en tenten. Beschikt ook stroom en drinkwater.")}
-                {renderCampingplek("CAMPINGPLEK E", "Filler.png", "€58 per nacht", "Een campingplek geschikt voor campers, caravans en tenten. Beschikt ook stroom en drinkwater.")}
-                {renderCampingplek("CAMPINGPLEK F", "Filler.png", "€42 per nacht", "Een campingplek geschikt voor campers, caravans en tenten. Beschikt ook stroom en drinkwater.")}
-                {renderCampingplek("CAMPINGPLEK G", "Filler.png", "€53 per nacht", "Een campingplek geschikt voor campers, caravans en tenten. Beschikt ook stroom en drinkwater.")}
-                {renderCampingplek("CAMPINGPLEK H", "Filler.png", "€48 per nacht", "Een campingplek geschikt voor campers, caravans en tenten. Beschikt ook stroom en drinkwater.")}
+                {renderCampingplek("CAMPINGPLEK A", "Campingplek-A.png", "€52 per nacht", "Een campingplek geschikt voor campers, caravans en tenten. Beschikt ook stroom en drinkwater.")}
+                {renderCampingplek("CAMPINGPLEK B", "Campingplek-B.png", "€52 per nacht", "Een campingplek geschikt voor campers, caravans en tenten. Beschikt ook stroom en drinkwater.")}
+                {renderCampingplek("CAMPINGPLEK C", "Campingplek-C.png", "€52 per nacht", "Een campingplek geschikt voor campers, caravans en tenten. Beschikt ook stroom en drinkwater.")}
+                {renderCampingplek("CAMPINGPLEK D", "Campingplek-D.png", "€52 per nacht", "Een campingplek geschikt voor campers, caravans en tenten. Beschikt ook stroom en drinkwater.")}
+                {renderCampingplek("CAMPINGPLEK E", "Campingplek-E.png", "€52 per nacht", "Een campingplek geschikt voor campers, caravans en tenten. Beschikt ook stroom en drinkwater.")}
+                {renderCampingplek("CAMPINGPLEK F", "Campingplek-F.png", "€52 per nacht", "Een campingplek geschikt voor campers, caravans en tenten. Beschikt ook stroom en drinkwater.")}
+                {renderCampingplek("CAMPINGPLEK G", "Campingplek-G.png", "€52 per nacht", "Een campingplek geschikt voor campers, caravans en tenten. Beschikt ook stroom en drinkwater.")}
             </div>
            
         </>

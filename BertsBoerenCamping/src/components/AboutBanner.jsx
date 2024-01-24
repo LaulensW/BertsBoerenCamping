@@ -12,7 +12,7 @@ const Banner = () => {
             <img src="../images/Banner_Background.png" alt="Banner" className="banner-background"/>
         </div>
         <div className="wie-zijn-wij">
-            <img src="../images/Filler.png" className="wie-zijn-wij-photo"/>
+            <img src="../images/Wie-zijn-wij.png" className="wie-zijn-wij-photo"/>
             <h className="wie-zijn-wij-title">WIE ZIJN WIJ</h>
             <p3 className="wie-zijn-wij-title-cursive">wie zijn wij</p3>
             <p3 className="wie-zijn-wij-tekst">BertsBoerenCamping is een boerencamping opgericht in 2023 door Bert … , ook wel Boer Bert genoemd. Als eerst opgericht als een boerderij, bij “BertsBoerenCamping” is ons doel om een unieke en gastvrije ervaring te creëren voor onze kampeerders. Welkom op onze boerencamping, waar duurzaamheid, innovatie, plezier samenkomen voor een onvergetelijke ervaring.</p3>

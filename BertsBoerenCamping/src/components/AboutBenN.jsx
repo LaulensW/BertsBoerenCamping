@@ -26,7 +26,7 @@ export default function BedrijvenEnNominaties(){
         </div>
         <div className="rectangle-achtergrond">
         <div className="bedrijven-nominaties-total">
-            {renderBedrijfofNominatie("")}
+            {renderBedrijfofNominatie("","Fake-logo-SH.png")}
         </div>
         </div>
     </div>

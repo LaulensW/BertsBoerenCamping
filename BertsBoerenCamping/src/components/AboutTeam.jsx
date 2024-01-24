@@ -12,8 +12,9 @@ export default function OnsTeam() {
                 <p className="subtitle-title-cursive">ons team</p> 
             </div>
             <div className="team-total">
-                {renderProfiel('Filler.png', "Boer Bert", "Eigenaar van de camping")}
-                {renderProfiel('Filler.png', "Sophie van der Linden", "Baliemedewerker")}
+                {renderProfiel('Boer-Bert-profile.png', "Boer Bert", "Eigenaar van de camping")}
+                {renderProfiel('Baliemedewerker-profile-Sophie.png', "Sophie van der Linden", "Baliemedewerker")}
+                {renderProfiel('Baliemedewerker-profile-Daan.png', "Daan van den Berg", "Baliemedewerker")}
             </div>
         </div>
         
