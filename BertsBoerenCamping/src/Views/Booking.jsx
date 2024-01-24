@@ -16,6 +16,7 @@ const Booking = () => {
       <BookingPlattegrond />
       <BookingForm />
       </Layout> 
+      <Footer />
 
     </div>
   );
