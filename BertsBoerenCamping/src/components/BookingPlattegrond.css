@@ -1,0 +1,61 @@
+.plattegrond-en-legenda{
+    display: flex;
+    justify-content: space-between;
+}
+
+.plattegrond-title, .legenda-title{
+    font-weight: var(--font-weight-semibold);
+    color: var(--primary-color);
+    font-size: 40px;    
+    position: absolute;
+    margin: 0 0 0 22%;
+}
+.plattegrond-title-cursive, .legenda-title-cursive{
+    font-family: "Homemade Apple", cursive;
+    font-size: 40px;
+    color: #E7E4E1;
+    letter-spacing: 3px;   
+}
+.rectangle{
+    border-radius: 15px;
+    box-shadow: 0px 0px 20px rgba(74, 64, 52, 0.25);
+    background-color:var(--neutral-color);
+    padding: 32px;
+    width: 968px;
+    height: 775px;
+    display: flex;    
+    margin-top: 38px;
+}
+.rectangle-plekken{
+    background-color:#828A66;
+    color: var(--neutral-color);
+    text-decoration: none;
+    font-size: 40px;
+    font-weight: var(--font-weight-semibold);   
+    border-radius: 15px;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.rectangle-legenda{
+    width: 380px;
+    height: 312px;
+    margin-top: 38px;
+    background-color: var(--neutral-color);
+    box-shadow: 0px 0px 20px rgba(74, 64, 52, 0.25);
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+}
+.rectangle-legenda-inside{
+    margin: 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 72px;
+    border-radius: 12px;
+    font-size: 16px;
+    font-weight: var(--font-weight-semibold);
+    color: var(--neutral-color);
+}

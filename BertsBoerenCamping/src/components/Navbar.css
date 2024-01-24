@@ -26,14 +26,22 @@
     display: flex;
     align-items: center;
   }
-  
-  .nav-button {
+
+  .nav-button{
     font-size: 18px;
     margin-right: 50px;
     text-decoration: none;
     color: var(--secondary-color); /* Adjust the text color as needed */
+    font-weight: var(--font-weight-semibold);
+    transition: 0.3s ease-in-out;
   }
-  
+
+  .nav-button:hover{
+    color: #A0AD9E;
+  }
+  .nav-button.active{
+    color: #A0AD9E;
+  }
   .search-field {
     margin-right: 10px;
     padding: 5px;
@@ -44,10 +52,10 @@
 
   .search-field{
   margin-right: 10px;
-  padding: 5px;
+  padding: 12px 13px;
   border-radius: 20px;
   border: none;
-  box-shadow: 0px 2px 20px rgba(0, 0, 0, 0.247);
+  box-shadow: 0px 2px 20px rgba(74, 64, 52, 15%);
   outline: none; /* Remove the default focus outline */
 }
 
@@ -55,6 +63,10 @@
 .search-field:focus,
 select:focus {
   outline: none;
+}
+
+::placeholder{
+  color: #ADA39F;
 }
   
 .login-button {
@@ -76,3 +88,88 @@ select:focus {
     background-color: #A0AD9E; /* Darker shade when hovered */
   }
   
+
+  @media (max-width: 430px){
+    /* components/Navbar.css */
+.navbar-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 20px 20px 0 20px;
+  color: #fff; /* Adjust the text color as needed */
+}
+
+.navbar-left {
+  display: flex;
+  align-items: center;
+}
+
+.logo-link {
+  text-decoration: none;
+  color: inherit;
+}
+
+.logo {
+  width: 120px; /* Adjust the logo width as needed */
+  height: auto;
+  margin-left: 120px;
+}
+
+.navbar-right {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.nav-button {
+  font-size: 16px;
+  margin: 0 25px 15px 25px;
+  text-decoration: none;
+  color: var(--secondary-color); /* Adjust the text color as needed */
+}
+
+.search-field {
+  margin-right: 10px;
+  padding: 5px;
+  border-radius: 20px;
+  border: none;
+  box-shadow: 0px 2px 20px rgba(0, 0, 0, 0.247);
+}
+
+.search-field,
+select {
+margin-right: 10px;
+padding: 5px;
+border-radius: 20px;
+border: none;
+box-shadow: 0px 2px 20px rgba(0, 0, 0, 0.247);
+outline: none; /* Remove the default focus outline */
+}
+
+/* Remove the focus border for both input and select */
+.search-field:focus,
+select:focus {
+outline: none;
+}
+
+.login-button {
+  padding: 10px 20px;
+  background-color: var(--primary-color);
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 16px;
+  font-family: Arial, sans-serif;
+  transition: background-color 0.3s ease-in-out; /* Add a smooth transition effect */
+
+  /* Optional: Add box-shadow for depth */
+  box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.login-button:hover {
+  background-color: #A0AD9E; /* Darker shade when hovered */
+}
+  }

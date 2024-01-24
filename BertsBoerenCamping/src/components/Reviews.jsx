@@ -10,17 +10,17 @@ export default function Reviews() {
             <h3 className="reviews">REVIEWS</h3>
             <p3 className="reviews-cursive">reviews</p3>
             <div className="reviews-total">
-                {renderReview("Review Title 1", "Author", "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc metus libero, dignissim et arcu id, consequat rutrum leo. Morbi pretium nec lorem vel porta. Aenean finibus faucibus commodo. Vivamus quis justo neque. Sed et pulvinar magna. Duis nec laoreet purus. Vivamus tempus leo vitae sem vestibulum volutpat.")}
-                {renderReview("Review Title 2", "Author", "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc metus libero, dignissim et arcu id, consequat rutrum leo. Morbi pretium nec lorem vel porta. Aenean finibus faucibus commodo. Vivamus quis justo neque. Sed et pulvinar magna. Duis nec laoreet purus. Vivamus tempus leo vitae sem vestibulum volutpat.")}
-                {renderReview("Review Title 3", "Author", "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc metus libero, dignissim et arcu id, consequat rutrum leo. Morbi pretium nec lorem vel porta. Aenean finibus faucibus commodo. Vivamus quis justo neque. Sed et pulvinar magna. Duis nec laoreet purus. Vivamus tempus leo vitae sem vestibulum volutpat.")}
-                {renderReview("Review Title 4", "Author", "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc metus libero, dignissim et arcu id, consequat rutrum leo. Morbi pretium nec lorem vel porta. Aenean finibus faucibus commodo. Vivamus quis justo neque. Sed et pulvinar magna. Duis nec laoreet purus. Vivamus tempus leo vitae sem vestibulum volutpat.")}
-                {renderReview("Review Title 5", "Author", "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc metus libero, dignissim et arcu id, consequat rutrum leo. Morbi pretium nec lorem vel porta. Aenean finibus faucibus commodo. Vivamus quis justo neque. Sed et pulvinar magna. Duis nec laoreet purus. Vivamus tempus leo vitae sem vestibulum volutpat.")}
+                {renderReview("Geweldige Natuurervaring", "Jasper van der Meer", "Ons verblijf op deze camping was fantastisch! De prachtige omgeving bood een geweldige natuurervaring. De kampeerplekken waren ruim en goed onderhouden. De voorzieningen waren schoon, en het personeel was vriendelijk en behulpzaam. We komen zeker terug voor een volgend avontuur!", 'rating-4.png')}
+                {renderReview("Perfecte Gezinsvakantie", "Eva Jansen", "Wat een geweldige plek voor een gezinsvakantie! De kinderen hebben genoten van de speeltuin, en de familieplekken waren perfect voor ons. De sfeer was ontspannen, en we voelden ons echt één met de natuur. Een topcamping voor gezinnen!", 'rating-5.png')}
+                {renderReview("Ontspannen Sfeer", "Niels van Dijk", "Deze camping bood precies de ontspannen sfeer die we zochten. Rustige kampeerplekken, een mooi uitzicht op de natuur en geen lawaai van de stad. De avond bij het kampvuur was magisch. Een aanrader voor wie even wil ontsnappen aan de hectiek.", 'rating-5.png')}
+                {renderReview("Geweldige Voorzieningen", "Lisa de Vries", "De voorzieningen op deze camping waren geweldig! Van schone douches tot goed onderhouden paden, alles was top. De toevoeging van elektriciteit op de kampeerplekken was een groot pluspunt. We waardeerden de aandacht voor detail en zorg voor de gasten.", 'rating-4.png')}
+                {renderReview("Vriendelijk Personeel en Service", "Lotte Hendriks", "Het personeel hier verdient een pluim! Ze waren buitengewoon vriendelijk en deden er alles aan om ons verblijf aangenaam te maken. Van hulp bij het opzetten van de tent tot lokale tips, ze waren altijd behulpzaam en glimlachend. Een warm welkom op een prachtige locatie!", 'rating-4.png')}
             </div>
         </>
     );
 };
 
-function renderReview (title, author, content) {
+function renderReview (title, author, content, rating) {
 
     return (
        <div className="reviewcard" key={title}>
@@ -28,6 +28,7 @@ function renderReview (title, author, content) {
                 <h4 className="review-title">{title}</h4>
                 <p4 className="review-author">{author}</p4>
                 <p3 className="review-content">{content}</p3>
+                <img src={`/images/${rating}`} alt="rating" className="review-rating" />
             </div>
        </div>
     );
