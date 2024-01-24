@@ -1,74 +1,184 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+.info-box {
+  grid-column: 1/4;
+  grid-row: 2;
+  border-radius: 15px;
+  background-color: var(--neutral-color);
+  padding: 20px;
+  box-shadow: 0px 0px 25px rgba(74, 64, 52, 0.2);
+  margin: 24px 20px 32px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.info-box h2 {
+  margin-top: 40px;
+  font-size: 32px;
+  color: var(--secondary-color);
+  z-index: 10;
+}
+.info-box p2 { 
+  font-family: 'Homemade Apple', cursive;
+  color: #E7E4E1;
+  font-size: 32px;
+  position: absolute;
+  margin-top: 43px;
+}
+
+.info-box a {
+  max-width: 833px;
+  margin-top: 40px;
+  display: block;
+  text-align: left;
+  line-height: 22.4px;
+  font-size: 16px;
+  margin-bottom: 40px;
+  color: var(--secondary-color);
+}
+
+.boeking-box{
+  background-color: #60775d3c;
+  box-shadow: 0px 0px 25px rgba(74, 64, 52, 0.2);
+  border-radius: 15px;
+}
+
+
 .booking-form-container {
-    max-width: 400px;
-    margin: 0 auto;
-  }
-  
-  .booking-form label {
-    display: block;
-    margin-bottom: 8px;
+  display: grid;
+  grid-template-columns: 1fr 1fr; 
+  grid-template-rows: auto auto; 
+  gap: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+
+form {
+  display: flex;
+  flex-direction: column;
+  padding: 32px 32px 0 32px;
+  border-radius: 10px;
+}
+
+.booking-form-container form div{
+  display: flex;
+}
+
+
+form input,
+select{
+  flex: 1;
+  padding: 12px;
+  margin-bottom: 16px;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  color: var(--secondary-color);
+  font-size: 16px;
+}
+
+::placeholder{
+  color: #ADA39F;
+}
+
+.right-side {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+}
+
+.common-section{
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  text-align: start;
+  border-radius: 8px;
+}
+
+
+label{
+  margin: 16px 0;
+  color: var(--secondary-color);
+  font-weight: var(--font-weight-semibold);
+}
+
+.customer-info {
+  grid-column: 1; 
+  grid-row: 3; 
+}
+
+.volgende {
+  background-color: var(--primary-color); 
+  border: none;
+  color: var(--neutral-color);
+  padding: 16px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  border-radius: 12px;
+  margin: 32px 20px;
+  cursor: pointer;
+  transition-duration: 0.4s;
+}
+
+.volgende:hover {
+  background-color: #8C9B89;
+}
+
+.total-box {
+  grid-column: 2; 
+  grid-row: 3;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0px 0px 15px rgba(74, 64, 52, 0.1);
+}
+
+
+.banner{
+  grid-column: 1/4;
+  grid-row: 1;
+}
+.banner-background{
+  border-radius: 15px;
+}
+.banner-wave{
+  position: absolute;
+  width: 100%;
+  margin-top: 20px;
+}
+.banner-title-cursive{
+  font-family: 'Homemade Apple', cursive;
+  margin: 100px 0 0 0;
+  letter-spacing: 3px;
+  font-size: 56px;
+  color: #A0AD9E
+}
+.banner-title{
+  position: absolute;
+  margin-top: 90px;
+  font-size: 56px;
+  font-weight: var(--font-weight-semibold);
+  color: var(--neutral-color);
+  z-index: 5;
+}
+
+
+@media (max-width: 768px) {
+  .booking-form-container {
+    grid-template-columns: 1fr; 
   }
 
-  .booking-form input {
-    width: 100%;
+  .total-box {
+    grid-column: 1;
+    grid-row: 3; 
   }
-  
-  .booking-form input,
-  .booking-form button {
-    padding: 10px;
-    margin-bottom: 15px;
-    box-sizing: border-box;
-  }
-  
-.booking-form button {
-    background-color: var(--primary-color);
-    color: #fff;
-    border: none;
-    padding: 15px;
-    cursor: pointer;
-    font-size: 16px;
-  }
-  
-  .booking-form button:hover {
-    background-color: #45a049;
-  }
-
-  .alert {
-    color: red;
-    background-color: #f8d7da;
-    padding: 10px;
-    margin-bottom: 10px;
-    border: 1px solid red;
-    border-radius: 5px;
-  }
-
-  @keyframes popup {
-    0% {
-      transform: translate(-50%, -50%) scale(0);
-    }
-    100% {
-      transform: translate(-50%, -50%) scale(1);
-    }
-  }
-
-  .alert-success {
-    animation: popup 0.3s ease-in;
-    background-color: var(--primary-color);
-    border-radius: 10px;
-    color: var(--neutral-color);
-    left: 50%;
-    min-width: 300px;
-    position: absolute;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    width: 500px;
-    height: 200px;
-  }
-
-  .inhoud{
-    padding: 10px;
-  }
-
-  .check{
-    padding: 5px;
-    height: 100px;
-  }
+}

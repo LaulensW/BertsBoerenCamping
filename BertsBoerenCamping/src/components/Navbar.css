@@ -50,8 +50,7 @@
     box-shadow: 0px 2px 20px rgba(0, 0, 0, 0.247);
   }
 
-  .search-field,
-select {
+  .search-field{
   margin-right: 10px;
   padding: 12px 13px;
   border-radius: 20px;
