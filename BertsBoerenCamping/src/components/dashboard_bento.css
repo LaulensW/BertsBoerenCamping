@@ -33,6 +33,7 @@
     margin: 0;
     letter-spacing: 3px;
     margin: 7px 0 0 0;
+    position: absolute;
 }
 .dashboard-title{
     color: var(--primary-color);

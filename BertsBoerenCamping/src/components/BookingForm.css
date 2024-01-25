@@ -13,7 +13,7 @@ body {
   background-color: var(--neutral-color);
   padding: 20px;
   box-shadow: 0px 0px 25px rgba(74, 64, 52, 0.2);
-  margin: 24px 20px 32px;
+  margin: 24px 0 32px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -48,6 +48,7 @@ body {
   background-color: #60775d3c;
   box-shadow: 0px 0px 25px rgba(74, 64, 52, 0.2);
   border-radius: 15px;
+  padding: 32px;
 }
 
 
@@ -56,16 +57,15 @@ body {
   grid-template-columns: 1fr 1fr; 
   grid-template-rows: auto auto; 
   gap: 20px;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 20px;
+  max-width: 100%;
+  margin: 160px 0 0 0;
+  padding: 0;
 }
 
 
 form {
   display: flex;
   flex-direction: column;
-  padding: 32px 32px 0 32px;
   border-radius: 10px;
 }
 
@@ -96,7 +96,7 @@ select{
 }
 
 .common-section{
-  padding: 32px;
+  padding-bottom: 32px;
   display: flex;
   flex-direction: column;
   text-align: start;
@@ -125,7 +125,7 @@ label{
   display: inline-block;
   font-size: 16px;
   border-radius: 12px;
-  margin: 32px 20px;
+  margin-top: 32px;
   cursor: pointer;
   transition-duration: 0.4s;
 }

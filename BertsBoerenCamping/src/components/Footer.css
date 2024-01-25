@@ -31,14 +31,13 @@ label{
     margin-bottom: 13px;
 }
 input[type=email]{
-    font-family: 'IBM Plex Mono', monospace;
-    color: var(--secondary-color);
-    padding: 16px;
-    font-size:16px;
     width: 296px;
-    border-radius: 100px;
-    border: none;
-    display: flex;
+    flex: 1;
+    padding: 16px;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    color: var(--secondary-color);
+    font-size: 16px;
 }
 input[type=submit]{
     font-family: 'IBM Plex Mono', monospace;
@@ -47,7 +46,7 @@ input[type=submit]{
     font-weight: bold;
     border: none;
     cursor: pointer;
-    border-radius: 100px;
+    border-radius: 10px;
     display: flex;
     justify-content: center;
     align-items: center;
